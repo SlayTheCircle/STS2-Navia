@@ -95,7 +95,7 @@ jobs:
           import sys
           tag, src, dst = sys.argv[1:4]
           text = open(src, encoding='utf-8').read()
-          match = re.search(rf'^## \[{re.escape(tag)}\]\n(.*?)(?=^## \[|\Z)', text, re.M | re.S)
+          match = re.search(rf'^## \[{re.escape(tag)}\][^\n]*\n(.*?)(?=^## \[|\Z)', text, re.M | re.S)
           if not match:
               raise SystemExit(f'CHANGELOG 缺少 ## [{tag}] 段落。')
           body = match.group(1).strip()
