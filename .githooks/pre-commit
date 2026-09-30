@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# 源码检查不依赖游戏 DLL 或未公开美术。
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+./scripts/check.sh --source-only

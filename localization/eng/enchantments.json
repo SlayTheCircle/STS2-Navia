@@ -1,0 +1,23 @@
+{
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_UP.title": "Fire Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_UP.description": "The supported card deals +{Amount} damage (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_UP.extraCardText": "Support: Deals +{Amount} damage.",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_FREE_EXHAUST.title": "Free Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_FREE_EXHAUST.description": "The supported Skill costs 0 and gains Exhaust (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_FREE_EXHAUST.extraCardText": "Support: Costs 0. Exhausts.",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_GAIN_EXHAUST.title": "Exhaust Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_GAIN_EXHAUST.description": "The supported card gains Exhaust (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_GAIN_EXHAUST.extraCardText": "Support: Exhausts.",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_MORA_ON_PLAY.title": "Mora Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_MORA_ON_PLAY.description": "Each time the supported card is played, add {Amount} Shining Mora to your hand (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_MORA_ON_PLAY.extraCardText": "Support: When played, add {Amount} Shining Mora to your hand.",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_ON_PLAY.title": "Bunker Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_ON_PLAY.description": "Each time the supported card is played, gain {Amount} Block (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_ON_PLAY.extraCardText": "Support: When played, gain {Amount} Block.",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.title": "Suppressing Fire Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.description": "The supported Attack card deals {Amount} less damage (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.extraCardText": "Support: Deals {Amount} less damage.",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.title": "Horn Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.description": "When you play a card with a Support effect, if the supported card is in your hand, it is played automatically for free with a random target (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.extraCardText": "Support: When a Support card is played, if in hand, plays itself."
+}

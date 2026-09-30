@@ -1,0 +1,18 @@
+{
+  "id": "STS2-Navia",
+  "pck_name": "STS2-Navia",
+  "name": "娜维娅 | Navia",
+  "author": "3aKHP",
+  "description": "来自白淞镇的刺玫会会长——用铳弹与礼炮扫平一切障碍。新增可玩角色「娜维娅」:装填、礼炮轰鸣双机制,专属卡牌/遗物/药水/事件。A Slay the Spire 2 character mod: Navia from Spina di Rosula.",
+  "version": "0.1.5",
+  "has_pck": true,
+  "has_dll": true,
+  "affects_gameplay": true,
+  "dependencies": [
+    {
+      "id": "STS2-RitsuLib",
+      "min_version": "0.6.2"
+    }
+  ],
+  "min_game_version": "0.111.0"
+}

@@ -1,0 +1,39 @@
+name: Bug 报告 / Bug report
+description: 报告可复现的模组问题
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先搜索已有问题。优先提供文字步骤；日志中删除个人路径、存档身份等无关信息。
+  - type: textarea
+    id: phenomenon
+    attributes:
+      label: 现象与预期
+      description: 发生了什么，正确行为应是什么？
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: 游戏、模组及 RitsuLib 版本
+      description: 同时填写包文件名与游戏显示的模组版本，内部历史包的两者可能不同。
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: 平台与其他启用模组
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤
+      description: 包含相关牌、遗物、升级状态、回合或事件；有种子时提供种子。
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志与补充材料
+      description: 提供相关异常段或画面，说明是否使用旧存档。

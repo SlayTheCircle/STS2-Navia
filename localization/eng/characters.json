@@ -1,0 +1,18 @@
+{
+  "STS2_NAVIA_CHARACTER_NAVIA.title": "Navia",
+  "STS2_NAVIA_CHARACTER_NAVIA.titleObject": "Navia",
+  "STS2_NAVIA_CHARACTER_NAVIA.description": "President of Spina di Rosula from Poisson — a warm-hearted and reliable demoiselle.\nWith her most trusted attendants and her musket-umbrella, she marches toward the Spire.\n\nClears every obstacle with gunfire and festive cannons.",
+  "STS2_NAVIA_CHARACTER_NAVIA.pronounSubject": "she",
+  "STS2_NAVIA_CHARACTER_NAVIA.pronounObject": "her",
+  "STS2_NAVIA_CHARACTER_NAVIA.possessiveAdjective": "her",
+  "STS2_NAVIA_CHARACTER_NAVIA.pronounPossessive": "hers",
+  "STS2_NAVIA_CHARACTER_NAVIA.cardsModifierTitle": "Navia Cards",
+  "STS2_NAVIA_CHARACTER_NAVIA.cardsModifierDescription": "Navia's cards now appear in rewards and shops.",
+  "STS2_NAVIA_CHARACTER_NAVIA.eventDeathPrevention": "The Spina still needs me.",
+  "STS2_NAVIA_CHARACTER_NAVIA.bestiaryQuote": "So many things I've never seen! Can I get a photo with it?",
+  "STS2_NAVIA_CHARACTER_NAVIA.goldMonologue": "[sine][gold]These funds will enrich the Spina's coffers...[/gold][/sine]",
+  "STS2_NAVIA_CHARACTER_NAVIA.aromaPrinciple": "[sine][gold]Eyes on the future![/gold][/sine]",
+  "STS2_NAVIA_CHARACTER_NAVIA.unlockText": "A new adventure awaits the president of the Spina.",
+  "STS2_NAVIA_CHARACTER_NAVIA.banter.alive.endTurnPing": "Leave it to me!",
+  "STS2_NAVIA_CHARACTER_NAVIA.banter.dead.endTurnPing": "..."
+}

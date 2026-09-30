@@ -1,0 +1,11 @@
+{
+  "STS2_NAVIA_TO_GAIN_EXHAUST": "Choose [blue]{Amount}[/blue] card(s) to gain [gold]Exhaust[/gold].",
+  "STS2_NAVIA_TO_GAIN_SUPPORT": "Choose an Attack card to gain [gold]Support[/gold].",
+  "STS2_NAVIA_TO_GAIN_SUPPORT_DRAW_PILE": "Choose a card in your draw pile to gain [gold]Support[/gold].",
+  "STS2_NAVIA_TO_GAIN_SUPPORT_SKILL": "Choose a Skill card to gain [gold]Support[/gold].",
+  "STS2_NAVIA_TO_GAIN_SUPPORT_DRAW": "Choose [blue]{Amount}[/blue] card(s) from your draw pile to gain [gold]Support[/gold].",
+  "STS2_NAVIA_TO_EXHAUST_ANY": "Exhaust any number of cards in your hand (optional).",
+  "STS2_NAVIA_TO_PLAY_CANNON": "Choose a [gold]Golden Rose Cannon[/gold] to play.",
+  "STS2_NAVIA_TO_COPY": "Select [blue]{Amount}[/blue] card(s). A copy of it with [gold]Exhaust[/gold] will be added to your hand.",
+  "STS2_NAVIA_TO_TOP_OF_DRAW": "Choose a card to put on top of your Draw Pile."
+}

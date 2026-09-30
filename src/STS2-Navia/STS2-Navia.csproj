@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>STS2-Navia</AssemblyName>
+    <RootNamespace>NaviaMod</RootNamespace>
+    <Nullable>enable</Nullable>
+    <LangVersion>13.0</LangVersion>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <!-- 引用来自 scripts/restore-refs.sh,按游戏分支取对应版本 -->
+    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(GAME_REFS_DIR)</GameRefsDir>
+    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(MSBuildThisFileDirectory)..\..\libs\game</GameRefsDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="sts2">
+      <HintPath>$(GameRefsDir)\sts2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="GodotSharp">
+      <HintPath>$(GameRefsDir)\GodotSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(GameRefsDir)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- 本机路径由配置注入；无配置时从仓库内不追踪的 libs/RitsuLib 读取。 -->
+    <RitsuLibDir Condition="'$(RitsuLibDir)' == ''">$(RITSULIB_DIR)</RitsuLibDir>
+    <RitsuLibDir Condition="'$(RitsuLibDir)' == ''">$(MSBuildThisFileDirectory)..\..\libs\RitsuLib</RitsuLibDir>
+    <RitsuLibReferenceTarget Condition="'$(RitsuLibReferenceTarget)' == ''">$(RITSULIB_TARGET)</RitsuLibReferenceTarget>
+    <RitsuLibReferenceTarget Condition="'$(RitsuLibReferenceTarget)' == ''">0.111.0</RitsuLibReferenceTarget>
+  </PropertyGroup>
+  <Import Project="$(RitsuLibDir)/RitsuLib.References.props" />
+
+</Project>

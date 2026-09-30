@@ -1,0 +1,56 @@
+{
+  "COLORFUL_PHILOSOPHERS.pages.INITIAL.options.NAVIA.title": "金色",
+  "COLORFUL_PHILOSOPHERS.pages.INITIAL.options.NAVIA.description": "获得[blue]{Cards}[/blue]张娜维娅的卡牌。",
+
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.title": "故乡的回忆",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.description": "你的面前出现了一片翠绿的草坪。许久没有见过这样的景色了，你决定在这里生火，坐下休息一会。\n离开枫丹到尖塔已经有些时日了，你不禁有些怀念家乡的风景。你闭上眼睛，出现在你脑海中的是……",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.SUNNY.title": "晴天",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.SUNNY.description": "移除你卡组中的一张牌。",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.OVERCAST.title": "阴天",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.OVERCAST.description": "移除你卡组中的两张牌。将一张[愧疚]添加到你的卡组。",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.SUNNY.description": "你回忆起枫丹明媚的阳光，波光粼粼的大海，还有展翅翱翔的海鸟。\n你的身心不知不觉间放松了许多，仿佛忘记了所有的疲惫与烦恼。\n再睁开眼时，火堆已经熄灭。你背起行囊，继续踏上了旅程。",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.OVERCAST.description": "你回忆起枫丹倾盆的暴雨。你想起那位不近人情的大审判官，想起父亲，想起那天站在父亲墓前痛哭流涕的自己。\n回想起来，如果没有父亲，自己恐怕早就卷入明争暗斗的漩涡，被碾得粉身碎骨了吧？\n再睁开眼时，火堆已经熄灭。你背起行囊，继续踏上了旅程。",
+
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.title": "异邦人的舞会",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.description": "你来到一个富丽堂皇的大厅。厅中满是装束华丽的舞者，见到你他们都十分兴奋。\n「看呐，又来了一位新朋友！来吧，让我们一同起舞！」\n面对他们盛情的邀请，你决定……",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.DANCE.title": "与他们共舞",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.DANCE.description": "变化你卡组中的一张牌。",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.FEAST.title": "与他们共享晚宴",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.FEAST.description": "恢复{Heal}点生命值，获取一瓶随机药水。",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT.title": "赠与他们礼物",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT.description": "失去{GiftGold}金币，获得一件普通遗物。",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT_LOCKED.title": "赠与他们礼物",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT_LOCKED.description": "你没有足够的金币。",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.DANCE.description": "你欣然答应他们的邀请，一同加入了灯光闪烁的舞池中。\n在碰杯声中，你渐渐忘记了时间，随着节拍舞动着，直到筋疲力竭。\n好久没有这么痛快地一展舞步了。你与异邦人们告别，又踏上了旅途。",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.FEAST.description": "你决定留下来，与众人共进晚餐。一道道色香味俱全的美食端上餐桌，你与众人举杯共饮，觥筹交错。\n填饱肚子后，你抖擞精神，再次踏上了旅途。",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.GIFT.description": "你拿出口袋里的金币，作为礼金赠予大家。众人一边感叹着你的慷慨，一边纷纷掏出礼物回赠与你。\n在众人的簇拥与笑声中，你收拾好大家的赠礼，再次踏上了旅途。",
+
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.title": "大雨倾盆",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.description": "好大的雨！即使在家乡枫丹，你也很少看到这样的瓢泼大雨。\n不知道雨什么时候才能停下……要冒险前进吗，还是休整一下再前进？",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.PRESS_ON.title": "冒雨前进",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.PRESS_ON.description": "随机一张牌将从你的牌组中移除。",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.WAIT.title": "等待雨势减小",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.WAIT.description": "获得一件普通遗物。将一张[睡眠不佳]添加到你的卡组。",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.PRESS_ON.description": "时间就是金钱！这是刺玫会一贯的信条。你决定冒着大雨继续前进。况且自己还有一把伞呢。\n只可惜，在倾盆的大雨中，你的一些行李似乎被水流冲走了，再也找不回来。\n不过刺玫会的老板绝不会因为失去的东西而哀怨——要把目光放在未来！\n你烘干衣物与身体，收拾行囊，继续上路了。",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.WAIT.description": "刺玫会永远不做无谓的冒险——这是你一贯的信条。你决定就地整修，等待雨势减小。\n夜间大雨打在水面上的滴答声搅扰得你难以入睡。而且你总觉得睡觉的毯子铺的不平整——哎呦！什么东西硌了你一下？\n居然是一个小小的匣子！真是意外之喜。你将匣子收进行囊，等待雨停后就继续踏上了旅途。",
+
+  "STONE_OF_ALL_TIME.pages.INITIAL.options.NAVIA_BREAK_BOULDER.title": "尝试将巨石打碎",
+  "STONE_OF_ALL_TIME.pages.INITIAL.options.NAVIA_BREAK_BOULDER.description": "选择一张卡，使其获得附魔：华彩1。",
+  "STONE_OF_ALL_TIME.pages.NAVIA_BREAK_BOULDER.description": "你对准巨石瞄准——然后开炮！\n巨石在金花礼炮的冲击下碎成几块。你发现原来巨石的中心埋着一颗漂亮的宝石！\n真是意外收获。你将宝石收进行囊，然后一身轻松地踏上了旅途。",
+
+  "TRIAL.pages.INITIAL.options.NAVIA_REBUKE.title": "大声斥责",
+  "TRIAL.pages.INITIAL.options.NAVIA_REBUKE.description": "从卡组中选择一张牌移除。",
+  "TRIAL.pages.NAVIA_REBUKE.description": "看着面前瑟瑟发抖的囚犯，你不禁大声斥责审判官们的无情冷漠，并激烈地抨击他们将审判视作儿戏的可笑行为。\n审判官们面面相觑，似乎被你的壮举震慑。随后他们一致决定赦免囚犯，并为让你代行审判的行为道歉。\n你感到身上一阵没来由的轻松，随后继续踏上了征途。",
+
+  "SPIRALING_WHIRLPOOL.pages.INITIAL.options.NAVIA_REMINISCE.title": "回忆往事",
+  "SPIRALING_WHIRLPOOL.pages.INITIAL.options.NAVIA_REMINISCE.description": "升级你卡组中的一张卡。",
+  "SPIRALING_WHIRLPOOL.pages.NAVIA_REMINISCE.description": "面对涡旋的水潭，你不禁回忆起了在故乡经历的种种。\n故乡伙伴们的身影在你的脑海中浮现。你不禁下定决心，要让这趟旅程充满美好的回忆。\n怀着这样的心情，你继续踏上了旅程。",
+
+  "BUGSLAYER.pages.INITIAL.options.NAVIA_SHARE_EXPERIENCE.title": "分享自己的经验",
+  "BUGSLAYER.pages.INITIAL.options.NAVIA_SHARE_EXPERIENCE.description": "获得一件随机遗物。",
+  "BUGSLAYER.pages.NAVIA_SHARE_EXPERIENCE.description": "你将许多应对敌人的心得分享给面前的战士。\n对方似乎很受打动，将自己腰间的行囊解下递给了你，权当是饯别的礼物。",
+
+  "TEA_MASTER.pages.INITIAL.options.NAVIA_SHARE_TEA.title": "分享茶点",
+  "TEA_MASTER.pages.INITIAL.options.NAVIA_SHARE_TEA.description": "恢复5生命，获得50金币。",
+  "TEA_MASTER.pages.NAVIA_SHARE_TEA.description": "你将随身携带的茶点与面前的老者分享。对方对你的手艺给予了高度认可，声称这才是配得上他茶艺的茶点。\n他向你学习了一些烘焙茶点的技巧，作为回报，他将一杯清茶与一小堆金币推到你面前。"
+}

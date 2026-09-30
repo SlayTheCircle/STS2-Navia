@@ -1,0 +1,12 @@
+{
+  "STS2_NAVIA_POTION_FONTA.title": "Fonta",
+  "STS2_NAVIA_POTION_FONTA.description": "Gain [blue]{MaxHp}[/blue] Max HP. For every 3 extra Max HP gained this way, restore 1 HP.",
+  "STS2_NAVIA_POTION_ROSULA_WINE.title": "Rosula Wine",
+  "STS2_NAVIA_POTION_ROSULA_WINE.description": "[gold]Load[/gold] [blue]{Loads}[/blue].",
+  "STS2_NAVIA_POTION_LESSE.title": "Lesse",
+  "STS2_NAVIA_POTION_LESSE.description": "Restore all of your HP. For the rest of this combat, lose [blue]{LesseWitheringPower}[/blue] Max HP at the end of each turn. (Can only be used in combat)",
+  "STS2_NAVIA_POTION_FIREARM_LUBRICANT.title": "Firearm Lubricant",
+  "STS2_NAVIA_POTION_FIREARM_LUBRICANT.description": "[gold]Salvo[/gold] [blue]{Salvo}[/blue].",
+  "STS2_NAVIA_POTION_CHENYU_TEA.title": "Chenyu Tea",
+  "STS2_NAVIA_POTION_CHENYU_TEA.description": "Add [blue]{Moras}[/blue] [gold]Shining Mora[/gold] to your hand."
+}

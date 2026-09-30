@@ -1,0 +1,21 @@
+{
+  "STORY_NAVIA": "娜维娅",
+
+  "STS2_NAVIA_EPOCH_1.title": "启程",
+  "STS2_NAVIA_EPOCH_1.description": "白淞镇的刺玫会会长娜维娅，热心而又可靠的大小姐。她总是奔波在冒险的最前线，帮助一切需要帮助的人。\n当她听闻尖塔开放的消息时，一个冒险的念头油然而生。\n她带上自己最信任的侍从，扛起她的伞弹枪，向着高塔进发。",
+  "STS2_NAVIA_EPOCH_1.unlockInfo": "使用娜维娅完成一次攀登。",
+  "STS2_NAVIA_EPOCH_1.unlockText": "解锁：娜维娅成为一名可玩角色。",
+  "STS2_NAVIA_EPOCH_1.unlock": "娜维娅来到了尖塔。",
+
+  "STS2_NAVIA_EPOCH_2.title": "荒疫",
+  "STS2_NAVIA_EPOCH_2.description": "娜维娅从涅奥口中得知荒疫的存在。危险的疫病并不能阻止大小姐的好奇心。\n「好吧，那就让我们去高塔里见识见识这荒疫有多可怕——或许还能遇到需要帮助的伙伴！克洛琳德，你真该来看看这险象环生的尖塔！」\n她义无反顾地开始了自己的征途。",
+  "STS2_NAVIA_EPOCH_2.unlockInfo": "使用娜维娅通关一次。",
+
+  "STS2_NAVIA_EPOCH_3.title": "好奇心",
+  "STS2_NAVIA_EPOCH_3.description": "娜维娅给枫丹的朋友们寄来了一封信。\n「尖塔真是危险又有趣的地方！我的朋友们，你们真该来看看！」\n她在信中附上了与各种巨大怪物的合照——有拿着镰刀的巨大石像，有浑身裹着珊瑚的人形怪物，还有……奇怪的扭动虫？\n真亏她有勇气和这些东西合照。",
+  "STS2_NAVIA_EPOCH_3.unlockInfo": "使用娜维娅累计击败 3 个首领。",
+
+  "STS2_NAVIA_EPOCH_4.title": "尖塔的尽头",
+  "STS2_NAVIA_EPOCH_4.description": "娜维娅在尖塔的最高处与名为建筑师的男人相遇。\n相比起建筑师的冷漠，娜维娅的热情显得突兀但及时。她与建筑师分享了一路的见闻，以及向他询问尖塔的诸多故事。\n然而建筑师似乎并不愿意回答。他一次一次将娜维娅送回塔底。",
+  "STS2_NAVIA_EPOCH_4.unlockInfo": "使用娜维娅通关进阶 1。"
+}

@@ -1,0 +1,16 @@
+name: 建议 / Suggestion
+description: 提出玩法或开发体验建议
+title: "[Suggestion] "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: 场景与目标
+      description: 描述目前遇到的问题和希望得到的体验。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议及影响
+      description: 可附方案、平衡考量、存档或兼容影响。

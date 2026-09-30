@@ -1,0 +1,21 @@
+{
+  "STORY_NAVIA": "Navia",
+
+  "STS2_NAVIA_EPOCH_1.title": "Setting Out",
+  "STS2_NAVIA_EPOCH_1.description": "Navia, president of Spina di Rosula in Poisson — a warm-hearted, reliable young lady forever racing to the front lines of adventure to help anyone in need.\nWhen word arrived that the Spire had opened, the spirit of adventure took hold of her at once.\nShe brought her most trusted retainers, shouldered her umbrella-shotgun, and set out for the tower.",
+  "STS2_NAVIA_EPOCH_1.unlockInfo": "Complete a run as Navia.",
+  "STS2_NAVIA_EPOCH_1.unlockText": "Unlock: Navia becomes a playable character.",
+  "STS2_NAVIA_EPOCH_1.unlock": "Navia has arrived at the Spire.",
+
+  "STS2_NAVIA_EPOCH_2.title": "The Blight",
+  "STS2_NAVIA_EPOCH_2.description": "From Neow, Navia learned of the Blight's existence. No dangerous plague could curb the young lady's curiosity.\n\"Alright then, let's go see for ourselves how terrible this Blight is — maybe we'll even find friends who need help! Clorinde, you really should see this perilous Spire!\"\nWithout hesitation, she began her expedition.",
+  "STS2_NAVIA_EPOCH_2.unlockInfo": "Win a run as Navia.",
+
+  "STS2_NAVIA_EPOCH_3.title": "Curiosity",
+  "STS2_NAVIA_EPOCH_3.description": "Navia sent a letter to her friends back in Fontaine.\n\"The Spire is such a dangerous, delightful place! My friends, you simply must come see it!\"\nEnclosed were photos of her with all manner of giant monsters — a colossal statue with a scythe, a coral-wrapped humanoid, and... a strange wriggling worm?\nIt takes real courage to pose for photos with such things.",
+  "STS2_NAVIA_EPOCH_3.unlockInfo": "Defeat 3 bosses as Navia in total.",
+
+  "STS2_NAVIA_EPOCH_4.title": "The Top of the Spire",
+  "STS2_NAVIA_EPOCH_4.description": "At the very top of the Spire, Navia met the man called the Architect.\nNext to his coldness, her warmth stood out — awkward, but timely. She shared her journey's stories and asked about the Spire's many tales.\nBut the Architect seemed unwilling to answer. Again and again, he sent Navia back to the bottom of the tower.",
+  "STS2_NAVIA_EPOCH_4.unlockInfo": "Win an Ascension 1 run as Navia."
+}

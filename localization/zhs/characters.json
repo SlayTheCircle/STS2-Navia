@@ -1,0 +1,18 @@
+{
+  "STS2_NAVIA_CHARACTER_NAVIA.title": "娜维娅",
+  "STS2_NAVIA_CHARACTER_NAVIA.titleObject": "娜维娅",
+  "STS2_NAVIA_CHARACTER_NAVIA.description": "来自白淞镇的刺玫会会长，热心而又可靠的大小姐。\n她带上最信任的侍从，扛起伞弹枪，向着高塔进发。\n\n用铳弹与礼炮扫平一切障碍。",
+  "STS2_NAVIA_CHARACTER_NAVIA.pronounSubject": "她",
+  "STS2_NAVIA_CHARACTER_NAVIA.pronounObject": "她",
+  "STS2_NAVIA_CHARACTER_NAVIA.possessiveAdjective": "她的",
+  "STS2_NAVIA_CHARACTER_NAVIA.pronounPossessive": "她的",
+  "STS2_NAVIA_CHARACTER_NAVIA.cardsModifierTitle": "娜维娅卡牌",
+  "STS2_NAVIA_CHARACTER_NAVIA.cardsModifierDescription": "娜维娅的卡牌现在会出现在奖励和商店中。",
+  "STS2_NAVIA_CHARACTER_NAVIA.eventDeathPrevention": "刺玫会还需要我。",
+  "STS2_NAVIA_CHARACTER_NAVIA.bestiaryQuote": "好多没见过的东西！能和它合个影吗？",
+  "STS2_NAVIA_CHARACTER_NAVIA.goldMonologue": "[sine][gold]这些摩拉可以充实刺玫会的金库……[/gold][/sine]",
+  "STS2_NAVIA_CHARACTER_NAVIA.aromaPrinciple": "[sine][gold]把目光放在未来！[/gold][/sine]",
+  "STS2_NAVIA_CHARACTER_NAVIA.unlockText": "新的冒险正等着刺玫会会长。",
+  "STS2_NAVIA_CHARACTER_NAVIA.banter.alive.endTurnPing": "交给我吧！",
+  "STS2_NAVIA_CHARACTER_NAVIA.banter.dead.endTurnPing": "……"
+}

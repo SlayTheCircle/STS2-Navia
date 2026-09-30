@@ -1,0 +1,12 @@
+{
+  "STS2_NAVIA_POTION_FONTA.title": "枫达",
+  "STS2_NAVIA_POTION_FONTA.description": "获得[blue]{MaxHp}[/blue]点最大生命值。每有3点额外的生命值上限，额外恢复1点生命值。",
+  "STS2_NAVIA_POTION_ROSULA_WINE.title": "刺玫佳酿",
+  "STS2_NAVIA_POTION_ROSULA_WINE.description": "[gold]装填[/gold][blue]{Loads}[/blue]。",
+  "STS2_NAVIA_POTION_LESSE.title": "乐斯",
+  "STS2_NAVIA_POTION_LESSE.description": "恢复你全部的生命值。本场战斗中，每个回合结束时，失去[blue]{LesseWitheringPower}[/blue]点最大生命值。（仅可在战斗中饮用）",
+  "STS2_NAVIA_POTION_FIREARM_LUBRICANT.title": "铳枪润滑油",
+  "STS2_NAVIA_POTION_FIREARM_LUBRICANT.description": "[gold]礼炮轰鸣[/gold][blue]{Salvo}[/blue]。",
+  "STS2_NAVIA_POTION_CHENYU_TEA.title": "沉玉茶露",
+  "STS2_NAVIA_POTION_CHENYU_TEA.description": "将[blue]{Moras}[/blue]张[gold]闪耀摩拉[/gold]加入你的手牌。"
+}

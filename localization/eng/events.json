@@ -1,0 +1,56 @@
+{
+  "COLORFUL_PHILOSOPHERS.pages.INITIAL.options.NAVIA.title": "Gold",
+  "COLORFUL_PHILOSOPHERS.pages.INITIAL.options.NAVIA.description": "Obtain [blue]{Cards}[/blue] Navia {Cards:plural:card|cards}.",
+
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.title": "Memories of Home",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.description": "A verdant meadow stretches before you. It has been a long time since you saw scenery like this, so you decide to make camp and rest a while.\nYou left Fontaine for the Spire some time ago, and you cannot help missing the sights of home. You close your eyes, and what appears in your mind is...",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.SUNNY.title": "Sunny Skies",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.SUNNY.description": "Remove a card from your deck.",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.OVERCAST.title": "Overcast Skies",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.INITIAL.options.OVERCAST.description": "Remove two cards from your deck. Add a [Guilty] to your deck.",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.SUNNY.description": "You recall Fontaine's bright sunshine, the glittering sea, and the seabirds wheeling overhead.\nYour body and mind relax without your noticing, as if fatigue and worry had drained away.\nWhen you open your eyes again, the fire has gone out. You shoulder your pack and continue your journey.",
+  "STS2_NAVIA_EVENT_HOMETOWN_MEMORY.pages.OVERCAST.description": "You recall Fontaine's torrential rain. You think of that unsympathetic Chief Justice, of your father, of yourself weeping at his graveside.\nLooking back, without your father you would long ago have been drawn into the whirlpool of intrigue and ground to dust.\nWhen you open your eyes again, the fire has gone out. You shoulder your pack and continue your journey.",
+
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.title": "Ball of Foreigners",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.description": "You enter a magnificent hall filled with lavishly dressed dancers, and they grow excited at your arrival.\n\"Look, a new friend! Come, let us dance together!\"\nFaced with their warm invitation, you decide to...",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.DANCE.title": "Dance With Them",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.DANCE.description": "Transform a card in your deck.",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.FEAST.title": "Join Their Banquet",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.FEAST.description": "Heal {Heal} HP and gain a random potion.",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT.title": "Present a Gift",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT.description": "Lose {GiftGold} gold. Gain a Common relic.",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT_LOCKED.title": "Present a Gift",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.INITIAL.options.GIFT_LOCKED.description": "You do not have enough gold.",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.DANCE.description": "You gladly accept and join the glittering dance floor.\nAmid the clinking of glasses you lose track of time, moving to the beat until you are thoroughly spent.\nIt has been ages since you danced this freely. You bid the foreigners farewell and set out again.",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.FEAST.description": "You stay for the banquet. Dish after fragrant dish arrives, and you raise your glass with the crowd.\nYour belly full and spirits lifted, you set out once more.",
+  "STS2_NAVIA_EVENT_FOREIGN_BALL.pages.GIFT.description": "You offer your gold as a courtesy gift. The crowd marvels at your generosity and produces return gifts one after another.\nAmid their cheers and laughter you gather the presents and set out once more.",
+
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.title": "Torrential Rain",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.description": "What a downpour! Even in Fontaine you rarely saw rain this heavy.\nThere is no telling when it will let up... press on through the rain, or rest and wait it out?",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.PRESS_ON.title": "Press On",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.PRESS_ON.description": "A random card is removed from your deck.",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.WAIT.title": "Wait Out the Rain",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.INITIAL.options.WAIT.description": "Gain a Common relic. Add a [Poor Sleep] to your deck.",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.PRESS_ON.description": "Time is money! That has always been the Spina di Rosula's creed. You press on through the rain — besides, you have an umbrella.\nSadly, in the deluge some of your luggage seems to have been swept away, never to be recovered.\nBut a Spina di Rosula president never mourns what is lost — eyes on the future!\nYou dry your clothes and yourself, pack up, and continue on your way.",
+  "STS2_NAVIA_EVENT_HEAVY_RAIN.pages.WAIT.description": "The Spina di Rosula never takes needless risks — that has always been your creed. You make camp and wait for the rain to ease.\nThe drumming of night rain on the water keeps you from sleep, and the blanket never lies flat — ouch! What poked you?\nWhy, it is a small box! A happy accident indeed. You tuck it away and set out once the rain stops.",
+
+  "STONE_OF_ALL_TIME.pages.INITIAL.options.NAVIA_BREAK_BOULDER.title": "Try to Shatter the Boulder",
+  "STONE_OF_ALL_TIME.pages.INITIAL.options.NAVIA_BREAK_BOULDER.description": "Choose a card. It gains the Enchantment: Glam 1.",
+  "STONE_OF_ALL_TIME.pages.NAVIA_BREAK_BOULDER.description": "You take aim at the boulder — and fire!\nThe boulder shatters under the Rosula shotgun's impact, revealing a beautiful gemstone buried at its heart!\nWhat an unexpected find. You pocket the gem and continue your journey, light as air.",
+
+  "TRIAL.pages.INITIAL.options.NAVIA_REBUKE.title": "Speak Out in Rebuke",
+  "TRIAL.pages.INITIAL.options.NAVIA_REBUKE.description": "Choose a card in your deck to remove.",
+  "TRIAL.pages.NAVIA_REBUKE.description": "Faced with the trembling prisoner, you loudly rebuke the judges for their callousness, decrying their farce of a trial.\nThe judges exchange looks, seemingly cowed by your audacity. They unanimously decide to pardon the prisoner and apologize for deputizing you.\nFeeling inexplicably lighter, you continue your ascent.",
+
+  "SPIRALING_WHIRLPOOL.pages.INITIAL.options.NAVIA_REMINISCE.title": "Recall the Past",
+  "SPIRALING_WHIRLPOOL.pages.INITIAL.options.NAVIA_REMINISCE.description": "Upgrade a card in your deck.",
+  "SPIRALING_WHIRLPOOL.pages.NAVIA_REMINISCE.description": "Before the swirling pool you cannot help recalling all you experienced back home.\nThe figures of old companions surface in your mind, and you resolve to fill this journey with memories just as good.\nWith that thought, you continue on your way.",
+
+  "BUGSLAYER.pages.INITIAL.options.NAVIA_SHARE_EXPERIENCE.title": "Share Your Experience",
+  "BUGSLAYER.pages.INITIAL.options.NAVIA_SHARE_EXPERIENCE.description": "Gain a random relic.",
+  "BUGSLAYER.pages.NAVIA_SHARE_EXPERIENCE.description": "You share many hard-won lessons about fighting monsters with the warrior before you.\nDeeply moved, they untie the pack from their belt and hand it to you as a parting gift.",
+
+  "TEA_MASTER.pages.INITIAL.options.NAVIA_SHARE_TEA.title": "Share Your Tea Snacks",
+  "TEA_MASTER.pages.INITIAL.options.NAVIA_SHARE_TEA.description": "Heal 5 HP. Gain 50 gold.",
+  "TEA_MASTER.pages.NAVIA_SHARE_TEA.description": "You share the tea snacks you carry with the elder. They praise your craftsmanship highly, declaring them worthy of their tea art.\nThey learn a few baking tricks from you, and in return slide a cup of tea and a small pile of coins your way."
+}

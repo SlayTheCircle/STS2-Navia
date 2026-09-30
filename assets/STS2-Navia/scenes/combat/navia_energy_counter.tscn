@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://src/Core/Nodes/Combat/NEnergyCounter.cs" id="1_counter"]
+[ext_resource type="Script" path="res://addons/mega_text/MegaLabel.cs" id="2_label"]
+[ext_resource type="Script" path="res://src/Core/Nodes/Vfx/Utilities/NParticlesContainer.cs" id="3_particles"]
+[ext_resource type="FontVariation" path="res://themes/kreon_bold_shared.tres" id="4_font"]
+[ext_resource type="Texture2D" path="res://STS2-Navia/images/energy/navia_energy_big.png" id="5_rose"]
+
+[sub_resource type="FontVariation" id="FontVariation_energy"]
+base_font = ExtResource("4_font")
+spacing_glyph = 2
+
+[sub_resource type="Gradient" id="Gradient_spark"]
+colors = PackedColorArray(1, 0.82, 0.32, 0.8, 1, 0.82, 0.32, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture_spark"]
+gradient = SubResource("Gradient_spark")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spark"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 46.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 35.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.018
+scale_max = 0.03
+color_ramp = SubResource("GradientTexture_spark")
+
+[node name="NaviaEnergyCounter" type="Control"]
+layout_mode = 3
+offset_right = 128.0
+offset_bottom = 128.0
+pivot_offset = Vector2(64, 64)
+script = ExtResource("1_counter")
+
+[node name="EnergyVfxBack" type="Node2D" parent="." node_paths=PackedStringArray("_particles")]
+unique_name_in_owner = true
+position = Vector2(64, 64)
+script = ExtResource("3_particles")
+_particles = [NodePath("Sparks")]
+
+[node name="Sparks" type="GPUParticles2D" parent="EnergyVfxBack"]
+emitting = false
+amount = 8
+texture = ExtResource("5_rose")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_spark")
+
+[node name="Layers" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RotationLayers" type="Control" parent="Layers"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Rose" type="TextureRect" parent="Layers/RotationLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+mouse_filter = 2
+texture = ExtResource("5_rose")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnergyVfxFront" type="Node2D" parent="." node_paths=PackedStringArray("_particles")]
+unique_name_in_owner = true
+position = Vector2(64, 64)
+script = ExtResource("3_particles")
+_particles = [NodePath("Sparks")]
+
+[node name="Sparks" type="GPUParticles2D" parent="EnergyVfxFront"]
+emitting = false
+amount = 5
+texture = ExtResource("5_rose")
+lifetime = 0.45
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_spark")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -29.0
+offset_right = -16.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.964706, 0.886275, 1)
+theme_override_colors/font_outline_color = Color(0.09, 0.08, 0.16, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("FontVariation_energy")
+theme_override_font_sizes/font_size = 36
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_label")
+MinFontSize = 32
+MaxFontSize = 36

@@ -1,0 +1,23 @@
+{
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_UP.title": "火力支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_UP.description": "获得支援的卡牌造成的伤害 +{Amount}（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_UP.extraCardText": "支援：造成伤害 +{Amount}。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_FREE_EXHAUST.title": "免费支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_FREE_EXHAUST.description": "获得支援的技能牌费用变为0，并获得消耗（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_FREE_EXHAUST.extraCardText": "支援：费用为0，获得消耗。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_GAIN_EXHAUST.title": "消耗支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_GAIN_EXHAUST.description": "获得支援的牌获得消耗（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_GAIN_EXHAUST.extraCardText": "支援：获得消耗。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_MORA_ON_PLAY.title": "摩拉支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_MORA_ON_PLAY.description": "获得支援的牌每次打出时，在手牌中生成{Amount}张闪耀摩拉（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_MORA_ON_PLAY.extraCardText": "支援：打出时，在手牌中生成{Amount}张闪耀摩拉。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_ON_PLAY.title": "掩体支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_ON_PLAY.description": "获得支援的牌每次打出时，获得{Amount}点格挡（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_ON_PLAY.extraCardText": "支援：打出时，获得{Amount}点格挡。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.title": "火力压制支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.description": "获得支援的攻击牌造成的伤害 -{Amount}（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.extraCardText": "支援：造成伤害 -{Amount}。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.title": "号角支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.description": "打出一张带有支援效果的牌时，若被附魔的牌在手牌中，自动（免费）将其打出，目标随机（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.extraCardText": "支援：打出支援牌时，若在手牌中，自动打出。"
+}
