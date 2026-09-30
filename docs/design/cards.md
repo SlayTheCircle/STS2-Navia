@@ -4,6 +4,7 @@
 <!-- 过时校验:check.sh 调用 --check;再生成:python3 scripts/export-card-table.py -->
 
 共 91 张（含衍生 token）。效果文本为当前运行文本;升级数值以源码与游戏内为准。
+稀有度颜色对照：普通=白卡，罕见=蓝卡，稀有=金卡。
 原案数值与设计过程见[技术历史](../history/design/README.md)。
 
 ## 初始卡（4）
