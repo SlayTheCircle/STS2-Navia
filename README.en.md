@@ -2,13 +2,11 @@
 
 [简体中文](README.md)
 
-A Navia character mod for Slay the Spire 2, built around Load, Salvo, Mora, and Support. The main content batches are implemented; compatibility work, final acceptance, and open-source preparation are in progress. See [STATUS.md](STATUS.md) for implemented state and limits.
+A Navia character mod for Slay the Spire 2, built around Load, Salvo, Mora, and Support. Version 0.1.5 is released (GitHub Releases and Steam Workshop); compatibility work and final acceptance continue. See [STATUS.md](STATUS.md) for implemented state and limits.
 
 ## Installation
 
-This checkout provides source code, bilingual localization, text resource configuration, and organized public design documents. The official release package and artwork distribution are still being decided. The current build targets game version `0.111.0`; install a matching RitsuLib bundle. Minimum dependency versions are defined in the [mod manifest](STS2-Navia.json).
-
-For an accepted complete package, place its `STS2-Navia/` directory under the game's `mods/` directory and install RitsuLib. Close the game before installing or replacing files, and keep the previous package for rollback. Multimedia is absent from source checkouts. A DLL alone is not a complete installable package.
+This checkout provides source code, bilingual localization, text resource configuration, and organized public design documents. The preferred install path is subscribing on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) together with [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295); alternatively, download a release from [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) and place its `STS2-Navia/` directory under the game's `mods/` directory. Close the game before installing or replacing files, and keep the previous package for rollback. The current build targets game version `0.111.0`; minimum dependency versions are defined in the [mod manifest](STS2-Navia.json). Multimedia is absent from source checkouts. A DLL alone is not a complete installable package.
 
 ## Development
 
@@ -33,7 +31,7 @@ See the [contributor guide](CONTRIBUTING.md) and [build pipeline](docs/dev/pipel
 - [Technical history](docs/history/README.md)
 - [Changelog](CHANGELOG.md)
 - [Roadmap](docs/roadmap.md)
-- Community files: [Code of conduct](CODE_OF_CONDUCT.md), [Security policy](SECURITY.md), [Support](SUPPORT.md), and [Credits](CREDITS.md). These are placeholders to be finalized after the project becomes open source.
+- Community files: [Code of conduct](CODE_OF_CONDUCT.md), [Security policy](SECURITY.md), [Support](SUPPORT.md), and [Credits](CREDITS.md).
 
 The developer documents are maintained in Chinese. The two README files are updated together.
 

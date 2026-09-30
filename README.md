@@ -2,13 +2,11 @@
 
 [English](README.en.md)
 
-《杀戮尖塔 2》的娜维娅角色模组，以装填、礼炮轰鸣、摩拉与支援构筑为主题。当前内容开发已完成主要批次，正在进行开源准备、兼容适配和最终验收。当前实现与限制见 [STATUS.md](STATUS.md)。
+《杀戮尖塔 2》的娜维娅角色模组，以装填、礼炮轰鸣、摩拉与支援构筑为主题。0.1.5 已发布（GitHub Release 与 Steam 工坊），兼容适配与最终验收持续推进。当前实现与限制见 [STATUS.md](STATUS.md)。
 
 ## 获取与安装
 
-当前仓库提供源码、双语本地化、文本资源配置及整理后的公开设计资料。正式发行包及美术公开方式尚待确定。需要使用与游戏分支匹配的 RitsuLib；当前构建目标为游戏 `0.111.0`，依赖最低版本以 [模组清单](STS2-Navia.json) 为准。
-
-取得经过验收的完整包后，将其中 `STS2-Navia/` 目录放入游戏 `mods/`，并安装 RitsuLib。安装或覆盖前关闭游戏；保存原版本包，便于回退。源码检出中不包含多媒体，单独编译 DLL 不构成可安装的完整包。
+当前仓库提供源码、双语本地化、文本资源配置及整理后的公开设计资料。推荐经 [Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) 订阅安装，并一并订阅 [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295)；也可从 [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) 下载发行包，将其中 `STS2-Navia/` 目录放入游戏 `mods/`。安装或覆盖前关闭游戏；保存原版本包，便于回退。当前构建目标为游戏 `0.111.0`，依赖最低版本以 [模组清单](STS2-Navia.json) 为准。源码检出中不包含多媒体，单独编译 DLL 不构成可安装的完整包。
 
 ## 开发
 
@@ -33,7 +31,7 @@ cp .local-dev.env.example .local-dev.env
 - [技术历史](docs/history/README.md)：排错案例、方案取舍和审计证据。
 - [变更记录](CHANGELOG.md)：用户可感知的变动。
 - [路线图](docs/roadmap.md)：尚未完成的工作。
-- 社区文件：[行为准则](CODE_OF_CONDUCT.md)、[安全策略](SECURITY.md)、[获取帮助](SUPPORT.md)、[贡献署名](CREDITS.md)。当前均为占位模板，开源后定稿。
+- 社区文件：[行为准则](CODE_OF_CONDUCT.md)、[安全策略](SECURITY.md)、[获取帮助](SUPPORT.md)、[贡献署名](CREDITS.md)。
 
 ## 许可与素材
 

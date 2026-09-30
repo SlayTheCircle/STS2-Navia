@@ -66,4 +66,6 @@ C# 扩展自身使用的 .NET Runtime 与项目所需 SDK 分别发现。dotnetA
 
 tag `v*` 推送触发 [Release 工作流](../../.github/workflows/release.yml)：托管 runner 检出私有构建输入仓 circle-refs（`game-refs/<版本>/` 编译参考与 RitsuLib 镜像，组织私有）和美术母版仓，按清单 min_game_version 选择目标目录完整构建，产出候选 ZIP 与校验值并创建草稿 Release；发行说明取自 [CHANGELOG](../../CHANGELOG.md) 对应版本段落。main 推送另有 [Compile 工作流](../../.github/workflows/compile.yml) 做 DLL 编译验证。两者依赖的只读凭据 REFS_TOKEN 存于仓库 Actions secrets；fork PR 拿不到该凭据，只会运行无 secret 的源码检查。
 
+Steam 工坊发布为本地手工步（`local_dev/workshop/publish.sh`，私有）：从 Release 工件取内容经 SteamCMD 上传至固定物品，描述单源 `description.bbcode` 使用真实换行——steamcmd 的 VDF 不解析 `\n` 转义，会按字面透传。
+
 双版本发行尚未实现。准备游戏 0.107.1 变体时分别恢复引用、选对应 RitsuLib compat、编译并试玩验收，发布布局与流程另行落实。
