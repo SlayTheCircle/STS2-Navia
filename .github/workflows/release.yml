@@ -77,7 +77,7 @@ jobs:
         env:
           ART_SOURCE_DIR: ${{ github.workspace }}/art
         run: |
-          command -v convert >/dev/null || sudo apt-get install -y imagemagick
+          command -v convert >/dev/null || { sudo apt-get update; sudo apt-get install -y --no-install-recommends imagemagick; }
           bash scripts/prep-art.sh
 
       - name: 完整构建并打包
