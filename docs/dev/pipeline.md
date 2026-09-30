@@ -40,7 +40,7 @@ C# 扩展自身使用的 .NET Runtime 与项目所需 SDK 分别发现。dotnetA
 ./scripts/check.sh --full        # 源码检查 + 环境 + 完整构建
 ./scripts/build.sh               # 完整素材检查、编译、导入、打包和 PCK 验证
 ./scripts/verify-pck.sh           # 检查已有 PCK 的代表性纹理和本地化
-./scripts/package.sh             # 重建完整包，再按清单／游戏目标版本生成内部 ZIP
+./scripts/package.sh             # 重建完整包，再按清单／游戏目标版本生成候选 ZIP（NAVIA_PACKAGE_CHANNEL=release 为公开措辞）
 ```
 
 源码检查不依赖游戏 DLL、Godot 或多媒体。完整构建先检查素材和引用，再在临时目录组装，经 PCK 验证成功后复制到 mods-dist/STS2-Navia/。入口必须存在。导入失败会输出诊断并中止。编译和素材检查不能替代实际游戏验收。
@@ -61,5 +61,9 @@ C# 扩展自身使用的 .NET Runtime 与项目所需 SDK 分别发现。dotnetA
 ```
 
 当前部署脚本服务于 WSL 下的 Windows 游戏，依赖 TASKLIST_EXE。游戏运行或进程检测失败时拒绝部署。文件占用则中止；不得改名让路。缺日志时只能报告未取得证据，不能据此认定无错误。
+
+## 发行工作流
+
+tag `v*` 推送触发 [Release 工作流](../../.github/workflows/release.yml)：托管 runner 检出私有构建输入仓 circle-refs（`game-refs/<版本>/` 编译参考与 RitsuLib 镜像，组织私有）和美术母版仓，按清单 min_game_version 选择目标目录完整构建，产出候选 ZIP 与校验值并创建草稿 Release；发行说明取自 [CHANGELOG](../../CHANGELOG.md) 对应版本段落。main 推送另有 [Compile 工作流](../../.github/workflows/compile.yml) 做 DLL 编译验证。两者依赖的只读凭据 REFS_TOKEN 存于仓库 Actions secrets；fork PR 拿不到该凭据，只会运行无 secret 的源码检查。
 
 双版本发行尚未实现。准备游戏 0.107.1 变体时分别恢复引用、选对应 RitsuLib compat、编译并试玩验收，发布布局与流程另行落实。

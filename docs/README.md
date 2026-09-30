@@ -9,7 +9,7 @@
 | [CHANGELOG](../CHANGELOG.md) | 用户可感知的变化 |
 | [路线图](roadmap.md) | 尚未完成的工作 |
 | [许可范围](../LICENSING.md)与[第三方说明](../THIRD_PARTY_NOTICES.md) | MIT 软件范围、素材和上游权利 |
-| [行为准则](../CODE_OF_CONDUCT.md)、[安全策略](../SECURITY.md)、[获取帮助](../SUPPORT.md)、[贡献署名](../CREDITS.md) | 占位模板，具体内容将在项目开源后确定 |
+| [行为准则](../CODE_OF_CONDUCT.md)、[安全策略](../SECURITY.md)、[获取帮助](../SUPPORT.md)、[贡献署名](../CREDITS.md) | 社区协作、漏洞报告渠道与贡献署名 |
 
 ## 贡献者模块
 

@@ -1,0 +1,51 @@
+name: Compile check
+
+# main 推送时检出私有构建输入（circle-refs）做 DLL 编译验证（build.sh --dll-only，
+# 不含素材与 PCK——那些属于 tag 触发的 Release 工作流）。
+# 源码检查在 ci.yml；fork PR 无 secret，只跑源码检查。
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: compile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出源码
+        uses: actions/checkout@v4
+
+      - name: 读取构建目标
+        run: |
+          target=$(python3 -c 'import json; print(json.load(open("STS2-Navia.json"))["min_game_version"])')
+          echo "TARGET=$target" >> "$GITHUB_ENV"
+
+      - name: 检出构建输入
+        uses: actions/checkout@v4
+        with:
+          repository: SlayTheCircle/circle-refs
+          token: ${{ secrets.REFS_TOKEN }}
+          path: refs
+
+      - name: 校验输入版本目录
+        run: |
+          [[ -d "refs/game-refs/$TARGET" ]] || { echo "错误: circle-refs 缺少 game-refs/$TARGET。" >&2; exit 1; }
+
+      - name: 安装 .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: DLL 编译
+        env:
+          GAME_REFS_DIR: ${{ github.workspace }}/refs/game-refs/${{ env.TARGET }}
+          RITSULIB_DIR: ${{ github.workspace }}/refs/RitsuLib
+          RITSULIB_TARGET: ${{ env.TARGET }}
+        run: bash scripts/build.sh --dll-only
