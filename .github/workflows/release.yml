@@ -84,6 +84,7 @@ jobs:
       - name: 双目标完整构建并打包
         env:
           NAVIA_PACKAGE_CHANNEL: release
+          RITSULIB_DIR: ${{ github.workspace }}/refs/RitsuLib
           NAVIA_GAME_REFS_1110: ${{ github.workspace }}/refs/game-refs/0.111.0
           NAVIA_GAME_REFS_1071: ${{ github.workspace }}/refs/game-refs/0.107.1
         run: bash scripts/package.sh
