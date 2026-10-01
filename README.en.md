@@ -2,11 +2,11 @@
 
 [简体中文](README.md)
 
-A Navia character mod for Slay the Spire 2, built around Load, Salvo, Mora, and Support. Version 0.1.5 is released (GitHub Releases and Steam Workshop); compatibility work and final acceptance continue. See [STATUS.md](STATUS.md) for implemented state and limits.
+A Navia character mod for Slay the Spire 2, built around Load, Salvo, Mora, and Support. Version 0.1.6 is released (GitHub Releases and Steam Workshop) for both game branches: 0.107.1 (stable) and 0.111.0 (beta). See [STATUS.md](STATUS.md) for implemented state and limits.
 
 ## Installation
 
-This checkout provides source code, bilingual localization, text resource configuration, and organized public design documents. The preferred install path is subscribing on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) together with [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295); alternatively, download a release from [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) and place its `STS2-Navia/` directory under the game's `mods/` directory. Close the game before installing or replacing files, and keep the previous package for rollback. The current build targets game version `0.111.0`; minimum dependency versions are defined in the [mod manifest](STS2-Navia.json). Multimedia is absent from source checkouts. A DLL alone is not a complete installable package.
+This checkout provides source code, bilingual localization, text resource configuration, and organized public design documents. The preferred install path is subscribing on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) together with [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295) — the workshop item picks the matching content for the running game version, so switching branches needs no reinstall. Alternatively, download the zip for your game target (0.107.1 or 0.111.0) from [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) and place its `STS2-Navia/` directory under the game's `mods/` directory. Close the game before installing or replacing files, and keep the previous package for rollback. Minimum dependency versions are defined in the [mod manifest](STS2-Navia.json). Multimedia is absent from source checkouts. A DLL alone is not a complete installable package.
 
 ## Development
 
