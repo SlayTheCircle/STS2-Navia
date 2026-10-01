@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Scaffolding.Content;
 using STS2RitsuLib.Interop.AutoRegistration;
 using NaviaMod.Content.CardPools;
+using NaviaMod.Content.Keywords;
 using NaviaMod.Content.Enchantments;
 
 namespace NaviaMod.Content.Cards;
@@ -27,6 +28,16 @@ namespace NaviaMod.Content.Cards;
 [RegisterCard(typeof(NaviaCardPool))]
 public sealed class PresidentOrder : NaviaCardBase
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords
+    {
+        get
+        {
+            HashSet<CardKeyword> set = new HashSet<CardKeyword>();
+            NaviaKeywords.AddTo(set, NaviaKeywords.Support);
+            return set;
+        }
+    }
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new DamageVar(3m, ValueProp.Move),

@@ -31,6 +31,7 @@ public sealed class WarningShot : NaviaCardBase
         {
             HashSet<CardKeyword> set = new HashSet<CardKeyword>();
             NaviaKeywords.AddTo(set, NaviaKeywords.Load);
+            NaviaKeywords.AddTo(set, NaviaKeywords.Salvo);
             return set;
         }
     }

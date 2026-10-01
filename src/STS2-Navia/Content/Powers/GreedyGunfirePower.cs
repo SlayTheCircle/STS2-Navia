@@ -10,6 +10,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 using NaviaMod.Content.Cards;
+using MegaCrit.Sts2.Core.HoverTips;
+using NaviaMod.Content.Keywords;
 
 namespace NaviaMod.Content.Powers;
 
@@ -23,6 +25,9 @@ namespace NaviaMod.Content.Powers;
 [RegisterPower]
 public sealed class GreedyGunfirePower : NaviaPowerBase
 {
+
+    /// <summary>文本提及机制名词,挂关键词词条悬停解释。</summary>
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => NaviaKeywords.HoverTips(NaviaKeywords.Load);
     /// <summary>打出摩拉那一刻是否持有装填(决定这张摩拉付不付 1 层、计不计金币)。</summary>
     private bool _hadLoadWhenMoraPlayed;
 

@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Scaffolding.Content;
 using STS2RitsuLib.Interop.AutoRegistration;
 using NaviaMod.Content.CardPools;
+using NaviaMod.Content.Keywords;
 using NaviaMod.Content.Mechanics;
 
 namespace NaviaMod.Content.Cards;
@@ -21,6 +22,16 @@ namespace NaviaMod.Content.Cards;
 [RegisterCard(typeof(NaviaCardPool))]
 public sealed class OffGuard : NaviaCardBase
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords
+    {
+        get
+        {
+            HashSet<CardKeyword> set = new HashSet<CardKeyword>();
+            NaviaKeywords.AddTo(set, NaviaKeywords.Salvo);
+            return set;
+        }
+    }
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new DamageVar(4m, ValueProp.Move),

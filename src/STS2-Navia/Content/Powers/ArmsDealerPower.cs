@@ -8,6 +8,8 @@ using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 using NaviaMod.Content.Mechanics;
+using MegaCrit.Sts2.Core.HoverTips;
+using NaviaMod.Content.Keywords;
 
 namespace NaviaMod.Content.Powers;
 
@@ -18,6 +20,9 @@ namespace NaviaMod.Content.Powers;
 [RegisterPower]
 public sealed class ArmsDealerPower : NaviaPowerBase
 {
+
+    /// <summary>文本提及机制名词,挂关键词词条悬停解释。</summary>
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => NaviaKeywords.HoverTips(NaviaKeywords.Salvo);
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

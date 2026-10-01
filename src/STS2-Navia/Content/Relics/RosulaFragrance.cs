@@ -14,6 +14,8 @@ using STS2RitsuLib.Scaffolding.Content;
 using MegaCrit.Sts2.Core.ValueProps;
 using NaviaMod.Content.Powers;
 using NaviaMod.Content.RelicPools;
+using MegaCrit.Sts2.Core.HoverTips;
+using NaviaMod.Content.Keywords;
 
 namespace NaviaMod.Content.Relics;
 
@@ -27,6 +29,9 @@ namespace NaviaMod.Content.Relics;
 [RegisterRelic(typeof(NaviaRelicPool))]
 public sealed class RosulaFragrance : NaviaRelicBase
 {
+
+    /// <summary>文本提及机制名词,挂关键词词条悬停解释。</summary>
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => NaviaKeywords.HoverTips(NaviaKeywords.Load);
     private const int CombatStartLoad = 3;
 
     private bool _loadedThisTurn;

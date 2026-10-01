@@ -11,6 +11,9 @@ using STS2RitsuLib.Scaffolding.Content;
 using MegaCrit.Sts2.Core.ValueProps;
 using NaviaMod.Content.Powers;
 using NaviaMod.Content.RelicPools;
+using System.Collections.Generic;
+using MegaCrit.Sts2.Core.HoverTips;
+using NaviaMod.Content.Keywords;
 
 namespace NaviaMod.Content.Relics;
 
@@ -27,6 +30,9 @@ namespace NaviaMod.Content.Relics;
 [RegisterRelic(typeof(NaviaRelicPool))]
 public sealed class ElegantParasol : NaviaRelicBase
 {
+
+    /// <summary>文本提及机制名词,挂关键词词条悬停解释。</summary>
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => NaviaKeywords.HoverTips(NaviaKeywords.Load);
     public override RelicRarity Rarity => RelicRarity.Rare;
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)

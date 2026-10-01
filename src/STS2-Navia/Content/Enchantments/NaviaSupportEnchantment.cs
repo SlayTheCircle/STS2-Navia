@@ -1,4 +1,7 @@
 using STS2RitsuLib.Scaffolding.Content;
+using System.Collections.Generic;
+using MegaCrit.Sts2.Core.HoverTips;
+using NaviaMod.Content.Keywords;
 
 namespace NaviaMod.Content.Enchantments;
 
@@ -16,6 +19,9 @@ namespace NaviaMod.Content.Enchantments;
 public abstract class NaviaSupportEnchantment : ModEnchantmentTemplate
 {
     public override bool HasExtraCardText => true;
+    /// <summary>文本提及机制名词,挂关键词词条悬停解释。</summary>
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => NaviaKeywords.HoverTips(NaviaKeywords.Support);
+
 
     private string? ResolveIcon()
     {

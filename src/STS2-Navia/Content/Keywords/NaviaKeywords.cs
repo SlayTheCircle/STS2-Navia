@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.HoverTips;
 using STS2RitsuLib.Keywords;
 
 namespace NaviaMod.Content.Keywords;
@@ -33,4 +34,10 @@ public static class NaviaKeywords
             }
         }
     }
+
+    /// <summary>
+    /// 把已注册关键词转为悬停提示。遗物/能力/药水/附魔等非卡牌模型的 <c>ExtraHoverTips</c> 用
+    /// (卡牌本体走 CanonicalKeywords,由卡牌悬停管线自动展开;这些模型没有该管线,须显式挂)。
+    /// </summary>
+    public static IEnumerable<IHoverTip> HoverTips(params string[] ids) => ids.ToHoverTips();
 }

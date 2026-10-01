@@ -10,6 +10,8 @@ using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 using NaviaMod.Content.Powers;
 using NaviaMod.Content.RelicPools;
+using MegaCrit.Sts2.Core.HoverTips;
+using NaviaMod.Content.Keywords;
 
 namespace NaviaMod.Content.Relics;
 
@@ -22,6 +24,9 @@ namespace NaviaMod.Content.Relics;
 [RegisterRelic(typeof(NaviaRelicPool))]
 public sealed class MonthlyReport : NaviaRelicBase
 {
+
+    /// <summary>文本提及机制名词,挂关键词词条悬停解释。</summary>
+    protected override IEnumerable<IHoverTip> AdditionalHoverTips => NaviaKeywords.HoverTips(NaviaKeywords.Load);
     private const int EnergyGain = 1;
 
     public override RelicRarity Rarity => RelicRarity.Uncommon;
