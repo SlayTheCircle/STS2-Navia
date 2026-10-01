@@ -41,6 +41,8 @@ jobs:
           global-json-file: global.json
 
       - name: 双目标 DLL 编译
+        env:
+          RITSULIB_DIR: ${{ github.workspace }}/refs/RitsuLib
         run: |
           for target in 0.111.0 0.107.1; do
             echo "== 目标 $target =="
