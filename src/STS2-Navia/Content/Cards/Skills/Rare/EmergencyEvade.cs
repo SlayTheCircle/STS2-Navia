@@ -18,8 +18,8 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 紧急避险(稀有,0 费技能):消耗全部[装填],每消耗 2 层获得 6 点格挡,并在下回合装填 1。
-/// 升级:每 2 层格挡提升至 8。
+/// 紧急避险(稀有,0 费技能,数值调整V3):消耗全部[装填],每消耗 2 层获得 8 点格挡,并在下回合装填 1。
+/// 升级:每 2 层格挡提升至 10。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
 public sealed class EmergencyEvade : NaviaCardBase
@@ -40,7 +40,7 @@ public sealed class EmergencyEvade : NaviaCardBase
     {
         // 预览感知三件套(格挡侧):CalculatedBlockVar 的面板会过格挡修正钩子(敏捷等),与实际获得一致。
         new CalculationBaseVar(0m),
-        new CalculationExtraVar(6m),
+        new CalculationExtraVar(8m),
         new CalculatedBlockVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => Math.Floor((card.Owner?.Creature?.GetPowerAmount<LoadPower>() ?? 0) / 2m)),
     };
 
@@ -69,7 +69,7 @@ public sealed class EmergencyEvade : NaviaCardBase
 
     protected override void OnUpgrade()
     {
-        // 每 2 层 6→8:只抬升「每份」的增量,基准仍为 0。
+        // 每 2 层 8→10:只抬升「每份」的增量,基准仍为 0。
         base.DynamicVars["CalculationExtra"].UpgradeValueBy(2m);
     }
 }

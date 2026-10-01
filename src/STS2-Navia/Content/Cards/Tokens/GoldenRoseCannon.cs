@@ -19,7 +19,7 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 金花礼炮(token,无色,0 费——数值调整V1):造成 2 点伤害 3 次。消耗。
+/// 金花礼炮(token,无色,1 费——数值调整V3):造成 2 点伤害 3 次。消耗。
 /// 由「礼炮轰鸣」在手牌无炮时生成——从 2 伤白板起算(轰鸣=即时收益,设计者勘误 2026-09-30),
 /// 仅炮火连天的次数累计随生成应用(见 <see cref="CreateInHand"/>)。
 /// 「饱和爆破」在场时全体结算(见 OnPlay 分支);「武器保养」的去消耗礼炮另行生成,本类无需参与。
@@ -63,7 +63,7 @@ public sealed class GoldenRoseCannon : NaviaCardBase
     }
 
     public GoldenRoseCannon()
-        : base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
+        : base(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
     {
     }
 

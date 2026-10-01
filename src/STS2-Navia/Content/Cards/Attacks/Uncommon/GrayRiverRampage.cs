@@ -16,8 +16,8 @@ using NaviaMod.Content.Keywords;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 横行灰河(罕见,2 费攻击):造成 6 点伤害。手牌中每有一张带有[gold]支援[/gold]效果的牌,
-/// 抽 1 张牌并恢复 1 点能量。升级:伤害 9。
+/// 横行灰河(罕见,1 费攻击,数值调整V3):造成 6 点伤害。手牌中每有一张带有[gold]支援[/gold]效果的牌,
+/// 抽 1 张牌并恢复 1 点能量。升级:伤害 9,费用 0。
 /// 「带有支援效果的牌」判据 = <c>card.Enchantment is NaviaSupportEnchantment</c>(支援系唯一判据)。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
@@ -39,7 +39,7 @@ public sealed class GrayRiverRampage : NaviaCardBase
     };
 
     public GrayRiverRampage()
-        : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+        : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }
 
@@ -63,5 +63,6 @@ public sealed class GrayRiverRampage : NaviaCardBase
     protected override void OnUpgrade()
     {
         base.DynamicVars.Damage.UpgradeValueBy(3m);
+        base.EnergyCost.UpgradeBy(-1);
     }
 }

@@ -14,7 +14,7 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 精制装药(罕见,0 费技能):礼炮轰鸣 2。如果有[装填],则消耗 1 层,将此卡返回你的手牌。
+/// 精制装药(稀有,0 费技能,数值调整V3):礼炮轰鸣 2。如果有[装填],则消耗 1 层,将此卡返回你的手牌。
 /// 升级:获得保留。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
@@ -36,7 +36,7 @@ public sealed class RefinedCharge : NaviaCardBase
     };
 
     public RefinedCharge()
-        : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+        : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 

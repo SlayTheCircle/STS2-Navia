@@ -128,7 +128,7 @@
   "STS2_NAVIA_CARD_GUNBOAT.title": "坚船利炮",
   "STS2_NAVIA_CARD_GUNBOAT.description": "对所有敌人造成{Damage:diff()}点伤害X次。你当前每有1层[gold]装填[/gold]，这张卡的伤害+{ExtraDamage:diff()}（不消耗装填）。{InCombat:\n（当前每次造成{CalculatedDamage:diff()}点伤害）|}",
   "STS2_NAVIA_CARD_DOUBLE_BARREL.title": "双管齐下",
-  "STS2_NAVIA_CARD_DOUBLE_BARREL.description": "造成{Damage:diff()}点伤害{Hits:diff()}次。",
+  "STS2_NAVIA_CARD_DOUBLE_BARREL.description": "造成{Damage:diff()}点伤害{Hits:diff()}次。获得1点力量。",
   "STS2_NAVIA_CARD_GREEDY_GUNFIRE.title": "贪婪枪火",
   "STS2_NAVIA_CARD_GREEDY_GUNFIRE.description": "本回合内，你每次打出[gold]闪耀摩拉[/gold]，都会消耗1层[gold]装填[/gold]，在战斗结束时额外获得{Gold:diff()}金币。",
   "STS2_NAVIA_CARD_COLLECT_INTEREST.title": "回收利息",

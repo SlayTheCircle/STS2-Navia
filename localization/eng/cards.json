@@ -128,7 +128,7 @@
   "STS2_NAVIA_CARD_GUNBOAT.title": "Gunboat",
   "STS2_NAVIA_CARD_GUNBOAT.description": "Deal {Damage:diff()} damage to ALL enemies X times. For every [gold]Load[/gold] you currently have, this card's damage is increased by {ExtraDamage:diff()} ([gold]Load[/gold] is not expended).{InCombat:\n(Currently {CalculatedDamage:diff()} damage per hit)|}",
   "STS2_NAVIA_CARD_DOUBLE_BARREL.title": "Double Barrel",
-  "STS2_NAVIA_CARD_DOUBLE_BARREL.description": "Deal {Damage:diff()} damage {Hits:diff()} times.",
+  "STS2_NAVIA_CARD_DOUBLE_BARREL.description": "Deal {Damage:diff()} damage {Hits:diff()} times. Gain 1 Strength.",
   "STS2_NAVIA_CARD_GREEDY_GUNFIRE.title": "Greedy Gunfire",
   "STS2_NAVIA_CARD_GREEDY_GUNFIRE.description": "This turn, whenever you play a [gold]Shining Mora[/gold], exhaust 1 [gold]Load[/gold] to gain {Gold:diff()} extra gold at the end of combat.",
   "STS2_NAVIA_CARD_COLLECT_INTEREST.title": "Collect Interest",
