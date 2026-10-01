@@ -34,7 +34,7 @@ public sealed class GoldenTouchPower : NaviaPowerBase
     public override async Task BeforeCardPlayed(CardPlay cardPlay)
     {
         if (_moraPlayedThisTurn
-            || cardPlay.Player.Creature != base.Owner
+            || cardPlay.GetPlayer().Creature != base.Owner
             || cardPlay.Card is not ShiningMora)
         {
             return;
@@ -48,7 +48,12 @@ public sealed class GoldenTouchPower : NaviaPowerBase
             return;
         }
         Flash();
+#if NAVIA_GAME_0107_1
+        // 0.107.1 无 CreateCloneForPlayer(0.111 多人移交 API);CreateClone 保留原 owner,本处同人复制语义等价。
+        CardModel copy = cardPlay.Card.CreateClone();
+#else
         CardModel copy = cardPlay.Card.CreateCloneForPlayer(player);
+#endif
         copy.AddKeyword(CardKeyword.Ethereal);
         await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Discard, player);
     }

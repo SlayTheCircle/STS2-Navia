@@ -20,7 +20,7 @@ public sealed class ProfiteeringPower : NaviaPowerBase
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card, CardPlay? cardPlay)
+    protected override decimal ModifyDamageAdditiveCore(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card)
     {
         if (base.Owner != dealer)
         {

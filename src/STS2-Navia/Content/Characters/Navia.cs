@@ -81,12 +81,15 @@ public sealed class Navia : CharacterModel
     // 占位:复用铁甲的切场音效,待配音接入后替换。
     public override string CharacterTransitionSfx => "event:/sfx/ui/wipe_ironclad";
 
+#if !NAVIA_GAME_0107_1
+    // 0.107.1 无此虚属性,其 GenerateAnimator 硬编码的默认映射与本覆写逐项相同,省略即等价。
     protected override List<(AnimState, string)> AnimationStates => new List<(AnimState, string)>
     {
         (new AnimState("attack"), "Attack"),
         (new AnimState("hurt"), "Hit"),
         (new AnimState("cast"), "Cast"),
     };
+#endif
 
     public override List<string> GetArchitectAttackVfx()
     {

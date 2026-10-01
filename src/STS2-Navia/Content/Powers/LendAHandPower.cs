@@ -23,7 +23,7 @@ public sealed class LendAHandPower : NaviaPowerBase
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
+    protected override decimal ModifyDamageAdditiveCore(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
         if (base.Owner != dealer
             || cardSource?.Enchantment is not NaviaSupportEnchantment

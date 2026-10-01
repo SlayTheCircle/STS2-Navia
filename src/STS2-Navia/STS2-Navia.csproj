@@ -36,4 +36,9 @@
   </PropertyGroup>
   <Import Project="$(RitsuLibDir)/RitsuLib.References.props" />
 
+  <PropertyGroup>
+    <!-- 稳定版 0.107.1 与 0.111.0 的 API 差异用条件编译吸收;目标由 RITSULIB_TARGET(编译引用)决定。 -->
+    <DefineConstants Condition="'$(RitsuLibReferenceTarget)' == '0.107.1'">$(DefineConstants);NAVIA_GAME_0107_1</DefineConstants>
+  </PropertyGroup>
+
 </Project>

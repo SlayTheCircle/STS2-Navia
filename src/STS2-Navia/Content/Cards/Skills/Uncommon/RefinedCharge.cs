@@ -53,7 +53,9 @@ public sealed class RefinedCharge : NaviaCardBase
     /// <summary>
     /// 卡牌打出后的去向在 OnPlay 之前结算:此处的装填层数与 OnPlay 里判定/消耗用的是同一份(消耗前)状态,
     /// 两边条件天然一致。仅当本会进弃牌堆且有装填时改道手牌,不影响虚无/消耗等其它去向。
+    /// 0.111 走 CardLocation(牌堆+位置);0.107.1 钩子只返回 PileType,改道手牌语义保留、置底位置精度丢失。
     /// </summary>
+#if !NAVIA_GAME_0107_1
     protected override CardLocation GetResultLocationForCardPlay()
     {
         CardLocation location = base.GetResultLocationForCardPlay();
@@ -64,6 +66,13 @@ public sealed class RefinedCharge : NaviaCardBase
         }
         return location;
     }
+#else
+    protected override PileType GetResultPileTypeForCardPlay()
+    {
+        PileType pile = base.GetResultPileTypeForCardPlay();
+        return pile == PileType.Discard && base.Owner.Creature.GetPowerAmount<LoadPower>() > 0 ? PileType.Hand : pile;
+    }
+#endif
 
     protected override void OnUpgrade()
     {

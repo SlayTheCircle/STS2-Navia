@@ -32,7 +32,7 @@ public sealed class GreedyGunfirePower : NaviaPowerBase
 
     public override Task BeforeCardPlayed(CardPlay cardPlay)
     {
-        if (cardPlay.Player.Creature == base.Owner && cardPlay.Card is ShiningMora)
+        if (cardPlay.GetPlayer().Creature == base.Owner && cardPlay.Card is ShiningMora)
         {
             _hadLoadWhenMoraPlayed = base.Owner.GetPowerAmount<LoadPower>() > 0;
         }
@@ -41,7 +41,7 @@ public sealed class GreedyGunfirePower : NaviaPowerBase
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Player.Creature == base.Owner && cardPlay.Card is ShiningMora)
+        if (cardPlay.GetPlayer().Creature == base.Owner && cardPlay.Card is ShiningMora)
         {
             if (_hadLoadWhenMoraPlayed)
             {

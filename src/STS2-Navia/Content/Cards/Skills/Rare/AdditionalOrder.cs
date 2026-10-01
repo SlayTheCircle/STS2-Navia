@@ -41,7 +41,12 @@ public sealed class AdditionalOrder : NaviaCardBase
         CardModel? chosen = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(new LocString("card_selection", "STS2_NAVIA_TO_COPY"), 1), context: choiceContext, player: base.Owner, filter: (CardModel c) => c.Type is CardType.Attack or CardType.Skill or CardType.Power, source: this)).FirstOrDefault();
         if (chosen != null)
         {
+#if NAVIA_GAME_0107_1
+            // 0.107.1 无 CreateCloneForPlayer(0.111 多人移交 API);CreateClone 保留原 owner,本处同人复制语义等价。
+            CardModel copy = chosen.CreateClone();
+#else
             CardModel copy = chosen.CreateCloneForPlayer(base.Owner);
+#endif
             copy.AddKeyword(CardKeyword.Exhaust);
             await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, base.Owner);
         }

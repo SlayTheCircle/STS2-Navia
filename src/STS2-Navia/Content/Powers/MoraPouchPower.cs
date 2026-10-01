@@ -25,7 +25,12 @@ public sealed class MoraPouchPower : PowerModel
 
     protected override bool IsVisibleInternal => false;
 
+    /// <summary>伤害加成:0.111 带 CardPlay 第六参,0.107.1 无——隐藏 Power 直继 PowerModel,签名差异就地吸收。</summary>
+#if !NAVIA_GAME_0107_1
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card, CardPlay? cardPlay)
+#else
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card)
+#endif
     {
         if (base.Owner != dealer)
         {

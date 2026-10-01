@@ -1,3 +1,7 @@
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace NaviaMod.Content.Powers;
@@ -20,4 +24,18 @@ public abstract class NaviaPowerBase : ModPowerTemplate
     public override string? CustomIconPath => ResolveIcon() ?? base.CustomIconPath;
 
     public override string? CustomBigIconPath => ResolveIcon() ?? base.CustomBigIconPath;
+
+    /// <summary>
+    /// 伤害加成统一入口:0.111 的 AbstractModel.ModifyDamageAdditive 带 CardPlay 第六参,0.107.1 没有。
+    /// 差异吸收在本基线,子类只覆写五参 Core,两个游戏目标共用同一份逻辑(现有子类均不使用 cardPlay)。
+    /// </summary>
+#if !NAVIA_GAME_0107_1
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card, CardPlay? cardPlay)
+        => ModifyDamageAdditiveCore(target, amount, props, dealer, card);
+#else
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card)
+        => ModifyDamageAdditiveCore(target, amount, props, dealer, card);
+#endif
+    protected virtual decimal ModifyDamageAdditiveCore(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card)
+        => 0m;
 }

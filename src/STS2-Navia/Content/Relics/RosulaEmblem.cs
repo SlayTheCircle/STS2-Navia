@@ -108,9 +108,9 @@ public sealed class RosulaEmblem : NaviaRelicBase
 
     public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Player.Creature == base.Owner.Creature)
+        if (cardPlay.GetPlayer().Creature == base.Owner.Creature)
         {
-            NaviaCharacterVisuals.PlaySkillPose(cardPlay.Player.Creature);
+            NaviaCharacterVisuals.PlaySkillPose(cardPlay.GetPlayer().Creature);
         }
         return Task.CompletedTask;
     }

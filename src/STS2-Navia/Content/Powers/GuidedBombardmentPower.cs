@@ -24,7 +24,7 @@ public sealed class GuidedBombardmentPower : NaviaPowerBase
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Card is GoldenRoseCannon && cardPlay.Player.Creature == base.Owner)
+        if (cardPlay.Card is GoldenRoseCannon && cardPlay.GetPlayer().Creature == base.Owner)
         {
             Flash();
             await CardPileCmd.Draw(choiceContext, base.Amount, base.Owner.Player!);

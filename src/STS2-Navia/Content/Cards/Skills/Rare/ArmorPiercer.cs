@@ -41,7 +41,12 @@ public sealed class ArmorPiercer : NaviaCardBase
         int hits = block / 3;
         if (block > 0)
         {
+#if NAVIA_GAME_0107_1
+            // 0.107.1 的 LoseBlock 无上下文/移除者参数,语义降级为仅失去格挡。
+            await CreatureCmd.LoseBlock(creature, block);
+#else
             await CreatureCmd.LoseBlock(choiceContext, creature, block, creature);
+#endif
         }
         if (hits > 0)
         {

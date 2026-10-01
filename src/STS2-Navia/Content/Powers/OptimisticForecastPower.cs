@@ -23,7 +23,7 @@ public sealed class OptimisticForecastPower : NaviaPowerBase
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Player.Creature == base.Owner && cardPlay.Card.Enchantment is NaviaSupportEnchantment)
+        if (cardPlay.GetPlayer().Creature == base.Owner && cardPlay.Card.Enchantment is NaviaSupportEnchantment)
         {
             Flash();
             await CardPileCmd.Draw(choiceContext, base.Amount, base.Owner.Player!);

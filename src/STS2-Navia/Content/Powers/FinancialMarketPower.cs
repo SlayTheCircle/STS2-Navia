@@ -28,7 +28,7 @@ public sealed class FinancialMarketPower : NaviaPowerBase
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Card.Type == CardType.Skill && cardPlay.Player.Creature == base.Owner)
+        if (cardPlay.Card.Type == CardType.Skill && cardPlay.GetPlayer().Creature == base.Owner)
         {
             await CreateMorasInDrawPile(base.Owner.Player);
         }

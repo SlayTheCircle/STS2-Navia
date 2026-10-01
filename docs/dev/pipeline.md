@@ -68,4 +68,4 @@ tag `v*` 推送触发 [Release 工作流](../../.github/workflows/release.yml)�
 
 Steam 工坊发布为本地手工步（`local_dev/workshop/publish.sh`，私有）：从 Release 工件取内容经 SteamCMD 上传至固定物品，描述单源 `description.bbcode` 使用真实换行——steamcmd 的 VDF 不解析 `\n` 转义，会按字面透传。
 
-双版本发行尚未实现。准备游戏 0.107.1 变体时分别恢复引用、选对应 RitsuLib compat、编译并试玩验收，发布布局与流程另行落实。
+双版本编译已适配：源码以 `NAVIA_GAME_0107_1` 条件编译吸收 0.107.1 与 0.111.0 的 API 差异（伤害加成签名、卡牌去向钩子、克隆 API、LoseBlock，以及 `Content/Compat/` 下注入游戏命名空间的 FromCard／CardPlay.GetPlayer 垫片），csproj 按 `RITSULIB_TARGET` 自动注入 define。双目标回归：分别以 `RITSULIB_TARGET=0.107.1 GAME_REFS_DIR=<0.107.1 引用>` 与默认环境跑 `build.sh --dll-only`，两目标 0 错误且警告剖面一致方为通过。注意声明层错误会让编译在方法体绑定前中止——必须迭代到零错误，以警告回归确认绑定完整。变体分发布局与游戏内验收尚未实现。
