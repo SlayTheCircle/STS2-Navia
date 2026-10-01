@@ -34,7 +34,7 @@ RegisterArchaicToothTranscendence 挂在初始特色卡上：
 
 ## 先古对话与资源
 
-RitsuLib 根据 localization/{lang}/ancients.json 自动组装对话。键族为 <先古Entry>.talk.STS2_NAVIA_CHARACTER_NAVIA.<序号>-<行号>.char／ancient，续接键使用 .next。连续编号与说话者后缀须符合解析约定；改变对话分组时中英同时维护。
+RitsuLib 根据 localization/{lang}/ancients.json 自动组装对话。键族为 <先古Entry>.talk.STS2_NAVIA_CHARACTER_NAVIA.<序号>-<行号>.char／ancient，续接键使用 .next。连续编号与说话者后缀须符合解析约定；改变对话分组时中英同时维护。建筑师终局（THE_ARCHITECT）走同一机制：对话序号即登顶轮次，另有可选的 -visit／-attack／-startattack／-endattack 键控制轮次与攻防编排（缺省为轮次顺延、结尾建筑师动作）；无键时 RitsuLib 会以空对话兜底并告警。
 
 当前覆盖 Neow、Darv、Pael、Orobas、Tezcatara、Nonupeipe、Tanx；原案瓦库对话尚未进入运行文本。保留原案便于后续版本接入，不将未接入内容列为已实现。
 

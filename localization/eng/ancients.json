@@ -5,7 +5,6 @@
   "NEOW.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.char": "I've been curious — where does your power to raise the dead come from? Could you teach me?",
   "NEOW.talk.STS2_NAVIA_CHARACTER_NAVIA.1-1.ancient": "The Ancients... bring... miracles... go and... meet them...",
   "NEOW.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.next": "Continue",
-
   "DARV.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.char": "What a trove you have here! It must have taken ages to collect all this!",
   "DARV.talk.STS2_NAVIA_CHARACTER_NAVIA.0-1.ancient": "First time I've met a young lady with such a good eye! As a reward — pick anything you like!",
   "DARV.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.next": "Continue",
@@ -15,7 +14,6 @@
   "DARV.talk.STS2_NAVIA_CHARACTER_NAVIA.2-0.char": "So many things I've never seen! Perhaps I should bring something back for my partner?",
   "DARV.talk.STS2_NAVIA_CHARACTER_NAVIA.2-1.ancient": "Every treasure here is one of a kind!",
   "DARV.talk.STS2_NAVIA_CHARACTER_NAVIA.2-0.next": "Continue",
-
   "PAEL.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.char": "A clay dragon? Wow, so cool! Here, look this way — say cheese!",
   "PAEL.talk.STS2_NAVIA_CHARACTER_NAVIA.0-1.ancient": "How wondrous... within me... is a part of me?",
   "PAEL.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.next": "Continue",
@@ -23,7 +21,6 @@
   "PAEL.talk.STS2_NAVIA_CHARACTER_NAVIA.1-1.char": "If you say that to everyone who climbs the Spire, you'll soon be carried off piece by piece, you know.",
   "PAEL.talk.STS2_NAVIA_CHARACTER_NAVIA.1-2.ancient": "(The dragon says nothing, only chuckles softly...)",
   "PAEL.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.next": "Continue",
-
   "OROBAS.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.ancient": "Human! From outside? Story! Brought one?",
   "OROBAS.talk.STS2_NAVIA_CHARACTER_NAVIA.0-1.char": "(She tells the story of breaking a prophecy with her companions and standing against the flood...)",
   "OROBAS.talk.STS2_NAVIA_CHARACTER_NAVIA.0-2.ancient": "Wonderful! Companions, many many?",
@@ -36,7 +33,6 @@
   "OROBAS.talk.STS2_NAVIA_CHARACTER_NAVIA.2-1.char": "(She tells the story of her adventure with her companions in Simulanka...)",
   "OROBAS.talk.STS2_NAVIA_CHARACTER_NAVIA.2-2.ancient": "So strange! Cardboard blocks, come alive? Like us?",
   "OROBAS.talk.STS2_NAVIA_CHARACTER_NAVIA.2-0.next": "Continue",
-
   "TEZCATARA.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.ancient": "You've worked hard, child. Come, have some hot cocoa.",
   "TEZCATARA.talk.STS2_NAVIA_CHARACTER_NAVIA.0-1.char": "Whew... hot! Thank you, grandma!",
   "TEZCATARA.talk.STS2_NAVIA_CHARACTER_NAVIA.0-2.ancient": "Heh heh, go then... safe travels...",
@@ -44,17 +40,25 @@
   "TEZCATARA.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.char": "Come to think of it, it's so warm in here... hardly like a room that never sees sunlight.",
   "TEZCATARA.talk.STS2_NAVIA_CHARACTER_NAVIA.1-1.ancient": "Consider it a hearth for every traveler who finds their way here, heh heh...",
   "TEZCATARA.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.next": "Continue",
-
   "NONUPEIPE.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.ancient": "Oh, human, how exquisitely you are dressed. Come here, let me make you even lovelier.",
   "NONUPEIPE.talk.STS2_NAVIA_CHARACTER_NAVIA.0-1.char": "Thank you! You look quite elegant yourself!",
   "NONUPEIPE.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.next": "Continue",
   "NONUPEIPE.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.ancient": "Come, young lady — wear whichever piece you fancy. I promise you shall leave more graceful and splendid than you arrived.",
   "NONUPEIPE.talk.STS2_NAVIA_CHARACTER_NAVIA.1-1.char": "What beautiful ornaments! Please accept this brooch as my gift in return!",
   "NONUPEIPE.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.next": "Continue",
-
   "TANX.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.ancient": "Golden human! Fight me!",
   "TANX.talk.STS2_NAVIA_CHARACTER_NAVIA.0-1.char": "(Navia and Tanx enjoyed a good, hearty sparring match...)",
   "TANX.talk.STS2_NAVIA_CHARACTER_NAVIA.0-2.ancient": "Fine skill! Let me grant you strength!",
   "TANX.talk.STS2_NAVIA_CHARACTER_NAVIA.0-3.ancient": "Arm yourself with blade and gun, human!",
-  "TANX.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.next": "Continue"
+  "TANX.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.next": "Continue",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.0-0.char": "Who are you? Where do you come from?",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.0-1.char": "Is this the top of the Spire? Are you its master?",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.0-2.ancient": "...Go back. You don't belong here.",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.1-0.ancient": "So noisy...",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.1-1.char": "You could call it overflowing enthusiasm!",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.1-2.ancient": "...",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.2-0.char": "I'm back again!",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.2-1.ancient": "Why climb so stubbornly? What is it you seek?",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.2-2.char": "You sound just like an old scholar. How about some tea and pastries instead?",
+  "THE_ARCHITECT.talk.STS2_NAVIA_CHARACTER_NAVIA.2-3.ancient": "Much ado about nothing."
 }
