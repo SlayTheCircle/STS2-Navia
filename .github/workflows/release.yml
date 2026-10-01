@@ -1,7 +1,8 @@
 name: Release build
 
 # tag 推送触发：检出私有构建输入（circle-refs 编译参考与美术母版仓）后在托管 runner
-# 上完整构建，产出候选包并创建草稿 Release；维护者下载试玩验收后手动发布。
+# 上双目标完整构建（package.sh 编排 0.111.0 与 0.107.1 + 引导壳），产出三个候选包——
+# 每目标平铺安装 ZIP 与工坊变体布局 ZIP——并创建草稿 Release；维护者验收后手动发布。
 # 发行说明取自 CHANGELOG.md 的对应 `## [版本]` 段落，缺失即中止。
 # fork PR 拿不到 secret，本工作流不会为其执行任何构建。
 on:
@@ -23,20 +24,18 @@ jobs:
       - name: 检出源码
         uses: actions/checkout@v4
 
-      - name: 校验 tag 并读取构建目标
+      - name: 校验 tag 与清单版本一致
         run: |
           if [[ "${GITHUB_REF_TYPE}" != tag ]]; then
             echo '错误: 本工作流只在 tag (v*) 上运行；分支请使用 ci.yml / compile.yml。' >&2
             exit 1
           fi
-          target=$(python3 -c 'import json; print(json.load(open("STS2-Navia.json"))["min_game_version"])')
           version=$(python3 -c 'import json; print(json.load(open("STS2-Navia.json"))["version"])')
           tag="${GITHUB_REF_NAME#v}"
           if [[ "$tag" != "$version" ]]; then
             echo "错误: tag ${GITHUB_REF_NAME} 与清单版本 $version 不一致。" >&2
             exit 1
           fi
-          echo "TARGET=$target" >> "$GITHUB_ENV"
           echo "TAG=$tag" >> "$GITHUB_ENV"
 
       - name: 检出构建输入
@@ -55,7 +54,9 @@ jobs:
 
       - name: 校验输入版本目录并记录来源
         run: |
-          [[ -d "refs/game-refs/$TARGET" ]] || { echo "错误: circle-refs 缺少 game-refs/$TARGET。" >&2; exit 1; }
+          for target in 0.111.0 0.107.1; do
+            [[ -d "refs/game-refs/$target" ]] || { echo "错误: circle-refs 缺少 game-refs/$target。" >&2; exit 1; }
+          done
           echo "REFS_COMMIT=$(git -C refs rev-parse --short HEAD)" >> "$GITHUB_ENV"
           echo "ART_COMMIT=$(git -C art rev-parse --short HEAD)" >> "$GITHUB_ENV"
 
@@ -80,12 +81,11 @@ jobs:
           command -v convert >/dev/null || { sudo apt-get update; sudo apt-get install -y --no-install-recommends imagemagick; }
           bash scripts/prep-art.sh
 
-      - name: 完整构建并打包
+      - name: 双目标完整构建并打包
         env:
           NAVIA_PACKAGE_CHANNEL: release
-          GAME_REFS_DIR: ${{ github.workspace }}/refs/game-refs/${{ env.TARGET }}
-          RITSULIB_DIR: ${{ github.workspace }}/refs/RitsuLib
-          RITSULIB_TARGET: ${{ env.TARGET }}
+          NAVIA_GAME_REFS_1110: ${{ github.workspace }}/refs/game-refs/0.111.0
+          NAVIA_GAME_REFS_1071: ${{ github.workspace }}/refs/game-refs/0.107.1
         run: bash scripts/package.sh
 
       - name: 组装发行说明
@@ -108,7 +108,7 @@ jobs:
             echo
             echo '---'
             echo
-            echo "**游戏目标**: $TARGET · **RitsuLib**: >= $ritsu_min"
+            echo "**游戏目标**: 0.107.1 / 0.111.0（工坊物品按当前游戏版本自动选择）· **RitsuLib**: >= $ritsu_min"
             echo "**构建输入**: circle-refs@$REFS_COMMIT · 美术@$ART_COMMIT · 源码@${GITHUB_SHA::8}"
             echo
             echo '```'
@@ -121,9 +121,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "$GITHUB_REF_NAME" \
-            mods-dist/STS2-Navia-*.zip \
+            mods-dist/STS2-Navia-*-game-0.107.1.zip \
+            mods-dist/STS2-Navia-*-game-0.111.0.zip \
+            mods-dist/STS2-Navia-*-workshop.zip \
             mods-dist/STS2-Navia-*.sha256 \
             --draft \
-            --title "STS2-Navia v$TAG (game $TARGET)" \
+            --title "STS2-Navia v$TAG (game 0.107.1 / 0.111.0)" \
             --notes-file /tmp/release-notes.md
           echo "草稿 Release 已创建；下载试玩验收通过后手动发布。"
