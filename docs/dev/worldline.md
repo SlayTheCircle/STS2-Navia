@@ -34,9 +34,9 @@ RegisterArchaicToothTranscendence 挂在初始特色卡上：
 
 ## 先古对话与资源
 
-RitsuLib 根据 localization/{lang}/ancients.json 自动组装对话。键族为 <先古Entry>.talk.STS2_NAVIA_CHARACTER_NAVIA.<序号>-<行号>.char／ancient，续接键使用 .next。连续编号与说话者后缀须符合解析约定；改变对话分组时中英同时维护。`.next` 是**逐行键**：每轮除末行外各行都要有，缺失时游戏会把键名原文回显在界面角落（2026-10-01 修复的存量缺口）。**行号统一带 `r` 后缀**（同轮全行一致，含 .next）：全族对话皆为可重复——轮次精确匹配用尽后从已解锁轮次随机重放，与原版行为一致（2026-10-01 设计者定案）。建筑师终局（THE_ARCHITECT）走同一机制：对话序号即登顶轮次，另有可选的 -visit／-attack／-startattack／-endattack 键控制轮次与攻防编排（缺省为轮次顺延、结尾建筑师动作）；无键时 RitsuLib 会以空对话兜底并告警。拜访语义：各先古按「角色×先古」计次，但**整个存档的首次遇见（任意角色）由全角色共享的 firstVisitEver 通用台词占用**——纯新档上各族的第 0 轮因此不可达，与原版角色行为一致；第 N 次遇见显示 VisitIndex=N-1 的轮次。
+RitsuLib 根据 localization/{lang}/ancients.json 自动组装对话。键族为 <先古Entry>.talk.STS2_NAVIA_CHARACTER_NAVIA.<序号>-<行号>.char／ancient，续接键使用 .next。连续编号与说话者后缀须符合解析约定；改变对话分组时中英同时维护。`.next` 是**逐行键**：每轮除末行外各行都要有，缺失时游戏会把键名原文回显在界面角落（2026-10-01 修复的存量缺口）。**行号统一带 `r` 后缀**（同轮全行一致，含 .next）：全族对话皆为可重复——轮次精确匹配用尽后从已解锁轮次随机重放，与原版行为一致（2026-10-01 设计者定案）。**同轮变体**：多段对话可共享同一 VisitIndex，游戏在候选中随机挑选一段播放（坦克斯两段即此形态，2026-10-01 设计者确认）；序号>0 的变体段需 `<序号>-visit` 控制键显式回指轮次（如 `1-visit`=0），否则会被默认映射成后续轮次。建筑师终局（THE_ARCHITECT）走同一机制：对话序号即登顶轮次，另有可选的 -visit／-attack／-startattack／-endattack 键控制轮次与攻防编排（缺省为轮次顺延、结尾建筑师动作）；无键时 RitsuLib 会以空对话兜底并告警。拜访语义：各先古按「角色×先古」计次，但**整个存档的首次遇见（任意角色）由全角色共享的 firstVisitEver 通用台词占用**——纯新档上各族的第 0 轮因此不可达，与原版角色行为一致；第 N 次遇见显示 VisitIndex=N-1 的轮次。
 
-当前覆盖 Neow、Darv、Pael、Orobas、Tezcatara、Nonupeipe、Tanx；原案瓦库对话尚未进入运行文本。保留原案便于后续版本接入，不将未接入内容列为已实现。
+当前覆盖 Neow、Darv、Pael、Orobas、Tezcatara、Nonupeipe、Tanx、Vakuu 与建筑师终局，与原案逐句对齐（2026-10-01 全族审计）。
 
 纪元肖像是**两个独立资源槽**：大图按全局 res://images/timeline/epoch_portraits/sts2_navia_epoch_<序号>.png 推导（成品放 assets/global/，由 pack_mod.gd 保留全局路径，不能套用普通 Mod 前缀）；缩略图原版走 epoch_atlas 图集、mod 无图集条目会显示 NOPE，须经各纪元类的 AssetProfile.PackedPortraitPath 覆盖指向 res://STS2-Navia/images/timeline/ 下的派生图（scripts/art/stories.sh 从大图裁切 272×174）。启程章立绘与三张原案世界线图均已接入。
 
