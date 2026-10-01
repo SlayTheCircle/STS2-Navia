@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <!-- 引导壳 dll 文件名必须是 STS2-Navia.dll(与模组 id 一致,游戏按文件名发现),但程序集身份刻意
+         用 .Loader 后缀:真身变体程序集也叫 STS2-Navia,同名同版本会在 ALC 里撞「已加载」异常(实测)。 -->
+    <AssemblyName>STS2-Navia.Loader</AssemblyName>
+    <RootNamespace>NaviaMod.Loader</RootNamespace>
+    <Nullable>enable</Nullable>
+    <LangVersion>13.0</LangVersion>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <!-- 引导壳在两个游戏目标上共用一份:固定对下限 0.107.1 编译,只允许使用两版共有的 API。 -->
+    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(NAVIA_LOADER_GAME_REFS)</GameRefsDir>
+    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(MSBuildThisFileDirectory)..\..\libs\game-0.107.1</GameRefsDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="sts2">
+      <HintPath>$(GameRefsDir)\sts2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="GodotSharp">
+      <HintPath>$(GameRefsDir)\GodotSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

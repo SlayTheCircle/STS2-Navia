@@ -6,7 +6,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 paths = (set(ROOT.glob('*.md')) | set((ROOT / 'docs').rglob('*.md'))
-         | set((ROOT / '.github').rglob('*.md')) | set((ROOT / 'assets').glob('*.md')))
+         | set((ROOT / '.github').rglob('*.md')) | set((ROOT / 'assets').glob('*.md'))
+         | set((ROOT / 'tests').rglob('*.md')))
 errors = []
 count = 0
 for path in sorted(paths):

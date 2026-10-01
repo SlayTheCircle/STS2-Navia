@@ -54,3 +54,6 @@
 # Godot 素材导入缓存与侧车，由 build-pck.sh 的导入步骤重建。
 /assets/.godot/
 *.import
+# Loader 边界验证工程的构建产物。
+/tests/LoaderProbe/bin/
+/tests/LoaderProbe/obj/
