@@ -34,7 +34,7 @@ RegisterArchaicToothTranscendence 挂在初始特色卡上：
 
 ## 先古对话与资源
 
-RitsuLib 根据 localization/{lang}/ancients.json 自动组装对话。键族为 <先古Entry>.talk.STS2_NAVIA_CHARACTER_NAVIA.<序号>-<行号>.char／ancient，续接键使用 .next。连续编号与说话者后缀须符合解析约定；改变对话分组时中英同时维护。`.next` 是**逐行键**：每轮除末行外各行都要有，缺失时游戏会把键名原文回显在界面角落（2026-10-01 修复的存量缺口）。建筑师终局（THE_ARCHITECT）走同一机制：对话序号即登顶轮次，另有可选的 -visit／-attack／-startattack／-endattack 键控制轮次与攻防编排（缺省为轮次顺延、结尾建筑师动作）；无键时 RitsuLib 会以空对话兜底并告警。拜访语义：各先古按「角色×先古」计次，但**整个存档的首次遇见（任意角色）由全角色共享的 firstVisitEver 通用台词占用**——纯新档上各族的第 0 轮因此不可达，与原版角色行为一致；第 N 次遇见显示 VisitIndex=N-1 的轮次。
+RitsuLib 根据 localization/{lang}/ancients.json 自动组装对话。键族为 <先古Entry>.talk.STS2_NAVIA_CHARACTER_NAVIA.<序号>-<行号>.char／ancient，续接键使用 .next。连续编号与说话者后缀须符合解析约定；改变对话分组时中英同时维护。`.next` 是**逐行键**：每轮除末行外各行都要有，缺失时游戏会把键名原文回显在界面角落（2026-10-01 修复的存量缺口）。**行号统一带 `r` 后缀**（同轮全行一致，含 .next）：全族对话皆为可重复——轮次精确匹配用尽后从已解锁轮次随机重放，与原版行为一致（2026-10-01 设计者定案）。建筑师终局（THE_ARCHITECT）走同一机制：对话序号即登顶轮次，另有可选的 -visit／-attack／-startattack／-endattack 键控制轮次与攻防编排（缺省为轮次顺延、结尾建筑师动作）；无键时 RitsuLib 会以空对话兜底并告警。拜访语义：各先古按「角色×先古」计次，但**整个存档的首次遇见（任意角色）由全角色共享的 firstVisitEver 通用台词占用**——纯新档上各族的第 0 轮因此不可达，与原版角色行为一致；第 N 次遇见显示 VisitIndex=N-1 的轮次。
 
 当前覆盖 Neow、Darv、Pael、Orobas、Tezcatara、Nonupeipe、Tanx；原案瓦库对话尚未进入运行文本。保留原案便于后续版本接入，不将未接入内容列为已实现。
 
