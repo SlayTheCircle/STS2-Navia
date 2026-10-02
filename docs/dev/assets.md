@@ -36,3 +36,11 @@
 能量主图母版当前为单张透明金玫瑰，费用图标与战斗能量计共用；不把文件名中的“分层”当作独立图层交付证据。能量计使用原版 NEnergyCounter，供齐 Label、Layers、RotationLayers、EnergyVfxBack、EnergyVfxFront 节点。纹理在旋转层中显示，耗尽变暗与数值更新由原版驱动；两侧粒子容器提供有效的粒子数组，获得能量时播放金色粒子。标准版 Godot 的 PCK 验证只证明纹理与场景文件入包，游戏 C# 生命周期和动效须在游戏内验收。
 
 当前缺件与接线、验收状态由 STATUS 维护；公开的[美术贡献需求](../design/artwork.md)说明资源规格与贡献方式。母版位于组织私有美术仓，本地经 `ART_SOURCE_DIR` 定位，不随源码仓分发。占位图满足资源存在性时，仍需明确其美术状态。
+
+## 图标实尺寸检查
+
+运行 `python3 scripts/art_review/preview.py --output local_dev/art-review` 生成自包含 HTML 与 JSON 清单；可用 `--before` 指向带分类子目录的旧图目录，`--review` 传入按 `folder/stem` 索引、值含 `status`／`note` 的判断 JSON。输出留在忽略目录，不进入游戏包。
+
+基准取自支持版本的原版场景逻辑像素：Power 40、遗物／药水 60、支援徽记 35、卡面费用 64；内联费用使用本项目 24px 派生规格。页面提供明暗底、压力缩小、放大、描边及修改前对照，不模拟游戏着色器、数字遮挡、UI 缩放和悬停大图。
+
+确认的 Power 派生修饰集中在 `scripts/art/icon-finishing.sh`，先在临时目录完成再按字节写成品，避免中间图造成重复生成时的 mtime 变化。现有装填家族使用细深金描边，其余图标不批量调整。能量柔光纹理由 `scripts/art/energy.sh` 程序生成；战斗光晕放入原版耗尽变暗的 Layers，粒子沿用原版获得能量时的触发点。

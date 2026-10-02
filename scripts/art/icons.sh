@@ -1,4 +1,5 @@
 mkdir -p "$DST/relics" "$DST/potions" "$DST/powers" "$DST/enchantments"
+source "$ROOT/scripts/art/icon-finishing.sh"
 # 遗物图标 256²(原版规格);同时从主图生成描边变体 <类名>_outline.png
 # (遗物条背景的 outline 槽缺图会露出游戏 NOPE 缺图纹理,Watcher 同样三槽全供)。
 ok=0
@@ -34,7 +35,10 @@ ok=0
 for zh in "${!POWERS[@]}"; do
     cls="${POWERS[$zh]}"
     src="$SRC/buff图标/$zh.png"
-    convert "$src" -resize 256x256 "$DST/powers/$cls.png"
+    # 完成修饰后再写成品，避免重跑时先写原图再写描边导致 mtime 假变化。
+    convert "$src" -resize 256x256 "$TMP/power.png"
+    finish_power_icon "$cls" "$TMP/power.png"
+    convert "$TMP/power.png" "$DST/powers/$cls.png"
     ok=$((ok+1))
 done
 echo "Power 图标: $ok 张就绪"

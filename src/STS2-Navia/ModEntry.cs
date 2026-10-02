@@ -55,10 +55,8 @@ public static class ModEntry
                 // 先指原版通用淡入淡出,金色专属转场后补。
                 "res://materials/transitions/fade_transition_mat.tres",
                 "res://STS2-Navia/images/characters/navia_map_marker.png"),
-            // 出牌轨迹:留空会按条目名推导 vfx/card_trail_<entry>(CharacterModel.TrailPath)——
-            // mod 条目下不存在,NCardFlyVfx._Ready 抛空引用,换牌堆动画队列卡死(打出/弃掉的牌悬停不动)。
-            // 先借原版铁甲轨迹,金色专属轨迹后补。
-            new CharacterVfxAssetSet("res://scenes/vfx/card_trail_ironclad.tscn"),
+            // 专属金色轨迹沿用原版跟随、淡出和释放契约；与角色骨骼动画独立。
+            new CharacterVfxAssetSet("res://STS2-Navia/scenes/vfx/navia_card_trail.tscn"),
             null,
             null,
             new CharacterMultiplayerAssetSet(

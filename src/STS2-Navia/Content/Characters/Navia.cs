@@ -19,7 +19,7 @@ namespace NaviaMod.Content.Characters;
 /// <summary>
 /// 娜维娅:来自白淞镇的刺玫会会长,用铳弹与礼炮扫平一切障碍。初始生命 75。
 /// 核心机制:装填(见 <see cref="Powers.LoadPower"/>)、礼炮轰鸣(见 <see cref="Mechanics.Salvo"/>)。
-/// 角色与能量计通过 RitsuLib 资产档案接入；转场、出牌轨迹和音效仍复用原版资源。
+/// 角色与能量计通过 RitsuLib 资产档案接入；出牌轨迹使用专属金色场景，转场和音效仍复用原版资源。
 /// </summary>
 [RegisterCharacter]
 [UnlockEpochAfterRunAs(typeof(Navia1Epoch))]        // 第一章·启程:完成一局娜维娅

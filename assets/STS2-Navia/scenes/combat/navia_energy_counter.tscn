@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Script" path="res://src/Core/Nodes/Combat/NEnergyCounter.cs" id="1_counter"]
 [ext_resource type="Script" path="res://addons/mega_text/MegaLabel.cs" id="2_label"]
 [ext_resource type="Script" path="res://src/Core/Nodes/Vfx/Utilities/NParticlesContainer.cs" id="3_particles"]
 [ext_resource type="FontVariation" path="res://themes/kreon_bold_shared.tres" id="4_font"]
 [ext_resource type="Texture2D" path="res://STS2-Navia/images/energy/navia_energy_big.png" id="5_rose"]
+
+[ext_resource type="Texture2D" path="res://STS2-Navia/images/energy/navia_spark.png" id="6_spark"]
+[ext_resource type="Texture2D" path="res://STS2-Navia/images/energy/navia_energy_glow.png" id="7_glow"]
 
 [sub_resource type="FontVariation" id="FontVariation_energy"]
 base_font = ExtResource("4_font")
@@ -23,10 +26,10 @@ emission_sphere_radius = 46.0
 direction = Vector3(0, -1, 0)
 spread = 180.0
 initial_velocity_min = 10.0
-initial_velocity_max = 35.0
+initial_velocity_max = 24.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.018
-scale_max = 0.03
+scale_min = 0.03125
+scale_max = 0.0625
 color_ramp = SubResource("GradientTexture_spark")
 
 [node name="NaviaEnergyCounter" type="Control"]
@@ -44,9 +47,9 @@ _particles = [NodePath("Sparks")]
 
 [node name="Sparks" type="GPUParticles2D" parent="EnergyVfxBack"]
 emitting = false
-amount = 8
-texture = ExtResource("5_rose")
-lifetime = 0.7
+amount = 5
+texture = ExtResource("6_spark")
+lifetime = 0.55
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_spark")
@@ -60,6 +63,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Glow" type="TextureRect" parent="Layers"]
+self_modulate = Color(1, 0.82, 0.4, 0.22)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_glow")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="RotationLayers" type="Control" parent="Layers"]
 unique_name_in_owner = true
@@ -92,9 +108,9 @@ _particles = [NodePath("Sparks")]
 
 [node name="Sparks" type="GPUParticles2D" parent="EnergyVfxFront"]
 emitting = false
-amount = 5
-texture = ExtResource("5_rose")
-lifetime = 0.45
+amount = 3
+texture = ExtResource("6_spark")
+lifetime = 0.35
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_spark")

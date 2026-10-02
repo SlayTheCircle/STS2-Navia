@@ -2,6 +2,8 @@
 extends SceneTree
 
 const TEXTURES := [
+	"res://STS2-Navia/images/energy/navia_spark.png",
+	"res://STS2-Navia/images/energy/navia_energy_glow.png",
 	"res://STS2-Navia/images/cards/TravelLight.png",
 	"res://STS2-Navia/images/cards/VolleyFire.png",
 	"res://STS2-Navia/images/cards/LightningReload.png",
@@ -30,6 +32,8 @@ const TEXTURES := [
 	"res://STS2-Navia/images/timeline/sts2_navia_epoch_1_thumb.png",
 ]
 const DIMENSIONS := {
+	"res://STS2-Navia/images/energy/navia_spark.png": Vector2i(64, 64),
+	"res://STS2-Navia/images/energy/navia_energy_glow.png": Vector2i(128, 128),
 	"res://STS2-Navia/images/cards/LightningReload.png": Vector2i(606, 852),
 	"res://images/timeline/epoch_portraits/sts2_navia_epoch_1.png": Vector2i(1672, 941),
 	"res://STS2-Navia/images/timeline/sts2_navia_epoch_1_thumb.png": Vector2i(272, 174),
@@ -38,6 +42,8 @@ const DIMENSIONS := {
 	"res://STS2-Navia/images/enchantments/navia_support.png": Vector2i(256, 256),
 }
 const TRANSPARENT_TEXTURES := [
+	"res://STS2-Navia/images/energy/navia_spark.png",
+	"res://STS2-Navia/images/energy/navia_energy_glow.png",
 	"res://STS2-Navia/images/enchantments/navia_support.png",
 	"res://STS2-Navia/images/powers/CollectInterestPower.png",
 	"res://STS2-Navia/images/powers/CoveringFirePower.png",
@@ -64,6 +70,9 @@ func _process(_delta: float) -> bool:
 	# 标准版 Godot 不执行游戏 C# 脚本，仅确认新能量计场景确实入包。
 	if not FileAccess.file_exists("res://STS2-Navia/scenes/combat/navia_energy_counter.tscn"):
 		push_error("PCK 缺能量计场景")
+		failures += 1
+	if not FileAccess.file_exists("res://STS2-Navia/scenes/vfx/navia_card_trail.tscn"):
+		push_error("PCK 缺专属拖尾场景")
 		failures += 1
 	for lang in ["zhs", "eng"]:
 		for table in ["cards", "events", "epochs", "ancients"]:
