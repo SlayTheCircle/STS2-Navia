@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 using NaviaMod.Content.Cards;
@@ -16,14 +17,26 @@ namespace NaviaMod.Content.Powers;
 
 /// <summary>
 /// 炮火连天的光环(可见增益,数值调整V1):每回合你第一次打出[金花礼炮]时,使接下来所有
-/// [金花礼炮]的伤害次数+1。层数=战斗内累计次数加成,经 <see cref="Salvo.BoostHits"/> 即时抬升
+/// [金花礼炮]的伤害次数增加能力份数。层数=能力份数，累计次数从零起算，经 <see cref="Salvo.BoostHits"/> 即时抬升
 /// 既有礼炮实例,后续生成的礼炮由 CreateInHand 按累计值起算。
 /// 每回合计数走 BeforeCardPlayed 计数 + BeforeSideTurnStart 重置(RosulaMethodPower 已验证范式)。
 /// </summary>
 [RegisterPower]
 public sealed class CannonadePower : NaviaPowerBase
 {
-    private int _cannonsPlayedThisTurn;
+    private bool _triggeredThisTurn;
+    private CardPlay? _pendingFirstCannon;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => new[] { new DynamicVar("HitsBonus", 0m) };
+
+    public int HitsBonus => (int)DynamicVars["HitsBonus"].BaseValue;
+
+    internal void AccumulateHits(int value)
+    {
+        AssertMutable();
+        DynamicVars["HitsBonus"].BaseValue += value;
+        InvokeDisplayAmountChanged();
+    }
 
     public override PowerType Type => PowerType.Buff;
 
@@ -32,33 +45,38 @@ public sealed class CannonadePower : NaviaPowerBase
     public override Task BeforeCardPlayed(CardPlay cardPlay)
     {
         // 只数自己打出的礼炮(含被自动打出/从其它牌堆打出的:打出瞬间都位于 Play 牌堆)。
-        if (cardPlay.Card is GoldenRoseCannon
-            && cardPlay.Card.Owner.Creature == base.Owner
+        if (!_triggeredThisTurn && cardPlay.Card is GoldenRoseCannon
+            && cardPlay.GetPlayer().Creature == base.Owner
             && cardPlay.Card.Pile?.Type is PileType.Hand or PileType.Play)
         {
-            _cannonsPlayedThisTurn++;
+            _triggeredThisTurn = true;
+            _pendingFirstCannon = cardPlay;
         }
         return Task.CompletedTask;
     }
 
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // 只在「本回合第一炮」结算完毕后触发次数+1。
-        if (cardPlay.Card is GoldenRoseCannon
-            && cardPlay.Card.Owner.Creature == base.Owner
-            && _cannonsPlayedThisTurn == 1
-            && base.Owner.Player is { } player)
+        // 用出牌记录身份绑定首炮；嵌套自动出牌不会覆盖它，重复派发也不重复结算。
+        if (!ReferenceEquals(_pendingFirstCannon, cardPlay))
+        {
+            return Task.CompletedTask;
+        }
+        _pendingFirstCannon = null;
+        if (base.Owner.Player is { } player)
         {
             Flash();
-            await Salvo.BoostHits(choiceContext, player, 1m);
+            Salvo.BoostHits(player, base.Amount);
         }
+        return Task.CompletedTask;
     }
 
     public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
         if (participants.Contains(base.Owner))
         {
-            _cannonsPlayedThisTurn = 0;
+            _triggeredThisTurn = false;
+            _pendingFirstCannon = null;
         }
         return Task.CompletedTask;
     }

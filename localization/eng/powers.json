@@ -55,7 +55,7 @@
   "STS2_NAVIA_POWER_OPTIMISTIC_FORECAST_POWER.smartDescription": "Whenever you play a card with [gold]Support[/gold], draw [blue]{Amount}[/blue] card(s).",
   "STS2_NAVIA_POWER_CANNONADE_POWER.title": "Cannonade",
   "STS2_NAVIA_POWER_CANNONADE_POWER.description": "The first time you play a Golden Rose Cannon each turn, all future Golden Rose Cannons deal damage 1 additional time.",
-  "STS2_NAVIA_POWER_CANNONADE_POWER.smartDescription": "The first time you play a [gold]Golden Rose Cannon[/gold] each turn, all future [gold]Golden Rose Cannons[/gold] deal damage 1 additional time (current bonus hits: +{Amount}).",
+  "STS2_NAVIA_POWER_CANNONADE_POWER.smartDescription": "After you play your first [gold]Golden Rose Cannon[/gold] each turn, all subsequent [gold]Golden Rose Cannons[/gold] gain +{Amount} hit(s) (current accumulated bonus: +{HitsBonus} hits).",
   "STS2_NAVIA_POWER_REINFORCED_BARREL_POWER.title": "Reinforced Barrel",
   "STS2_NAVIA_POWER_REINFORCED_BARREL_POWER.description": "Whenever your Golden Rose Cannon deals damage to an enemy, gain 3 Block.",
   "STS2_NAVIA_POWER_REINFORCED_BARREL_POWER.smartDescription": "Whenever your [gold]Golden Rose Cannon[/gold] deals damage to an enemy, gain [blue]{Amount}[/blue] [gold]Block[/gold].",

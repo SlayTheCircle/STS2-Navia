@@ -1,6 +1,6 @@
 # 参与贡献
 
-公开开发规范见 [docs/dev/README.md](docs/dev/README.md)，原案与实现差异见[设计资料](docs/history/design/README.md)。原创软件采用 [MIT](LICENSE)，许可范围与第三方权利见 [LICENSING.md](LICENSING.md)。仓库处于开源准备阶段，文档与私有资料边界见[文档规范](docs/dev/documentation.md)。
+公开开发规范见 [docs/dev/README.md](docs/dev/README.md)，原案与实现差异见[设计资料](docs/history/design/README.md)。原创软件采用 [MIT](LICENSE)，许可范围与第三方权利见 [LICENSING.md](LICENSING.md)。文档与私有资料边界见[文档规范](docs/dev/documentation.md)。
 
 ## 环境与路径
 

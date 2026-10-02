@@ -140,3 +140,9 @@ protected override IEnumerable<IHoverTip> AdditionalHoverTips => new[] { HoverTi
   AddKeyword 只用于一次性永久变化(升级/附魔即改)。
 - **改变卡的目标行为**(单体↔全体):卡类覆写 **TargetType 虚属性**按 Power 存在性返回(Shiv/FanOfKnives 范式,
   `IsMutable && Owner != null` 守卫),AllEnemies 即免选目标;OnPlay 用同一守卫分支结算管线。
+
+### 炮火连天与通货膨胀的状态归属
+
+炮火连天的 `Amount` 表示能力份数；`HitsBonus` 动态变量保存从 0 起算的本场累计次数。每回合第一炮在 BeforeCardPlayed 占用资格，按具体 CardPlay 身份在 AfterCardPlayed 结算；嵌套自动出牌不能覆盖资格。结算时经 Salvo.BoostHits 按能力份数同时增加累计值和各战斗牌堆已有礼炮的次数，新礼炮经 CreateInHand 继承累计值。重复施加只增加份数，不立即增加次数、不重置本回合资格。下一回合只重置资格，保留累计值。
+
+通货膨胀的摩拉集合在 AfterCloned 中独立复制；原版模型是浅克隆，不可让集合随原型共享。记录仅属于当前能力实例，重复进场不二次减伤；抽牌同时核对出牌者归属与记录。新的战斗实例从原型的空集合开始。

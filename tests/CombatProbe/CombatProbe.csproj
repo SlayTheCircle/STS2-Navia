@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(GAME_REFS_DIR)</GameRefsDir>
+    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(MSBuildThisFileDirectory)../../libs/game</GameRefsDir>
+    <RitsuLibDir>$(RITSULIB_DIR)</RitsuLibDir>
+    <RitsuLibReferenceTarget>$(RITSULIB_TARGET)</RitsuLibReferenceTarget>
+    <DefineConstants Condition="'$(RITSULIB_TARGET)' == '0.107.1'">$(DefineConstants);NAVIA_GAME_0107_1</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(RitsuLibDir)/RitsuLib.References.props" />
+  <ItemGroup>
+    <ProjectReference Include="../../src/STS2-Navia/STS2-Navia.csproj" />
+    <Reference Include="sts2"><HintPath>$(GameRefsDir)/sts2.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="GodotSharp"><HintPath>$(GameRefsDir)/GodotSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GameRefsDir)/0Harmony.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

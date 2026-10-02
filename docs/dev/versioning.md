@@ -1,6 +1,6 @@
 # 版本与兼容约定
 
-[STS2-Navia.json](../../STS2-Navia.json) 的 version 是模组版本唯一来源。构建复制原清单；新生成发行 ZIP 从该字段命名，包内清单、发布说明和 tag 使用同一版本。正式版本确定由维护者决定。
+[STS2-Navia.json](../../STS2-Navia.json) 的 version 是模组版本唯一来源。完整构建经 `scripts/build_support/manifest.py` 生成安装清单，`min_game_version` 按已经过引用配对检查的 `RITSULIB_TARGET` 写入；根清单保持双变体最低支持版本。平铺 ZIP 复用同一生成规则并核对构建清单，工坊根清单取两目标中的最低版本；新生成发行 ZIP 从该字段命名，包内清单、发布说明和 tag 使用同一版本。正式版本确定由维护者决定。
 
 模组版本与游戏版本独立维护。RITSULIB_TARGET 选择与游戏引用一致的 compat 版本；双目标适配基线为 0.107.1 和 0.111.0，当前编译、试玩与发行状态由 [STATUS](../../STATUS.md) 维护。游戏／依赖升级涉及钩子、注册、资源、存档或部署变化时，发布说明列出影响和必要操作。
 

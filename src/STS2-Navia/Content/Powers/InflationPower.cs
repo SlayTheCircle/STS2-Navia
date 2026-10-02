@@ -19,27 +19,34 @@ namespace NaviaMod.Content.Powers;
 [RegisterPower]
 public sealed class InflationPower : NaviaPowerBase
 {
-    private readonly HashSet<CardModel> _adjusted = new HashSet<CardModel>();
+    private HashSet<CardModel> _adjusted = new HashSet<CardModel>();
 
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Single;
 
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        // 原版模型采用浅克隆；每个能力实例必须拥有自己的记录容器。
+        _adjusted = new HashSet<CardModel>(_adjusted);
+    }
+
     public override Task AfterCardEnteredCombat(CardModel card)
     {
-        if (card is ShiningMora && card.Owner == base.Owner.Player)
+        if (card is ShiningMora && card.Owner == base.Owner.Player && _adjusted.Add(card))
         {
             card.DynamicVars.Damage.BaseValue -= 1m;
-            _adjusted.Add(card);
         }
         return Task.CompletedTask;
     }
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (_adjusted.Contains(cardPlay.Card))
+        if (base.Owner.Player is { } player && cardPlay.GetPlayer() == player
+            && _adjusted.Contains(cardPlay.Card))
         {
-            await CardPileCmd.Draw(choiceContext, 1m, base.Owner.Player);
+            await CardPileCmd.Draw(choiceContext, 1m, player);
         }
     }
 }

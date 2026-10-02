@@ -38,7 +38,7 @@ PowerVar 占位符例外：`{LoadPower:diff()}` 用**类名**不经前缀。
 - 装填：`Content/Powers/LoadPower.cs`（上限 6/9，`Gain()` 唯一入口，每 2 层 +1 格挡=敏捷等价但不可偷取）
 - 礼炮轰鸣：`Content/Mechanics/Salvo.cs`（无炮生成/有炮全体加伤）
 - 摩拉计数：`ShiningMora.CountMoraPlayed`（每 3 张装填 1；监听方挂 `MoraCounterPower` 的 `AfterPowerAmountChanged`）
-- 角色视觉：`Content/Visuals/NaviaCharacterVisuals.cs`（四态换装/浮动/受击/技能姿态/开局预热）+ **宿主=刺玫会徽常驻钩子**（AfterObtained 预热 / AfterPlayerTurnStart 刷新 / AfterDamageReceived 受击 / AfterDeath 倒下 / AfterCardPlayed 技能姿态）
+- 角色视觉：`Content/Visuals/NaviaVisualHooks.cs` 经 `[RegisterSingleton]` + RitsuLib `HookedSingletonModel(HookType.Combat)` 进入原版战斗订阅流；战斗开始预热、玩家回合刷新、受击／死亡／出牌均按事件中的娜维娅玩家分发到 `NaviaCharacterVisuals`。不依赖遗物，替换或移除会徽不影响视觉；节点状态按生物隔离。
 - 预览感知三件套与升级键名规范：见 [卡牌手册](cards.md) §4/§6（**伤害=ExtraDamage，格挡=CalculationExtra**）
 
 ## 角色资产档案（ModEntry 内逐字段有注释）

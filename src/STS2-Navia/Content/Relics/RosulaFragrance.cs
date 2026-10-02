@@ -20,11 +20,11 @@ using NaviaMod.Content.Keywords;
 namespace NaviaMod.Content.Relics;
 
 /// <summary>
-/// 仅留余香的野蔷薇(Rare):战斗开始时,装填 3。每回合你第一次获得格挡时,装填 1。
+/// 仅留余香的野蔷薇(进阶初始遗物):战斗开始时,装填 3。每回合你第一次获得格挡时,装填 1。
 /// 刺玫会徽的强化版:回合格挡触发逻辑与会徽一致(参照 RosulaEmblem,但不继承它——
 /// 直接继承 NaviaRelicBase,避免捆绑初始遗物的语义);新增「战斗开始时装填 3」走
 /// BeforeCombatStart(vanilla Anchor 同款战斗开始时点),经由 LoadPower.Gain 统一入口。
-/// 注:设计上的「进阶遗物」解锁接线延后,本批先按 Rare 掉落物实装。
+/// 由欧罗巴斯之触替换刺玫会徽获得，不作普通掉落；视觉由独立战斗单例驱动。
 /// </summary>
 [RegisterRelic(typeof(NaviaRelicPool))]
 public sealed class RosulaFragrance : NaviaRelicBase

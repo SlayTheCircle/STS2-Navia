@@ -57,3 +57,6 @@
 # Loader 边界验证工程的构建产物。
 /tests/LoaderProbe/bin/
 /tests/LoaderProbe/obj/
+# Python 清单工具与回归用例的解释器缓存。
+__pycache__/
+*.pyc

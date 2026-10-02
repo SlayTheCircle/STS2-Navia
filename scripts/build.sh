@@ -27,7 +27,8 @@ fi
 mkdir -p "$NAVIA_ROOT/mods-dist"
 stage="$(mktemp -d "$NAVIA_ROOT/mods-dist/.build.XXXXXX")"
 trap 'rm -rf "$stage"' EXIT
-cp "$NAVIA_ROOT/STS2-Navia.json" "$stage/"
+python3 "$NAVIA_ROOT/scripts/build_support/manifest.py" \
+    "$NAVIA_ROOT/STS2-Navia.json" "$stage/STS2-Navia.json" "$RITSULIB_TARGET"
 cp "$DLL" "$stage/"
 NAVIA_MOD_PCK="$stage/STS2-Navia.pck" "$NAVIA_ROOT/scripts/build-pck.sh"
 NAVIA_MOD_PCK="$stage/STS2-Navia.pck" "$NAVIA_ROOT/scripts/verify-pck.sh"

@@ -55,7 +55,7 @@
   "STS2_NAVIA_POWER_OPTIMISTIC_FORECAST_POWER.smartDescription": "每当你打出一张带有[gold]支援[/gold]效果的牌，抽[blue]{Amount}[/blue]张牌。",
   "STS2_NAVIA_POWER_CANNONADE_POWER.title": "炮火连天",
   "STS2_NAVIA_POWER_CANNONADE_POWER.description": "每回合你第一次打出金花礼炮时，使接下来所有金花礼炮的伤害次数+1。",
-  "STS2_NAVIA_POWER_CANNONADE_POWER.smartDescription": "每回合你第一次打出[gold]金花礼炮[/gold]时，使接下来所有[gold]金花礼炮[/gold]的伤害次数+1（当前累计伤害次数+{Amount}）。",
+  "STS2_NAVIA_POWER_CANNONADE_POWER.smartDescription": "每回合你第一次打出[gold]金花礼炮[/gold]后，使接下来所有[gold]金花礼炮[/gold]的伤害次数+{Amount}（当前累计伤害次数+{HitsBonus}）。",
   "STS2_NAVIA_POWER_REINFORCED_BARREL_POWER.title": "炮身加固",
   "STS2_NAVIA_POWER_REINFORCED_BARREL_POWER.description": "你的金花礼炮每对1个敌人造成1次伤害，获得3点格挡。",
   "STS2_NAVIA_POWER_REINFORCED_BARREL_POWER.smartDescription": "你的[gold]金花礼炮[/gold]每对1个敌人造成1次伤害，获得[blue]{Amount}[/blue]点[gold]格挡[/gold]。",

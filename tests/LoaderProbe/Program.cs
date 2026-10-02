@@ -55,7 +55,7 @@ try
         "Loader selected the wrong game target");
     host.CompleteLoad(owner, loader);
     Type[] discovered = host.ScanModels();
-    foreach (string model in new[] { "NaviaMod.Content.Characters.Navia", "NaviaMod.Content.Cards.StrikeNavia", "NaviaMod.Content.CardPools.NaviaCardPool" })
+    foreach (string model in new[] { "NaviaMod.Content.Characters.Navia", "NaviaMod.Content.Cards.StrikeNavia", "NaviaMod.Content.CardPools.NaviaCardPool", "NaviaMod.Content.Visuals.NaviaVisualHooks" })
     {
         Require(discovered.Any(type => type.FullName == model), "Game model scanner missing " + model);
     }

@@ -8,6 +8,7 @@ if [[ "$#" -gt 1 || ( "$mode" != --source-only && "$mode" != --full ) ]]; then
     exit 2
 fi
 python3 "$NAVIA_ROOT/scripts/audit-repository.py"
+python3 -m unittest discover -s "$NAVIA_ROOT/tests/build"
 python3 "$NAVIA_ROOT/scripts/audit-docs.py"
 python3 "$NAVIA_ROOT/scripts/audit-placeholders.py"
 python3 "$NAVIA_ROOT/scripts/audit-loc-coverage.py"

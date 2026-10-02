@@ -40,7 +40,9 @@ import sys
 import zipfile
 from pathlib import Path
 root, stage = Path(sys.argv[1]), Path(sys.argv[2])
-targets = ['0.107.1', '0.111.0']
+sys.path.insert(0, str(root / 'scripts'))
+from build_support.manifest import SUPPORTED_TARGETS, for_target
+targets = list(SUPPORTED_TARGETS)
 channel_release = os.environ.get('NAVIA_PACKAGE_CHANNEL') == 'release'
 
 base = json.loads((stage / '0.111.0' / 'STS2-Navia.json').read_text(encoding='utf-8'))
@@ -77,8 +79,10 @@ artifacts = []
 # ① 每目标安装 ZIP(平铺,清单按目标改写 min_game_version)
 for target in targets:
     src = stage / target
-    manifest = dict(base)
-    manifest['min_game_version'] = target
+    manifest = for_target(base, target)
+    built_manifest = json.loads((src / 'STS2-Navia.json').read_text(encoding='utf-8'))
+    if built_manifest != manifest:
+        raise SystemExit(f'{target} 构建清单与打包目标不一致')
     archive = dist / f'STS2-Navia-{version}-game-{target}.zip'
     pairs = [(src / 'STS2-Navia.dll', 'STS2-Navia/STS2-Navia.dll'),
              (src / 'STS2-Navia.pck', 'STS2-Navia/STS2-Navia.pck')]
@@ -96,8 +100,7 @@ if workshop.exists():
     import shutil
     shutil.rmtree(workshop)
 (workshop / 'lib').mkdir(parents=True)
-root_manifest = dict(base)
-root_manifest['min_game_version'] = min(targets, key=semver)
+root_manifest = for_target(base, min(targets, key=semver))
 (workshop / 'STS2-Navia.json').write_text(json.dumps(root_manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 (workshop / 'STS2-Navia.dll').write_bytes((root / 'mods-dist' / 'loader' / 'STS2-Navia.dll').read_bytes())
 (workshop / 'STS2-Navia.pck').write_bytes((stage / '0.111.0' / 'STS2-Navia.pck').read_bytes())
@@ -130,5 +133,5 @@ print('工坊布局目录: mods-dist/workshop/STS2-Navia(根引导壳 + lib/game
 if channel_release:
     print('本脚本不上传,发布由 Release 工作流与维护者验收完成。')
 else:
-    print('未上传,素材授权与正式发布范围待确认。')
+    print('内部候选已生成；未上传，发布前仍需维护者验收。')
 PYCODE

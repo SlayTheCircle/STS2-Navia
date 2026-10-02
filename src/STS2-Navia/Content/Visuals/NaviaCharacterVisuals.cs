@@ -8,7 +8,7 @@ namespace NaviaMod.Content.Visuals;
 
 /// <summary>
 /// 娜维娅战斗形象的四态 2D 驱动(无 Spine 路线):按生物状态换装纹理 + 待机浮动 + 受击/出牌动效。
-/// 接线模式参考 Hikari 同类实现;生命周期钩子挂在常驻的初始遗物刺玫会徽上。
+/// 接线模式参考 Hikari 同类实现;生命周期钩子由独立的 NaviaVisualHooks 战斗单例分发，不依赖遗物。
 /// 场景节点契约:navia_character.tscn 根挂 NCreatureVisuals,子节点 Sprite2D 名为 "Visuals"。
 /// </summary>
 public static class NaviaCharacterVisuals

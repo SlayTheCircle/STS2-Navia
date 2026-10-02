@@ -39,24 +39,24 @@ public static class Salvo
     }
 
     /// <summary>炮火连天的伤害次数加成(持续成长,「接下来所有」):累计+value 并即时抬升既有礼炮实例;
-    /// 调用前提是炮火连天已在场,层数供后续生成的礼炮经 CreateInHand 起算。</summary>
-    public static async Task BoostHits(PlayerChoiceContext choiceContext, Player player, decimal value)
+    /// 调用前提是炮火连天已在场,独立累计值供后续生成的礼炮经 CreateInHand 起算。</summary>
+    public static void BoostHits(Player player, int value)
     {
         Creature creature = player.Creature;
         CannonadePower? power = creature.GetPower<CannonadePower>();
-        if (power == null)
+        if (power == null || value <= 0)
         {
             return;
         }
-        await PowerCmd.ModifyAmount(choiceContext, power, value, creature, null);
+        power.AccumulateHits(value);
         foreach (GoldenRoseCannon cannon in AllCannons(player))
         {
             cannon.DynamicVars["Hits"].BaseValue += value;
         }
     }
 
-    /// <summary>当前礼炮伤害次数累计加成(炮火连天层数,未在场为 0),供生成新礼炮起算。</summary>
-    public static int HitsBonus(Player player) => player.Creature.GetPowerAmount<CannonadePower>();
+    /// <summary>当前礼炮伤害次数累计加成(不含能力份数,未在场为 0),供生成新礼炮起算。</summary>
+    public static int HitsBonus(Player player) => player.Creature.GetPower<CannonadePower>()?.HitsBonus ?? 0;
 
     private static IEnumerable<GoldenRoseCannon> AllCannons(Player player)
     {
