@@ -1,6 +1,6 @@
 {
   "STS2_NAVIA_POTION_FONTA.title": "枫达",
-  "STS2_NAVIA_POTION_FONTA.description": "获得[blue]{MaxHp}[/blue]点最大生命值。每有3点额外的生命值上限，额外恢复1点生命值。",
+  "STS2_NAVIA_POTION_FONTA.description": "获得[blue]{MaxHp}[/blue]点最大生命值并恢复等量生命值。随后，每有3点超出角色初始上限的最大生命值，额外恢复1点生命值（包含本药水增加的上限）。",
   "STS2_NAVIA_POTION_ROSULA_WINE.title": "刺玫佳酿",
   "STS2_NAVIA_POTION_ROSULA_WINE.description": "[gold]装填[/gold][blue]{Loads}[/blue]。",
   "STS2_NAVIA_POTION_LESSE.title": "乐斯",

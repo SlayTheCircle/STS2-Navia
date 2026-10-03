@@ -1,6 +1,6 @@
 {
   "STS2_NAVIA_POTION_FONTA.title": "Fonta",
-  "STS2_NAVIA_POTION_FONTA.description": "Gain [blue]{MaxHp}[/blue] Max HP. For every 3 extra Max HP gained this way, restore 1 HP.",
+  "STS2_NAVIA_POTION_FONTA.description": "Gain [blue]{MaxHp}[/blue] Max HP and restore the same amount of HP. Then restore 1 additional HP for every 3 Max HP above the character's starting Max HP (including this potion's increase).",
   "STS2_NAVIA_POTION_ROSULA_WINE.title": "Rosula Wine",
   "STS2_NAVIA_POTION_ROSULA_WINE.description": "[gold]Load[/gold] [blue]{Loads}[/blue].",
   "STS2_NAVIA_POTION_LESSE.title": "Lesse",
