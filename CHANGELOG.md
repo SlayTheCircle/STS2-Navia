@@ -6,19 +6,21 @@
 
 ## [0.4.1] - 2026-10-03
 
-枫达生命值结算修复。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2；Steam 工坊自动选择对应变体。
+枫达生命值结算与建筑师对话修复。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2；Steam 工坊自动选择对应变体。
 
 ### 修复
 
 - 枫达增加最大生命值时，按原版流程同步恢复等量生命值。
 - 枫达的额外治疗按使用后的最大生命值超出目标角色初始上限的部分计算，每 3 点恢复 1 点，包含本瓶新增的上限；不再固定仅恢复 1 点。
 - 中英文药水描述明确结算口径。
+- 修正建筑师「你是谁？从哪里来？」的说话者归属，中英文均由建筑师说出。
 
 ### English summary
 
 - Fonta now restores HP when gaining Max HP, following the base game's behavior.
 - Its additional healing now grants 1 HP per 3 Max HP above the target character's starting Max HP, including this potion's increase, instead of always granting only 1 HP.
 - Clarified both Chinese and English potion descriptions.
+- Fixed the Architect's opening line being attributed to Navia in both languages.
 
 ## [0.4.0] - 2026-10-03
 
