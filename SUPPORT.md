@@ -19,8 +19,8 @@
 ## 支持约定
 
 - 支持最新发行版本，以及 [STATUS](STATUS.md) 标注的当前游戏分支与 RitsuLib 版本。
-- 目标平台为 Windows（Steam）；其他平台未实测，不作支持承诺。
-- 响应为尽力而为，不承诺固定时限。
+- 目标平台为 Windows（Steam），平台验证记录见 STATUS。
+- 维护者按问题影响与可用时间安排响应。
 
 ## English summary
 

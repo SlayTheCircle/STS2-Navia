@@ -15,7 +15,7 @@
 | 核心机制、钩子、持久化、跨模块重构 | 完整构建、对应边界与负向场景、真实试玩 | 未参与实现的独立 CR |
 | 发布候选 | 完整环境与发行物验收、兼容矩阵、回退材料 | 独立 CR 与维护者接受 |
 
-大型跨领域工作先在私有工作区写目标、边界、失败模式和拆分方案。评审结论采用 Blocking、Should-fix、Nits、Verified claims；Blocking 合入前修复，Should-fix 修复或记录延后理由。尚未部署 Bot Review，不把其他仓库的机器人机制列为当前门禁。
+大型跨领域工作先在私有工作区写目标、边界、失败模式和拆分方案。评审结论采用 Blocking、Should-fix、Nits、Verified claims；Blocking 合入前修复，Should-fix 修复或记录延后理由。
 
 ## 提交与文档
 

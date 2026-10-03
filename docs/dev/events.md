@@ -51,4 +51,4 @@ ModEventTemplate 的 InitialOptionKey 和 PageDescription 拼接层级；原版�
 
 同步修改事件类、中英本地化、资源映射和对应设计差异。源码检查覆盖键和文本资源，PCK 检查覆盖代表性资源解析，真实游戏还需确认门控、选项、支付不足、不可操作卡、空池和奖励结果。
 
-DevConsole 的 event <Entry> 可直达目标事件，例如 event STS2_NAVIA_EVENT_HOMETOWN_MEMORY 或 event TEA_MASTER。该命令绕过自然生成门控，因此只能验收事件处理与呈现，不能证明 IsAllowed 或自然生成概率正确。未进行的多人、存档或边界场景如实记录。
+DevConsole 的 event <Entry> 可直达目标事件，例如 event STS2_NAVIA_EVENT_HOMETOWN_MEMORY 或 event TEA_MASTER。该命令用于检查事件处理与呈现；IsAllowed 与自然生成概率通过地图流程核对。多人、存档和边界场景的完成情况分别记录。
