@@ -28,9 +28,9 @@ StartingRelics 恒返回 RosulaEmblem。会徽使用 RegisterTouchOfOrobasRefine
 RegisterArchaicToothTranscendence 挂在初始特色卡上：
 
 - [VolleyFire](../../src/STS2-Navia/Content/Cards/Basic/VolleyFire.cs)：铳弹齐射→枪炮轰鸣。
-- [QuickReload](../../src/STS2-Navia/Content/Cards/Basic/QuickReload.cs)：快速装填→神速装填。
+- [QuickReload](../../src/STS2-Navia/Content/Cards/Basic/QuickReload.cs)：快速装填→极速装填。
 
-神速装填是原案之外的新增内容，当前数值与待确认范围见[对照说明](../history/design/implementation-notes.md)。修改初始卡、转化目标或稀有度时检查原版遗物调用路径与先古池的结果。
+极速装填（原「神速装填」）是原案之外的新增内容，当前数值与待确认范围见[对照说明](../history/design/implementation-notes.md)。修改初始卡、转化目标或稀有度时检查原版遗物调用路径与先古池的结果。
 
 ## 先古对话与资源
 

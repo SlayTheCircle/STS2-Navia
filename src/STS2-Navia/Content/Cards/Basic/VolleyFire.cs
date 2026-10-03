@@ -18,8 +18,8 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 铳弹齐射(初始卡,1 费攻击):造成 7 点伤害。消耗全部[装填],每消耗 1 层,伤害 +3。
-/// 升级:伤害 10,每层 +4。
+/// 铳弹齐射(初始卡,1 费攻击,数值调整V4):造成 7 点伤害。消耗全部[装填],每消耗 1 层,伤害 +4。
+/// 升级:伤害 10,每层 +5。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
 [RegisterArchaicToothTranscendence(typeof(CannonRoar))] // 古老牙齿:铳弹齐射→枪炮轰鸣(vanilla Bash→Break 同型的先古化接线)
@@ -41,7 +41,7 @@ public sealed class VolleyFire : NaviaCardBase
         // 预览感知三件套:显示值 = CalculationBase + ExtraDamage × multiplier;CalculatedDamageVar
         // 的 UpdateCardPreview 会过 Hook.ModifyDamage(力量/虚弱/附魔),面板与实际出伤一致。
         new CalculationBaseVar(7m),
-        new ExtraDamageVar(3m),
+        new ExtraDamageVar(4m),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner?.Creature?.GetPowerAmount<LoadPower>() ?? 0),
     };
 

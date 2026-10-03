@@ -27,6 +27,8 @@ internal static class Boundaries
         Patch(typeof(CardPileCmd).GetMethod("AddGeneratedCardToCombat")!, nameof(AddGenerated));
         Patch(typeof(CombatManager).GetProperty("IsInProgress")!.GetMethod!, nameof(InProgress));
         Patch(typeof(CombatManager).GetProperty("IsOverOrEnding")!.GetMethod!, nameof(NotEnding));
+        // 0.107.1 的 IsEnding 在无战斗状态时会空引用;探针不启动战斗,恒 false。
+        Patch(typeof(CombatManager).GetProperty("IsEnding")!.GetMethod!, nameof(NotEnding));
         foreach (string name in new[] { "Refresh", "PlaySkill" })
             Patch(typeof(NaviaCombatVisuals).GetMethod(name)!, nameof(Visual));
         Patch(typeof(NaviaCombatVisuals).GetMethod("Prewarm")!, nameof(Prewarm));

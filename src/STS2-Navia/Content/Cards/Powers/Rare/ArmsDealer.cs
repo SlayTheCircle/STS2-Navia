@@ -13,9 +13,8 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 军火大亨(稀有,2 费能力,数值调整V1):回合开始时,[礼炮轰鸣]1。升级:轰鸣 2。
-/// 数值注:设计稿基础列写「轰鸣2」、升级参考加粗「2」——按文档惯例(加粗=升级后值)取基础 1/升级 2,
-/// 已提交设计者复核。
+/// 军火大亨(稀有,2 费能力,数值调整V4):回合开始时,[礼炮轰鸣]2。升级:轰鸣 3。
+/// V1 曾按文档惯例定为基础 1/升级 2;V4 设计者明确定夺 2/3。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
 public sealed class ArmsDealer : NaviaCardBase
@@ -32,7 +31,7 @@ public sealed class ArmsDealer : NaviaCardBase
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
-        new DynamicVar("Salvo", 1m),
+        new DynamicVar("Salvo", 2m),
     };
 
     public ArmsDealer()

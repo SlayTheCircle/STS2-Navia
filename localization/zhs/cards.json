@@ -30,7 +30,7 @@
   "STS2_NAVIA_CARD_AXE_ONSLAUGHT.title": "利斧强袭",
   "STS2_NAVIA_CARD_AXE_ONSLAUGHT.description": "造成{Damage:diff()}点伤害，给予{VulnerablePower:diff()}层[gold]易伤[/gold]。你当前每有1层[gold]装填[/gold]，这张卡的伤害{ExtraDamage:diff()}点（不消耗装填）。{InCombat:\n（当前造成{CalculatedDamage:diff()}点伤害）|}",
   "STS2_NAVIA_CARD_RIFLED_BARREL.title": "穿心膛线",
-  "STS2_NAVIA_CARD_RIFLED_BARREL.description": "[gold]装填[/gold]{LoadPower:diff()}。[gold]装填[/gold]的层数上限提升至9层。",
+  "STS2_NAVIA_CARD_RIFLED_BARREL.description": "[gold]装填[/gold]{LoadPower:diff()}。[gold]装填[/gold]的层数上限+3层（可叠加）。",
   "STS2_NAVIA_CARD_SURGING_PURSUIT.title": "乘胜追击",
   "STS2_NAVIA_CARD_SURGING_PURSUIT.description": "当前每有1层[gold]装填[/gold]，造成{ExtraDamage:diff()}点伤害、获得等量[gold]格挡[/gold]、[gold]礼炮轰鸣[/gold]1。随后将[gold]装填[/gold]层数减半（向下取整）。{InCombat:\n（当前共造成{CalculatedDamage:diff()}点伤害并获得等量格挡）|}",
   "STS2_NAVIA_CARD_EMERGENCY_EVADE.title": "紧急避险",
@@ -42,7 +42,7 @@
   "STS2_NAVIA_CARD_HIGH_PRESSURE_CHAMBER.title": "高压弹膛",
   "STS2_NAVIA_CARD_HIGH_PRESSURE_CHAMBER.description": "每当你的[gold]装填[/gold]减少1层（无论何种原因），对所有敌人造成{HighPressureChamberPower:diff()}点伤害。",
   "STS2_NAVIA_CARD_DANGEROUS_RETROFIT.title": "危险改装",
-  "STS2_NAVIA_CARD_DANGEROUS_RETROFIT.description": "[gold]装填[/gold]{LoadPower:diff()}。每回合开始时，失去1层[gold]装填[/gold]。",
+  "STS2_NAVIA_CARD_DANGEROUS_RETROFIT.description": "接下来3个回合的回合开始时：先失去1层[gold]装填[/gold]，再将其补至上限。此后每回合开始时，失去1层[gold]装填[/gold]。",
   "STS2_NAVIA_CARD_COMMAND_STANCE.title": "指挥形态",
   "STS2_NAVIA_CARD_COMMAND_STANCE.description": "每有1张牌被消耗，[gold]装填[/gold]{CommandStancePower:diff()}。",
   "STS2_NAVIA_CARD_PEDDLING_FIREARMS.title": "兜售枪火",
@@ -179,6 +179,6 @@
   "STS2_NAVIA_CARD_CANNON_ROAR.description": "造成{Damage:diff()}点伤害。消耗全部[gold]装填[/gold]，每消耗1层，伤害+{ExtraDamage:diff()}，给予{VulnerablePower:diff()}层[gold]易伤[/gold]。{InCombat:\n（当前共造成{CalculatedDamage:diff()}点伤害）|}",
   "STS2_NAVIA_CARD_COVERING_FIRE.title": "掩护轰炸",
   "STS2_NAVIA_CARD_COVERING_FIRE.description": "回合开始时，自身每有1层[gold]装填[/gold]，便在本回合获得1点力量。",
-  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.title": "神速装填",
-  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.description": "获得{Block:diff()}点[gold]格挡[/gold]，[gold]装填[/gold]{LoadPower:diff()}。"
+  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.title": "极速装填",
+  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.description": "获得{Block:diff()}点[gold]格挡[/gold]，将[gold]装填[/gold]补至上限。"
 }

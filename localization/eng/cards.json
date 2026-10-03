@@ -30,7 +30,7 @@
   "STS2_NAVIA_CARD_AXE_ONSLAUGHT.title": "Axe Onslaught",
   "STS2_NAVIA_CARD_AXE_ONSLAUGHT.description": "Deal {Damage:diff()} damage. Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold]. For every [gold]Load[/gold] you currently have, this card's damage is modified by {ExtraDamage:diff()} ([gold]Load[/gold] is not expended).{InCombat:\n(Currently deals {CalculatedDamage:diff()} damage)|}",
   "STS2_NAVIA_CARD_RIFLED_BARREL.title": "Rifled Barrel",
-  "STS2_NAVIA_CARD_RIFLED_BARREL.description": "[gold]Load[/gold] {LoadPower:diff()}. Raise the stack cap of [gold]Load[/gold] to 9.",
+  "STS2_NAVIA_CARD_RIFLED_BARREL.description": "[gold]Load[/gold] {LoadPower:diff()}. Raise the stack cap of [gold]Load[/gold] by 3 (stacking).",
   "STS2_NAVIA_CARD_SURGING_PURSUIT.title": "Surging Pursuit",
   "STS2_NAVIA_CARD_SURGING_PURSUIT.description": "For every stack of [gold]Load[/gold] you have, deal {ExtraDamage:diff()} damage, gain that much [gold]Block[/gold], and [gold]Salvo[/gold] 1. Then halve your [gold]Load[/gold] stacks (rounded down).{InCombat:\n(Currently {CalculatedDamage:diff()} damage and equal Block)|}",
   "STS2_NAVIA_CARD_EMERGENCY_EVADE.title": "Emergency Evade",
@@ -42,7 +42,7 @@
   "STS2_NAVIA_CARD_HIGH_PRESSURE_CHAMBER.title": "High-Pressure Chamber",
   "STS2_NAVIA_CARD_HIGH_PRESSURE_CHAMBER.description": "Whenever a stack of your [gold]Load[/gold] is removed (for any reason), deal {HighPressureChamberPower:diff()} damage to ALL enemies.",
   "STS2_NAVIA_CARD_DANGEROUS_RETROFIT.title": "Dangerous Retrofit",
-  "STS2_NAVIA_CARD_DANGEROUS_RETROFIT.description": "[gold]Load[/gold] {LoadPower:diff()}. At the start of each turn, lose 1 [gold]Load[/gold].",
+  "STS2_NAVIA_CARD_DANGEROUS_RETROFIT.description": "For the next 3 turns, at the start of each turn: lose 1 [gold]Load[/gold], then refill it to the cap. Afterwards, at the start of each turn, lose 1 [gold]Load[/gold].",
   "STS2_NAVIA_CARD_COMMAND_STANCE.title": "Command Stance",
   "STS2_NAVIA_CARD_COMMAND_STANCE.description": "Whenever a card is exhausted, gain {CommandStancePower:diff()} [gold]Load[/gold].",
   "STS2_NAVIA_CARD_PEDDLING_FIREARMS.title": "Peddling Firearms",
@@ -179,6 +179,6 @@
   "STS2_NAVIA_CARD_CANNON_ROAR.description": "Deal {Damage:diff()} damage. Expend all [gold]Load[/gold]; for each stack expended, deal +{ExtraDamage:diff()} damage and apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].{InCombat:\n(Currently {CalculatedDamage:diff()} total damage)|}",
   "STS2_NAVIA_CARD_COVERING_FIRE.title": "Covering Fire",
   "STS2_NAVIA_CARD_COVERING_FIRE.description": "At the start of your turn, gain 1 Strength this turn for each stack of [gold]Load[/gold] you have.",
-  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.title": "Lightning Reload",
-  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.description": "Gain {Block:diff()} Block. [gold]Load[/gold] {LoadPower:diff()}."
+  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.title": "Swift Reload",
+  "STS2_NAVIA_CARD_LIGHTNING_RELOAD.description": "Gain {Block:diff()} Block. Refill [gold]Load[/gold] to its cap."
 }

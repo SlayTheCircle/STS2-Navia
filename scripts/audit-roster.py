@@ -13,7 +13,7 @@ if not os.path.isfile(DOC):
 # 原案尚未实装的已明确延后内容；当前为空。
 DEFERRED = set()
 TOKENS = {'金花礼炮', '闪耀摩拉'}
-ADDITIONS = {'神速装填'}  # 原案外新增的先古强化卡；设计确认状态见公开对照说明。
+ADDITIONS = {'极速装填'}  # 原案外新增的先古强化卡(数值调整V4 由「神速装填」改名)；设计确认状态见公开对照说明。
 
 names = []
 for line in open(DOC, encoding='utf-8'):

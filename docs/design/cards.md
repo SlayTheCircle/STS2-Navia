@@ -105,7 +105,7 @@
 | 囤积物资 | 罕见 | 2 | 能力 | 回合开始时，手牌中每有1张[gold]闪耀摩拉[/gold]，[gold]礼炮轰鸣[/gold]{HoardingSuppliesPower:diff()}。 |
 | 牟取利益 | 罕见 | 2 | 能力 | [gold]闪耀摩拉[/gold]现在会额外造成{MoraBonus:diff()}点伤害。 |
 | 炮身加固 | 罕见 | 1 | 能力 | 你的[gold]金花礼炮[/gold]每对1个敌人造成1次伤害，获得{ReinforcedBarrelPower:diff()}点[gold]格挡[/gold]。 |
-| 穿心膛线 | 罕见 | 1 | 能力 | [gold]装填[/gold]{LoadPower:diff()}。[gold]装填[/gold]的层数上限提升至9层。 |
+| 穿心膛线 | 罕见 | 1 | 能力 | [gold]装填[/gold]{LoadPower:diff()}。[gold]装填[/gold]的层数上限+3层（可叠加）。 |
 | 众志成城 | 罕见 | 2 | 能力 | 每当你打出一张[gold]闪耀摩拉[/gold]，获得{UnitedFrontPower:diff()}点[gold]格挡[/gold]。 |
 | 武器保养 | 罕见 | 1 | 能力 | 将1张去除了[gold]消耗[/gold]的[gold]金花礼炮[/gold]加入你的手牌。 |
 | 意外事故 | 稀有 | 2 | 能力 | 你每消耗1张[gold]金花礼炮[/gold]，都获得{AccidentalBlastPower:diff()}点[gold]格挡[/gold]，[gold]装填[/gold]1。 |
@@ -114,7 +114,7 @@
 | 炮火连天 | 稀有 | 1 | 能力 | 每回合你第一次打出[gold]金花礼炮[/gold]时，使接下来所有[gold]金花礼炮[/gold]的伤害次数+1。 |
 | 回收利息 | 稀有 | 2 | 能力 | 你每获得3层[gold]装填[/gold]，便获得1点能量。 |
 | 指挥形态 | 稀有 | 3 | 能力 | 每有1张牌被消耗，[gold]装填[/gold]{CommandStancePower:diff()}。 |
-| 危险改装 | 稀有 | 2 | 能力 | [gold]装填[/gold]{LoadPower:diff()}。每回合开始时，失去1层[gold]装填[/gold]。 |
+| 危险改装 | 稀有 | 1 | 能力 | 接下来3个回合的回合开始时：先失去1层[gold]装填[/gold]，再将其补至上限。此后每回合开始时，失去1层[gold]装填[/gold]。 |
 | 引导轰炸 | 稀有 | 2 | 能力 | [gold]礼炮轰鸣[/gold]{Salvo:diff()}。每当你打出[gold]金花礼炮[/gold]时，抽1张牌。 |
 | 高压弹膛 | 稀有 | 1 | 能力 | 每当你的[gold]装填[/gold]减少1层（无论何种原因），对所有敌人造成{HighPressureChamberPower:diff()}点伤害。 |
 | 通货膨胀 | 稀有 | 2 | 能力 | 你接下来生成的[gold]闪耀摩拉[/gold]伤害降低1点，并会在打出时抽1张牌。 |
@@ -129,7 +129,7 @@
 | 枪炮轰鸣 | 先古 | 1 | 攻击 | 造成{Damage:diff()}点伤害。消耗全部[gold]装填[/gold]，每消耗1层，伤害+{ExtraDamage:diff()}，给予{VulnerablePower:diff()}层[gold]易伤[/gold]。{InCombat:
 （当前共造成{CalculatedDamage:diff()}点伤害）\|} |
 | 掩护轰炸 | 先古 | 2 | 能力 | 回合开始时，自身每有1层[gold]装填[/gold]，便在本回合获得1点力量。 |
-| 神速装填 | 先古 | 1 | 技能 | 获得{Block:diff()}点[gold]格挡[/gold]，[gold]装填[/gold]{LoadPower:diff()}。 |
+| 极速装填 | 先古 | 1 | 技能 | 获得{Block:diff()}点[gold]格挡[/gold]，将[gold]装填[/gold]补至上限。 |
 
 ## 衍生（2）
 

@@ -16,8 +16,8 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 坚船利炮(罕见,X 费攻击):对所有敌人造成 7 点伤害 X 次。若已有[装填],这张卡的伤害值
-/// 提升等量的值(当前每有 1 层装填伤害 +1,不消耗装填)。升级:伤害 7→9。
+/// 坚船利炮(罕见,X 费攻击,数值调整V4):对所有敌人造成 7 点伤害 X 次。若已有[装填],这张卡的伤害值
+/// 提升装填层数×2(每有 1 层装填伤害 +2,不消耗装填)。升级:伤害 7→9。
 /// X 费=vanilla Whirlwind/Eradicate 范式(<c>HasEnergyCostX</c> + 构造费 0 + <c>ResolveEnergyXValue</c>)。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
@@ -42,7 +42,7 @@ public sealed class Gunboat : NaviaCardBase
         // 无需「先算后耗」,但实际伤害仍必须在攻击执行前用 Calculate 求值);CalculatedDamageVar
         // 的面板会过 Hook.ModifyDamage(力量/虚弱/附魔),与实际出伤一致。
         new CalculationBaseVar(7m),
-        new ExtraDamageVar(1m),
+        new ExtraDamageVar(2m),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner?.Creature?.GetPowerAmount<LoadPower>() ?? 0),
     };
 

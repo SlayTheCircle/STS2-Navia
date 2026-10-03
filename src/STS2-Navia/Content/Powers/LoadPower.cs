@@ -13,8 +13,9 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace NaviaMod.Content.Powers;
 
 /// <summary>
-/// 装填:每有 2 层,获得格挡时便 +1(等同敏捷的格挡加成,但不被计为敏捷——不会被偷取/移除);
-/// 部分卡牌可消耗装填获得额外效果。默认上限 6 层(「穿心膛线」标记在场时为 9)。
+/// 装填(数值调整V4):每有 2 层,获得格挡时便 +1、攻击伤害 +1(等同敏捷与力量的加成,
+/// 但不被计为敏捷/力量——不会被偷取/移除);部分卡牌可消耗装填获得额外效果。
+/// 默认上限 6 层;「穿心膛线」每层标记额外 +3(可叠加)。
 /// </summary>
 [RegisterPower]
 public sealed class LoadPower : NaviaPowerBase
@@ -27,10 +28,10 @@ public sealed class LoadPower : NaviaPowerBase
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    /// <summary>当前装填上限:存在 <see cref="LoadCapUpPower"/>(穿心膛线)时为 9,否则 6。</summary>
+    /// <summary>当前装填上限:6 + 3 × <see cref="LoadCapUpPower"/>层数(数值调整V4:可叠加的 +3)。</summary>
     public static int CapFor(Creature creature)
     {
-        return creature.HasPower<LoadCapUpPower>() ? LoadCapUpPower.UpgradedCap : DefaultCap;
+        return DefaultCap + LoadCapUpPower.CapPerStack * creature.GetPowerAmount<LoadCapUpPower>();
     }
 
     /// <summary>
@@ -65,6 +66,19 @@ public sealed class LoadPower : NaviaPowerBase
             return 0m;
         }
         if (!props.IsPoweredCardOrMonsterMoveBlock())
+        {
+            return 0m;
+        }
+        return Math.Floor(base.Amount / StacksPerDexterity);
+    }
+
+    /// <summary>
+    /// 力量等价(数值调整V4):vanilla <see cref="MegaCrit.Sts2.Core.Models.Powers.StrengthPower"/> 同款口径——
+    /// 只加自己造成的卡牌攻击伤害(<c>IsPoweredAttack</c>),格挡/Power 伤害/队友出牌不吃加成。
+    /// </summary>
+    protected override decimal ModifyDamageAdditiveCore(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? card)
+    {
+        if (base.Owner != dealer || !props.IsPoweredAttack())
         {
             return 0m;
         }

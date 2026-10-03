@@ -21,6 +21,7 @@ const TEXTURES := [
 	"res://STS2-Navia/images/powers/CoveringFirePower.png",
 	"res://STS2-Navia/images/powers/ArmsDealerPower.png",
 	"res://STS2-Navia/images/powers/AccidentalBlastPower.png",
+	"res://STS2-Navia/images/powers/DangerousRetrofitFillPower.png",
 	"res://STS2-Navia/images/enchantments/navia_support.png",
 	"res://STS2-Navia/images/energy/navia_energy_big.png",
 	"res://STS2-Navia/images/energy/navia_energy_text.png",
@@ -42,6 +43,7 @@ const DIMENSIONS := {
 	"res://STS2-Navia/images/enchantments/navia_support.png": Vector2i(256, 256),
 }
 const TRANSPARENT_TEXTURES := [
+	"res://STS2-Navia/images/powers/DangerousRetrofitFillPower.png",
 	"res://STS2-Navia/images/energy/navia_spark.png",
 	"res://STS2-Navia/images/energy/navia_energy_glow.png",
 	"res://STS2-Navia/images/enchantments/navia_support.png",

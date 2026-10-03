@@ -16,7 +16,7 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 快速装填(初始卡,1 费技能):获得 3 点格挡,装填 1。升级:格挡 5。
+/// 快速装填(初始卡,1 费技能,数值调整V4):获得 3 点格挡,装填 2。升级:格挡 5,装填 3。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
 [RegisterArchaicToothTranscendence(typeof(LightningReload))] // 古老牙齿:快速装填→神速装填(双槽纯强化,痛击→破击范式)
@@ -37,7 +37,7 @@ public sealed class QuickReload : NaviaCardBase
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new BlockVar(3m, ValueProp.Move),
-        new PowerVar<LoadPower>(1m),
+        new PowerVar<LoadPower>(2m),
     };
 
     public QuickReload()
@@ -54,5 +54,6 @@ public sealed class QuickReload : NaviaCardBase
     protected override void OnUpgrade()
     {
         base.DynamicVars.Block.UpgradeValueBy(2m);
+        base.DynamicVars["LoadPower"].UpgradeValueBy(1m);
     }
 }

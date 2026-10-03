@@ -6,7 +6,7 @@
 
 | 项目 | 母版要求 | 接入目标 |
 |---|---|---|
-| 神速装填 | 606×852 或等比先古竖图；参考快速装填的伞弹枪与先古卡系列 | images/cards/LightningReload.png |
+| 极速装填（原神速装填） | 606×852 或等比先古竖图；参考快速装填的伞弹枪与先古卡系列 | images/cards/LightningReload.png |
 | 第一章“启程”立绘 | 1672×941；与已有世界线立绘保持角色身份和画风一致 | 全局 images/timeline/epoch_portraits/sts2_navia_epoch_1.png；派生 272×174 缩略图 |
 | 统一支援徽记 | 256×256，透明底，金色／深蓝色玫瑰徽记；小尺寸仍清晰 | images/enchantments/navia_support.png；支援类型以附加文本区分 |
 | 能量玫瑰 | 透明主图；当前交付为单张 PNG | images/energy/navia_energy_big.png 256²、navia_energy_text.png 24²；战斗能量计共用主图 |
@@ -14,8 +14,9 @@
 | 武器保养能力图标 | 256×256，透明底；礼炮保养／保留的视觉语义 | images/powers/WeaponMaintenancePower.png |
 | 掩护轰炸能力图标 | 256×256，透明底；装填带来火力强化的视觉语义 | images/powers/CoveringFirePower.png |
 | 意外事故能力图标 | 256×256，透明底；礼炮消耗转为格挡与装填的视觉语义，参考对应卡图及现有图标系列 | images/powers/AccidentalBlastPower.png |
+| 危险改装·补满能力图标 | 1254² 透明母版，直接派生 256²；同族炮盾、向炮口回填的弹药与粗箭头、大沙漏，区别永久流失的危险改装图标 | images/powers/DangerousRetrofitFillPower.png |
 
-常规卡图使用 25:19 横图窗；先古卡使用竖图窗，不能把常规比例要求套到神速装填上。当前核心补图均已提供母版并接入生成管线，新生图素材的构图与游戏内显示已随 0.1.5 验收，不再列作“待美工交付”。
+常规卡图使用 25:19 横图窗；先古卡使用竖图窗，不能把常规比例要求套到极速装填上。当前核心补图均已提供母版并接入生成管线。此前新生图已随 0.1.5 验收；数值调整V4 新增的危险改装·补满图标游戏内显示仍待验收，详见 STATUS。
 
 ## 接线与既有素材约定
 

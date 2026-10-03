@@ -67,6 +67,7 @@ declare -A POWERS=(
     ["指挥形态-图标"]="CommandStancePower"
     ["兜售枪火-图标"]="PeddlingFirearmsPower"
     ["危险改装-图标"]="DangerousRetrofitPower"
+    ["危险改装·补满-图标"]="DangerousRetrofitFillPower"
     ["紧急避险-图标"]="EmergencyEvadePower"
     ["金融市场-图标"]="FinancialMarketPower"
     ["高压弹膛-图标"]="HighPressureChamberPower"

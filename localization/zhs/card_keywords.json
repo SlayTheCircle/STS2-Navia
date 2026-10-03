@@ -1,6 +1,6 @@
 {
   "STS2_NAVIA_KEYWORD_LOAD.title": "装填",
-  "STS2_NAVIA_KEYWORD_LOAD.description": "最多6层（「穿心膛线」可将其上限提升至9层）。每有2层，获得格挡时便+1（等同敏捷的格挡加成，但不会被偷取或移除）。许多卡牌会消耗装填，以获得额外效果。",
+  "STS2_NAVIA_KEYWORD_LOAD.description": "最多6层（「穿心膛线」每张可使其上限+3层，可叠加）。每有2层，获得格挡时便+1、造成的攻击伤害+1（等同敏捷与力量的加成，但不会被偷取或移除）。许多卡牌会消耗装填，以获得额外效果。",
   "STS2_NAVIA_KEYWORD_SALVO.title": "礼炮轰鸣",
   "STS2_NAVIA_KEYWORD_SALVO.description": "使卡组中当前的「金花礼炮」伤害提升等量值（即时结算，新生成的礼炮从基础值起算）。触发时，若手牌中没有「金花礼炮」，则生成1张。",
   "STS2_NAVIA_KEYWORD_SUPPORT.title": "支援",

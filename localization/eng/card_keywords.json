@@ -1,6 +1,6 @@
 {
   "STS2_NAVIA_KEYWORD_LOAD.title": "Load",
-  "STS2_NAVIA_KEYWORD_LOAD.description": "Up to 6 stacks (Rifled Barrel raises the cap to 9). Every 2 stacks grant +1 Block when you gain Block (the same block bonus Dexterity gives, but it cannot be stolen or removed). Many cards expend Load for extra effects.",
+  "STS2_NAVIA_KEYWORD_LOAD.description": "Up to 6 stacks (each Rifled Barrel raises the cap by 3, stacking). Every 2 stacks grant +1 Block when you gain Block and +1 attack damage (the same bonuses Dexterity and Strength give, but they cannot be stolen or removed). Many cards expend Load for extra effects.",
   "STS2_NAVIA_KEYWORD_SALVO.title": "Salvo",
   "STS2_NAVIA_KEYWORD_SALVO.description": "Raises the damage of the Golden Rose Cannons currently in your deck by that value (instant; newly generated cannons start at base damage). If you have no Golden Rose Cannon in hand when triggered, add 1 to your hand.",
   "STS2_NAVIA_KEYWORD_SUPPORT.title": "Support",

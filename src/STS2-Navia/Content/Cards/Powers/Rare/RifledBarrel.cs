@@ -17,8 +17,8 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 穿心膛线(罕见,1 费能力,数值调整V3):装填 1;装填的层数上限提升至 9 层。
-/// 升级:装填 3。上限标记复用既有 LoadCapUpPower(LoadPower.CapFor 自动识别),无需新建 Power。
+/// 穿心膛线(罕见,1 费能力,数值调整V4):装填 1;装填的层数上限 +3 层(可叠加,第二张 → 12)。
+/// 升级:装填 3。上限标记复用既有 LoadCapUpPower,按层数计算(LoadPower.CapFor 自动识别)。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
 public sealed class RifledBarrel : NaviaCardBase

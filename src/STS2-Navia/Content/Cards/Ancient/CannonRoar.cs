@@ -18,7 +18,7 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 枪炮轰鸣(先古,1 费攻击):造成 12 点伤害。消耗全部[装填],每消耗 1 层,伤害 +5,给予 1 层易伤。
+/// 枪炮轰鸣(先古,1 费攻击,数值调整V4):造成 12 点伤害。消耗全部[装填],每消耗 1 层,伤害 +7,给予 1 层易伤。
 /// 升级:伤害 16。先古稀有度进池即修达弗/DustyTome 的空 Ancient 池崩溃(奥罗巴斯给予的先古卡)。
 /// 三件套同构自铳弹齐射(VolleyFire)。
 /// </summary>
@@ -39,7 +39,7 @@ public sealed class CannonRoar : NaviaCardBase
     {
         new DamageVar(12m, ValueProp.Move),
         new CalculationBaseVar(12m),
-        new ExtraDamageVar(5m),
+        new ExtraDamageVar(7m),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner?.Creature?.GetPowerAmount<LoadPower>() ?? 0),
         new PowerVar<VulnerablePower>(1m),
     };

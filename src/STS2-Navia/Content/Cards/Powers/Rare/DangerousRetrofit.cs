@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Scaffolding.Content;
 using STS2RitsuLib.Interop.AutoRegistration;
 using NaviaMod.Content.CardPools;
@@ -13,12 +12,16 @@ using NaviaMod.Content.Powers;
 namespace NaviaMod.Content.Cards;
 
 /// <summary>
-/// 危险改装(稀有,2 费能力):装填 6;每回合开始时失去 1 层[装填]。
-/// 升级:费用降为 1(数值不变)。回合衰减逻辑在 <see cref="DangerousRetrofitPower"/>。
+/// 危险改装(稀有,1 费能力,数值调整V4 重做):接下来 3 个回合开始时,先失去 1 层[装填],
+/// 再将其补至当前上限;此后每回合开始时仅失去 1 层[装填](永久)。
+/// 升级:获得[固有]。补满倒数在 <see cref="DangerousRetrofitFillPower"/>,
+/// 永久流失在 <see cref="DangerousRetrofitPower"/>(两者用在场判断互斥,不依赖钩子顺序)。
 /// </summary>
 [RegisterCard(typeof(NaviaCardPool))]
 public sealed class DangerousRetrofit : NaviaCardBase
 {
+    public const int FillTurns = 3;
+
     public override IEnumerable<CardKeyword> CanonicalKeywords
     {
         get
@@ -29,27 +32,22 @@ public sealed class DangerousRetrofit : NaviaCardBase
         }
     }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
-    {
-        new PowerVar<LoadPower>(6m),
-    };
-
     public DangerousRetrofit()
-        : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+        : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(base.Owner.Creature, "PowerUp", base.Owner.Character.PowerUpAnimDelay);
-        await LoadPower.Gain(choiceContext, base.Owner.Creature, (int)base.DynamicVars["LoadPower"].BaseValue, base.Owner.Creature, this);
-        // 「每回合开始时失去 1 层」由隐藏标记承担;重复打出时标记叠层合并,仍只失去 1 层/回合。
+        // 补满倒数 3 层;重复打出时层数累加(更多补满回合),流失仍只 1 层/回合。
+        await PowerCmd.Apply<DangerousRetrofitFillPower>(choiceContext, base.Owner.Creature, FillTurns, base.Owner.Creature, this);
         await PowerCmd.Apply<DangerousRetrofitPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        // 升级:2 费 → 1 费(vanilla 降费写法)。
-        base.EnergyCost.UpgradeBy(-1);
+        // 升级:获得固有(手册 §6:升级加关键词走 OnUpgrade→AddKeyword)。
+        AddKeyword(CardKeyword.Innate);
     }
 }
