@@ -4,13 +4,35 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-03
+
+局内角色动画与视觉更新，同时修复战斗状态隔离、嵌套礼炮触发及动作生命周期。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2；Steam 工坊自动选择对应变体。
+
+### 新增
+
+- 娜维娅局内形象接入 Godot 原生骨骼动画，覆盖待机、攻击、施法／能力、受击、低血量、放松、死亡和复活。
+- 角色资源的脚本组装与回归验证，覆盖关节连接、腿部刚性、动作复位、材质隔离和界面遮挡。
+
+### 变更
+
+- 卡牌拖尾改为香槟金细拖尾；能量计加入柔光、能量获取光点与耗尽反馈。
+- 装填／待发装填图标增加细深金描边，改善浅色背景下的辨识度。
+- 统一公开文档的表达和开发指引，更新角色资源制作与接入说明。
+
 ### 修复
 
-- 通货膨胀的摩拉记录改为每个能力实例独立持有，修复联机中队友错误抽牌及跨战斗引用残留，重复进场不再二次减伤。
-- 炮火连天从零累计额外次数，能力份数与累计值分离；多份能力按份数叠加每回合首炮后的增量，嵌套自动出炮不会吞掉首炮触发。
-- 角色动作改由独立战斗单例驱动，初始遗物升级或移除后仍能分发受击、出牌、死亡和回合刷新事件。
-- 普通完整构建的安装清单最低游戏版本与实际 DLL 编译目标一致，与分目标发行包共用生成规则。
-- 更新当前版本、工坊分发和开发文档中的旧状态描述。
+- 修复战斗结算后完整角色越过奖励页和地图的绘制层级问题。
+- 通货膨胀的摩拉记录按能力实例独立持有，修复联机中队友错误抽牌及跨战斗引用残留。
+- 炮火连天正确区分能力份数与累计次数，修复嵌套自动出炮时首炮触发遗漏。
+- 角色动作由独立战斗单例驱动，初始遗物升级或移除后保持正常；完善生命变化、连续出牌、死亡与复活时的动作切换和恢复。
+- 完整构建的安装清单与实际 DLL 编译目标一致。
+
+### English summary
+
+- Added native skeletal combat animations for Navia, including attacks, casting, reactions, low-health idle, death and revival.
+- Refined card trails, energy effects and Load icons.
+- Fixed character rendering over rewards and the map, per-instance combat state, nested cannon triggers and animation lifecycle handling.
+- Updated public documentation and reproducible character-asset tooling.
 
 ## [0.2.0] - 2026-10-01
 

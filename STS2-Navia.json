@@ -4,7 +4,7 @@
   "name": "娜维娅 | Navia",
   "author": "3aKHP",
   "description": "来自白淞镇的刺玫会会长——用铳弹与礼炮扫平一切障碍。新增可玩角色「娜维娅」:装填、礼炮轰鸣双机制,专属卡牌/遗物/药水/事件。A Slay the Spire 2 character mod: Navia from Spina di Rosula.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "has_pck": true,
   "has_dll": true,
   "affects_gameplay": true,
