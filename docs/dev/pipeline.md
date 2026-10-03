@@ -70,7 +70,7 @@ Steam 工坊发布为本地手工步（`local_dev/workshop/publish.sh`，私有�
 
 双版本编译已适配：源码以 `NAVIA_GAME_0107_1` 条件编译吸收 0.107.1 与 0.111.0 的 API 差异（伤害加成签名、卡牌去向钩子、克隆 API、LoseBlock，以及 `Content/Compat/` 下注入游戏命名空间的 FromCard／CardPlay.GetPlayer 垫片），csproj 按 `RITSULIB_TARGET` 自动注入 define。双目标回归：分别以 `RITSULIB_TARGET=0.107.1 GAME_REFS_DIR=<0.107.1 引用>` 与默认环境跑 `build.sh --dll-only`，两目标 0 错误且警告剖面一致方为通过。注意声明层错误会让编译在方法体绑定前中止——必须迭代到零错误，以警告回归确认绑定完整。变体候选布局与游戏内状态见 [STATUS](../../STATUS.md)。
 
-Loader 按两版共有的 API 下限 0.107.1 编译：`scripts/build-loader.sh` 输出到 `mods-dist/loader/`，不刷新已有工坊目录或 ZIP。构建变体包时须重新执行 package.sh；产物更新不等于部署授权。游戏程序集登记规则见[架构](architecture.md#变体-loader-与游戏模型发现)。[Loader 验证](../../tests/LoaderProbe/README.md) 使用真实游戏 DLL 检查选择、依赖拒绝与模型发现，仍须用实际游戏复验完整初始化、资源和菜单。
+Loader 按两版共有的 API 下限 0.107.1 编译：`scripts/build-loader.sh` 输出到 `mods-dist/loader/`，不刷新已有工坊目录或 ZIP。构建变体包时须重新执行 package.sh；部署按工作流中的授权范围执行。游戏程序集登记规则见[架构](architecture.md#变体-loader-与游戏模型发现)。[Loader 验证](../../tests/LoaderProbe/README.md) 使用真实游戏 DLL 检查选择、依赖拒绝与模型发现，仍须用实际游戏复验完整初始化、资源和菜单。
 
 ### 单目标安装清单
 

@@ -30,7 +30,7 @@ SetEventFinished 是受保护成员，外部处理器使用启动时缓存的反
 
 ## 初始化通道
 
-ModEntry 带 ModInitializer，游戏加载器不会再自动 PatchAll。因此 [ModEntry.Init](../../src/STS2-Navia/ModEntry.cs) 完成内容／关键词／资产注册后，必须显式调用 Harmony.PatchAll。注册了三个新事件不代表五个追加选项已生效。
+ModEntry 带 ModInitializer，游戏加载器不会再自动 PatchAll。因此 [ModEntry.Init](../../src/STS2-Navia/ModEntry.cs) 完成内容／关键词／资产注册后，必须显式调用 Harmony.PatchAll。三个新事件的注册和五个原版追加选项的补丁接线分别验证。
 
 补丁声明、DLL 编译、日志与真实选项出现提供不同层次的证据。历史报告中仅凭加载器日志判定整个事件链通过的结论已修正，见[事件审计](../history/audits/2026-09-29-event-static-audit.md)。
 

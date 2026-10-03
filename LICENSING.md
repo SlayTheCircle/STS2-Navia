@@ -8,9 +8,9 @@ LICENSE 使用标准 MIT 正文。素材、第三方内容与游戏使用条件�
 
 ## 素材与第三方权利
 
-美术母版与图像素材存放于组织私有美术仓，采用限定授权：仅限本模组的构建、测试与 Steam 工坊分发，不得再分发，MIT 不适用；完整安装包中的美术按该授权随包分发。音频、字体等其他媒体的公开方式仍待定。随包附带 LICENSE 不表示所有内容都采用 MIT，各组成部分按其适用许可处理。
+美术母版与图像素材存放于组织私有美术仓，采用限定授权：仅限本模组的构建、测试与 Steam 工坊分发，不得再分发，MIT 不适用；完整安装包中的美术按该授权随包分发。音频、字体等其他媒体的公开方式仍待定。安装包中的各组成部分按各自适用许可处理。
 
-《杀戮尖塔》／《杀戮尖塔 2》和《原神》的既有角色、设定、原文、标识、商标、代码与资源权利不由本项目授予。本项目不声称与 Mega Crit 或原神权利人有官方关联。引自第三方的内容按对应权利人与原许可处理。
+《杀戮尖塔》／《杀戮尖塔 2》和《原神》的既有角色、设定、原文、标识、商标、代码与资源权利归对应权利人所有。本项目为独立社区 Mod。引自第三方的内容按对应权利人与原许可处理。
 
 上游依赖与工具见 [第三方说明](THIRD_PARTY_NOTICES.md)。维护者确认本项目程序代码没有直接借用第三方代码。公开设计与原创本地化属于文本贡献；原案作者的署名和授权范围、素材来源仍需随正式公开范围确认。
 
@@ -24,4 +24,4 @@ Mega Crit 的 [Content Policy](https://megacrit.com/content-policy/) 允许符�
 
 Original software, build scripts, text resource configuration, documentation, and original localization that the contributors are entitled to license are provided under the [MIT License](LICENSE). Preserve the copyright and permission notice when distributing copies or substantial portions of the software.
 
-Artwork, audio, fonts, and other multimedia have not been released under this source license. Rights in Slay the Spire, Slay the Spire 2, Genshin Impact, and third-party material remain with their respective holders. A package may contain components under different terms. See [third-party notices](THIRD_PARTY_NOTICES.md) and Mega Crit's [Content Policy](https://megacrit.com/content-policy/). The project does not claim official affiliation or grant rights belonging to others. The maintainer confirms that the project code does not directly copy third-party code. Attribution and licensing of original design text, and asset permissions, remain subject to confirmation before public release.
+Artwork is governed by the restricted permissions described above; audio, fonts, and other media follow their respective terms. Rights in Slay the Spire, Slay the Spire 2, Genshin Impact, and third-party material remain with their respective holders. A package may contain components under different terms. See [third-party notices](THIRD_PARTY_NOTICES.md) and Mega Crit's [Content Policy](https://megacrit.com/content-policy/). This is an independent community mod; third-party rights remain with their holders. The maintainer confirms that the project code does not directly copy third-party code. Contributor attribution is recorded in CREDITS.md, and asset permissions are maintained with their source records.

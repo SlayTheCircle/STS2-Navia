@@ -21,9 +21,9 @@
 | `ROSTER_DESIGN_FILE` | 卡表审计输入覆盖 | 仓库 `docs/history/design/card-roster.txt` |
 | `TASKLIST_EXE` | Windows 进程检测工具 | PATH 中的 `tasklist.exe` |
 
-公开源码检查只需 Bash、Git 和 Python 3.11+。编译还需要 .NET、游戏引用和 RitsuLib；完整打包需要本地多媒体、Godot 和 `strings`；美术再生成另需 ImageMagick。自动下载 Godot 的脚本支持 Linux x86_64；其他平台手动安装后配置可执行文件。Windows 原生 PowerShell 脚本尚未提供，WSL 部署依赖 Windows `tasklist.exe`。未实测平台不得标为已支持。
+公开源码检查只需 Bash、Git 和 Python 3.11+。编译还需要 .NET、游戏引用和 RitsuLib；完整打包需要本地多媒体、Godot 和 `strings`；美术再生成另需 ImageMagick。自动下载 Godot 的脚本支持 Linux x86_64；其他平台手动安装后配置可执行文件。本项目提供 Bash／WSL 开发脚本，WSL 部署使用 Windows `tasklist.exe` 检测游戏进程。平台验证结果记录在 STATUS。
 
-VSCode 的 C# 项目服务不自动读取 .local-dev.env。SDK 必须在扩展宿主的 PATH 可见，项目引用也要通过它的环境或默认 libs 路径可读；WSL 的 Server 环境与普通终端分别配置。配置与排错见[编辑器环境](docs/dev/pipeline.md#vscodewsl-编辑器环境)。
+VSCode 的 C# 项目服务通过扩展宿主环境读取 SDK 和引用配置。SDK 必须在扩展宿主的 PATH 可见，项目引用也要通过它的环境或默认 libs 路径可读；WSL 的 Server 环境与普通终端分别配置。配置与排错见[编辑器环境](docs/dev/pipeline.md#vscodewsl-编辑器环境)。
 
 ```bash
 ./scripts/check.sh --source-only
@@ -37,15 +37,15 @@ VSCode 的 C# 项目服务不自动读取 .local-dev.env。SDK 必须在扩展�
 
 ## 本地导航与仓库边界
 
-本机工作区的导航入口是私有文件 `local_dev/README.md`；它再指向实际游戏源码、依赖、参考 Mod、工具和未整理原件。`local_dev/` 整个目录被忽略，不为任何子文件增加跟踪例外。有公开价值的设计、调查和技术案例已提取到 docs 的对应模块；没有私有入口的贡献者也能取得设计依据、运行源码检查，并按本页配置依赖进行编译。
+本机工作区的导航入口是私有文件 `local_dev/README.md`；它再指向实际游戏源码、依赖、参考 Mod、工具和未整理原件。`local_dev/` 由 Git 整体忽略。有公开价值的设计、调查和技术案例已提取到 docs 的对应模块；贡献者可直接使用公开资料与本页配置完成开发起步。
 
-公开花名册检查默认读取设计卡表，不要求本机私有文件。只有检查其他卡表时才设置 ROSTER_DESIGN_FILE；指定文件不存在或解析不到条目会失败。它核对名称与内容覆盖，不验收费用、数值、升级或剧情。
+公开花名册检查默认读取仓库中的设计卡表。只有检查其他卡表时才设置 ROSTER_DESIGN_FILE；指定文件不存在或解析不到条目会失败。它核对名称与内容覆盖；费用、数值、升级和剧情由对应设计审查与试玩确认。
 
-多媒体、游戏 DLL、依赖包、构建输出、本机配置及私有工作区不进入公开仓；美术母版位于组织私有美术仓，完整打包需将其克隆并配置为 `ART_SOURCE_DIR`。不使用 Git LFS。文本场景、导入工程配置、规格与生成脚本随源码维护。
+源码仓维护程序、本地化、文本场景、导入工程配置、规格与生成脚本。游戏引用、依赖和构建产物在本地准备；完整打包通过 `ART_SOURCE_DIR` 接入组织私有美术仓。
 
 ## 修改与提交
 
-提供原创软件贡献时采用本项目 MIT 许可，并确认自己有权授予相应权利。第三方代码保留适用的原版权与许可声明，注明来源；素材授权单独处理，不因软件贡献而自动开放。不要提交无法确认来源或授权的内容。
+提供原创软件贡献时采用本项目 MIT 许可，并确认自己有权授予相应权利。第三方代码保留适用的原版权与许可声明，注明来源；素材按各自授权处理，提交时提供明确的来源与许可记录。
 
 遵循 [工程规范](docs/dev/style.md)、[验证纪律](docs/dev/testing.md)和[工作流](docs/dev/workflow.md)。一个变更承载一个主要意图；行为变化同步更新对应权威文档。当前 AI 协作只有收到明确指令才 commit、push、开 PR、合并、打 tag 或重写历史。
 
@@ -63,4 +63,4 @@ Markdown 段落和列表项保持自然换行；文本使用 UTF-8 / LF。README
 git config core.hooksPath .githooks
 ```
 
-pre-commit 和 CI 执行源码检查。完整美术、编译、PCK 与游戏试玩的证据单独记录，不能从 CI 通过推断。
+pre-commit 执行源码检查，CI 按工作流运行审计、编译或发行构建。完整素材、PCK 与游戏试玩结果统一记录在 STATUS，验证步骤见验证指南。

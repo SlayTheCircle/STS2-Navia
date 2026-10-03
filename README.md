@@ -2,11 +2,11 @@
 
 [English](README.en.md)
 
-《杀戮尖塔 2》的娜维娅角色模组，以装填、礼炮轰鸣、摩拉与支援构筑为主题。0.1.6 已发布（GitHub Release 与 Steam 工坊），支持游戏 0.107.1（稳定版）与 0.111.0（测试版）双分支。当前实现与限制见 [STATUS.md](STATUS.md)。
+《杀戮尖塔 2》的娜维娅角色模组，以装填、礼炮轰鸣、摩拉与支援构筑为主题。支持游戏 0.107.1（稳定版）与 0.111.0（测试版）双分支。当前实现与开发进度见 [STATUS.md](STATUS.md)。
 
 ## 获取与安装
 
-当前仓库提供源码、双语本地化、文本资源配置及整理后的公开设计资料。推荐经 [Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) 订阅安装，并一并订阅 [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295)——工坊物品按当前游戏版本自动选择内容，切换分支无需换装；也可从 [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) 下载对应游戏目标（0.107.1／0.111.0）的安装包，将其中 `STS2-Navia/` 目录放入游戏 `mods/`。安装或覆盖前关闭游戏；保存原版本包，便于回退。依赖最低版本以 [模组清单](STS2-Navia.json) 为准。源码检出中不包含多媒体，单独编译 DLL 不构成可安装的完整包。
+当前仓库提供源码、双语本地化、文本资源配置及整理后的公开设计资料。推荐经 [Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) 订阅安装，并一并订阅 [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295)——工坊物品按当前游戏版本自动选择内容，切换分支无需换装；也可从 [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) 下载对应游戏目标（0.107.1／0.111.0）的安装包，将其中 `STS2-Navia/` 目录放入游戏 `mods/`。安装或覆盖前关闭游戏；保存原版本包，便于回退。依赖最低版本以 [模组清单](STS2-Navia.json) 为准。完整安装包包含程序与运行素材，可直接从上述发行渠道获取。
 
 ## 开发
 
@@ -21,7 +21,7 @@ cp .local-dev.env.example .local-dev.env
 ./scripts/check.sh --full          # 完整素材、编译、PCK 检查
 ```
 
-详细配置、平台范围和构建步骤见 [贡献指南](CONTRIBUTING.md)及[构建管线](docs/dev/pipeline.md)。本地开发工作区存在时，先阅读私有入口 `local_dev/README.md`；该文件不随仓库分发，负责导航到实际本机资源。
+详细配置、平台范围和构建步骤见 [贡献指南](CONTRIBUTING.md)及[构建管线](docs/dev/pipeline.md)。本地开发工作区存在时，先阅读私有入口 `local_dev/README.md`；该入口负责导航到实际本机资源。
 
 ## 文档
 
@@ -35,4 +35,4 @@ cp .local-dev.env.example .local-dev.env
 
 ## 许可与素材
 
-原创软件采用 [MIT](LICENSE)，具体范围见 [许可说明](LICENSING.md)和[第三方说明](THIRD_PARTY_NOTICES.md)。美术母版存放于组织私有美术仓（限定授权，仅限本模组构建、测试与 Steam 工坊分发），不随源码仓公开，也不使用 Git LFS。
+原创软件采用 [MIT](LICENSE)，具体范围见 [许可说明](LICENSING.md)和[第三方说明](THIRD_PARTY_NOTICES.md)。美术母版由组织私有美术仓管理，适用授权见许可说明。
