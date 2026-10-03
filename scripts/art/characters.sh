@@ -1,4 +1,4 @@
-# 角色本体资产(⑥阶段):四态立绘原图直入 + 程序化派生(选人灰阶/图标描边/地图标记)
+# 角色本体资产(⑥阶段):商店／休息点与历史四态立绘原图直入 + 程序化派生(选人灰阶/图标描边/地图标记)
 mkdir -p "$DST/characters" "$DST/hands"
 convert "$SRC/立绘/立绘——常规.png" "$DST/characters/navia_normal.png"
 convert "$SRC/立绘/立绘——技能.png" "$DST/characters/navia_skill.png"

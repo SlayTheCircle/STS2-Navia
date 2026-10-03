@@ -13,5 +13,6 @@ AssemblyLoadContext.Default.Resolving += (_, name) =>
     return path is null ? null : AssemblyLoadContext.Default.LoadFromAssemblyPath(path);
 };
 await CombatCases.Run();
+AnimationCases.Run();
 Console.WriteLine($"PASS {args[3]}: combat regression probe");
 return 0;

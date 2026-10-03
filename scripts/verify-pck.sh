@@ -6,3 +6,5 @@ navia_require_godot
 export NAVIA_MOD_PCK="${NAVIA_MOD_PCK:-$NAVIA_ROOT/mods-dist/STS2-Navia/STS2-Navia.pck}"
 [[ -f "$NAVIA_MOD_PCK" ]] || { echo '错误: PCK 不存在；先完整构建。' >&2; exit 1; }
 "$GODOT_EXE" --headless --script "$NAVIA_ROOT/tools/verify_pck.gd"
+
+"$GODOT_EXE" --headless --script "$NAVIA_ROOT/tools/character_rig/validation/scene.gd"

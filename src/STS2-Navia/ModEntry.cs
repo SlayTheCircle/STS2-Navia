@@ -33,7 +33,7 @@ public static class ModEntry
         keywords.RegisterCardKeywordOwnedByLocNamespace("SALVO");  // → STS2_NAVIA_KEYWORD_SALVO(礼炮轰鸣)
         keywords.RegisterCardKeywordOwnedByLocNamespace("SUPPORT"); // → STS2_NAVIA_KEYWORD_SUPPORT(支援)
 
-        // 角色资产档案(⑥阶段,无 Spine 2D 路线):战斗形象/选人背景/图标/休息点/商店用自建场景,
+        // 角色资产档案(原生骨骼战斗形象与独立场景):战斗形象/选人背景/图标/休息点/商店用自建场景,
         // 能量计使用已交付金玫瑰及原版 NEnergyCounter 节点契约；Spine/音频资产集为 null。
         // 场景内脚本按 res:// 路径引用游戏本体 C# 类(正式包内同样解析)。
         string naviaEntry = ModContentRegistry.GetCompoundId(ModId, "character", nameof(Navia)).ToLowerInvariant();

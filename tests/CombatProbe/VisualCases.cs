@@ -35,14 +35,15 @@ internal static class VisualCases
                 await listener.AfterPlayerTurnStart(ctx, a);
                 await listener.AfterPlayerTurnStart(ctx, b);
                 await listener.AfterPlayerTurnStart(ctx, other);
+                await listener.AfterCurrentHpChanged(a.Creature, -1);
+                await listener.AfterCardPlayed(ctx, Play(Card<QuickReload>(a)));
+                await listener.AfterCardPlayed(ctx, Play(Card<QuickReload>(other)));
                 await listener.AfterCardPlayed(ctx, Play(Card<GoldenRoseCannon>(a)));
-                await listener.AfterCardPlayed(ctx, Play(Card<GoldenRoseCannon>(other)));
-                await listener.AfterDamageReceived(ctx, a.Creature, null!, default, null, null);
-                await listener.AfterDeath(ctx, b.Creature, false, 0);
+                await listener.AfterCurrentHpChanged(other.Creature, -1);
             }
             Require(Boundaries.Visuals.SequenceEqual(new[] {
                 ("Refresh", (Creature?)a.Creature), ("Refresh", (Creature?)b.Creature),
-                ("PlaySkillPose", (Creature?)a.Creature), ("PlayHurt", (Creature?)a.Creature), ("Refresh", (Creature?)b.Creature)
+                ("Refresh", (Creature?)a.Creature), ("PlaySkill", (Creature?)a.Creature)
             }), "Visual routing depends on relic or targets another character");
         }
         Console.WriteLine("PASS visuals: native subscription, prewarm, both relics/no relic and multiplayer routing");

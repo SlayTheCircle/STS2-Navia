@@ -14,3 +14,7 @@ for name in 选人头像 选人背景 能量球分层 世界线启程 世界线1
 done
 require_art_source '头像.png'
 require_art_source 'buff图标/支援徽记.png'
+
+for name in navia-master-v3 blink-v1 near-arm-backing-v1 far-arm-backing-v1 rigid-legs-v1 kneeling-train-v1; do
+    require_art_source "角色骨骼/godot/运行素材/$name.png"
+done

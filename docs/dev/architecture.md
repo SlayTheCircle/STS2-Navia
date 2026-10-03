@@ -38,7 +38,7 @@ PowerVar 占位符例外：`{LoadPower:diff()}` 用**类名**不经前缀。
 - 装填：`Content/Powers/LoadPower.cs`（上限 6/9，`Gain()` 唯一入口，每 2 层 +1 格挡=敏捷等价但不可偷取）
 - 礼炮轰鸣：`Content/Mechanics/Salvo.cs`（无炮生成/有炮全体加伤）
 - 摩拉计数：`ShiningMora.CountMoraPlayed`（每 3 张装填 1；监听方挂 `MoraCounterPower` 的 `AfterPowerAmountChanged`）
-- 角色视觉：`Content/Visuals/NaviaVisualHooks.cs` 经 `[RegisterSingleton]` + RitsuLib `HookedSingletonModel(HookType.Combat)` 进入原版战斗订阅流；战斗开始预热、玩家回合刷新、受击／死亡／出牌均按事件中的娜维娅玩家分发到 `NaviaCharacterVisuals`。不依赖遗物，替换或移除会徽不影响视觉；节点状态按生物隔离。
+- 角色视觉：`Content/Visuals/NaviaVisualHooks.cs` 经 `[RegisterSingleton]` + RitsuLib `HookedSingletonModel(HookType.Combat)` 进入原版战斗订阅流；只负责原生场景预热、玩家回合／生命变化的待机刷新，以及未触发原生动作的技能牌抬伞。`Content/Visuals/CombatAnimation/` 经角色的 `IModCreatureCombatAnimationStateMachineFactory` 接入 RitsuLib `GodotAnimationPlayerBackend`，游戏的 Attack／Cast／PowerUp／Hit／Dead／Revive／Relaxed 触发进入同一状态机。死亡保持终止姿态，复活回到按当前生命选择的待机；生命刷新与技能兜底不打断已有一次性动作。不依赖遗物，状态和变形材质按战斗形象隔离，退出场景时解绑。
 - 预览感知三件套与升级键名规范：见 [卡牌手册](cards.md) §4/§6（**伤害=ExtraDamage，格挡=CalculationExtra**）
 
 ## 角色资产档案（ModEntry 内逐字段有注释）

@@ -14,4 +14,5 @@ if ! "$GODOT_EXE" --headless --path "$NAVIA_ROOT/assets" --import >"$import_log"
     echo '错误: Godot 素材导入失败。' >&2
     exit 1
 fi
+"$GODOT_EXE" --headless --path "$NAVIA_ROOT/assets" --script "$NAVIA_ROOT/tools/character_rig/generate.gd"
 "$GODOT_EXE" --headless --script "$NAVIA_ROOT/tools/pack_mod.gd"

@@ -8,6 +8,9 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using NaviaMod.Content.CardPools;
+using NaviaMod.Content.Visuals.CombatAnimation;
+using STS2RitsuLib.Scaffolding.Content;
+using STS2RitsuLib.Scaffolding.Visuals.StateMachine;
 using NaviaMod.Content.Cards;
 using NaviaMod.Content.PotionPools;
 using NaviaMod.Content.RelicPools;
@@ -26,7 +29,7 @@ namespace NaviaMod.Content.Characters;
 [UnlockEpochAfterWinAs(typeof(Navia2Epoch))]        // 第二章·荒疫:首次通关
 [UnlockEpochAfterBossVictories(typeof(Navia3Epoch), 3)] // 第三章·好奇心:累计击败 3 首领
 [UnlockEpochAfterAscensionOneWin(typeof(Navia4Epoch))] // 第四章·尖塔的尽头:进阶 1 通关(vanilla 第七章同型)
-public sealed class Navia : CharacterModel
+public sealed class Navia : CharacterModel, IModCreatureCombatAnimationStateMachineFactory
 {
     public override Color NameColor => new Color("E8B23AFF");
 
@@ -82,14 +85,18 @@ public sealed class Navia : CharacterModel
     public override string CharacterTransitionSfx => "event:/sfx/ui/wipe_ironclad";
 
 #if !NAVIA_GAME_0107_1
-    // 0.107.1 无此虚属性,其 GenerateAnimator 硬编码的默认映射与本覆写逐项相同,省略即等价。
+    // 原生骨骼走工厂接口；保留对应原版触发名供角色声明与其他消费者核对。
     protected override List<(AnimState, string)> AnimationStates => new List<(AnimState, string)>
     {
         (new AnimState("attack"), "Attack"),
         (new AnimState("hurt"), "Hit"),
         (new AnimState("cast"), "Cast"),
+        (new AnimState("cast"), "PowerUp"),
     };
 #endif
+
+    public ModAnimStateMachine TryCreateCombatAnimationStateMachine(Node visualsRoot)
+        => NaviaCombatVisuals.Create(visualsRoot);
 
     public override List<string> GetArchitectAttackVfx()
     {

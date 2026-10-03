@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using NaviaMod.Content.Visuals;
+using NaviaMod.Content.Visuals.CombatAnimation;
 
 // 隔离抽牌动画、原生日志与视觉输出；不替换能力钩子、克隆、次数更新和订阅实现。
 internal static class Boundaries
@@ -27,9 +27,9 @@ internal static class Boundaries
         Patch(typeof(CardPileCmd).GetMethod("AddGeneratedCardToCombat")!, nameof(AddGenerated));
         Patch(typeof(CombatManager).GetProperty("IsInProgress")!.GetMethod!, nameof(InProgress));
         Patch(typeof(CombatManager).GetProperty("IsOverOrEnding")!.GetMethod!, nameof(NotEnding));
-        foreach (string name in new[] { "Refresh", "PlayHurt", "PlaySkillPose" })
-            Patch(typeof(NaviaCharacterVisuals).GetMethod(name)!, nameof(Visual));
-        Patch(typeof(NaviaCharacterVisuals).GetMethod("Prewarm")!, nameof(Prewarm));
+        foreach (string name in new[] { "Refresh", "PlaySkill" })
+            Patch(typeof(NaviaCombatVisuals).GetMethod(name)!, nameof(Visual));
+        Patch(typeof(NaviaCombatVisuals).GetMethod("Prewarm")!, nameof(Prewarm));
     }
 
     public static bool CommandLine(ref string[] __result) { __result = []; return false; }
