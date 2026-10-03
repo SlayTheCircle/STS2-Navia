@@ -4,6 +4,39 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-03
+
+数值调整 V4:装填获得力量等价加成,多张卡牌数值与机制调整,并补齐危险改装·补满图标。需要游戏 0.107.1／0.111.0 与 RitsuLib >= 0.6.2(工坊物品按当前游戏版本自动选择)。
+
+### 新增
+
+- 危险改装·补满能力图标:同族炮盾、向炮口回填的弹药与大沙漏,与永久流失图标同屏可区分。
+
+### 变更
+
+- 装填:每有 2 层,除格挡加成外额外使攻击伤害 +1(力量等价,不可被偷取/移除)。
+- 快速装填:基础装填 1→2;升级追加装填 +1(强化后 3)。
+- 铳弹齐射:每层加伤 +3→+4(强化后 +5)。
+- 枪炮轰鸣:每层加伤 +5→+7。
+- 神速装填改名为「极速装填」并重做:获得 10 点格挡,将装填补至上限;升级 12 点格挡。
+- 一枪爆头:伤害 10→13(强化后 17)。
+- 坚船利炮:每层装填的加伤 +1→+2。
+- 军火大亨:回合开始轰鸣 1→2;强化后 3。
+- 危险改装重做:1 费;接下来 3 个回合开始时先失去 1 层装填再补至上限,此后永久每回合失去 1 层;升级获得固有。
+- 穿心膛线:装填上限改为 +3 层且可叠加(第二张使上限达到 12)。
+
+### English summary
+
+- Added the Retrofit Refill power icon: cannon-shield family silhouette with ammunition feeding into the muzzle and a large hourglass, distinguishable from the permanent-drain icon on screen.
+- Load now also grants +1 attack damage per 2 stacks (a Strength-equivalent bonus that cannot be stolen or removed).
+- Quick Reload: base Load 1→2, upgrade also grants +1 Load (3 when upgraded).
+- Volley Fire: per-stack bonus +3→+4 (+5 upgraded). Cannon Roar: +5→+7.
+- Lightning Reload renamed to Swift Reload and reworked: 10 Block and refills Load to its cap; 12 Block upgraded.
+- Headshot 10→13 damage (17 upgraded). Gunboat: per-Load bonus +1→+2.
+- Arms Dealer: start-of-turn Salvo 1→2 (3 upgraded).
+- Dangerous Retrofit reworked: costs 1; for 3 turns, lose 1 Load then refill to cap at turn start, then lose 1 Load per turn permanently; upgrade grants Innate.
+- Rifled Barrel: Load cap is now +3 per copy and stacks (a second copy raises the cap to 12).
+
 ## [0.3.0] - 2026-10-03
 
 局内角色动画与视觉更新，同时修复战斗状态隔离、嵌套礼炮触发及动作生命周期。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2；Steam 工坊自动选择对应变体。
