@@ -4,6 +4,18 @@
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-10-06
+
+欧罗巴斯海玻璃标题修复。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2；Steam 工坊自动选择对应变体。
+
+### 修复
+
+- 修复欧罗巴斯事件的海玻璃在指派给娜维娅时显示裸本地化键名：补入按角色分键的标题，中文「玫瑰玻璃」、英文 "Rose Glass"，与原版五角色的「X 玻璃」命名同型。
+
+### English summary
+
+- Fixed Sea Glass showing a raw localization key when assigned to Navia in the Orobas event: added the per-character title "Rose Glass" / 「玫瑰玻璃」, matching the base game's per-character naming pattern.
+
 ## [0.4.1] - 2026-10-03
 
 枫达生命值结算与建筑师对话修复。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2；Steam 工坊自动选择对应变体。
