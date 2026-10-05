@@ -25,5 +25,6 @@
   "STS2_NAVIA_RELIC_MORA_POUCH.flavor": "摩拉不能解决一切问题。好在大多数问题还是可以解决的。",
   "STS2_NAVIA_RELIC_ELEGANT_PARASOL.title": "精致的阳伞",
   "STS2_NAVIA_RELIC_ELEGANT_PARASOL.description": "每当你在[gold]装填[/gold]层数达到上限时获得装填，都会获得与当前装填数相等的[gold]格挡[/gold]。",
-  "STS2_NAVIA_RELIC_ELEGANT_PARASOL.flavor": "很少有人能想到，大小姐手中的华丽阳伞也能成为克敌制胜的武器。"
+  "STS2_NAVIA_RELIC_ELEGANT_PARASOL.flavor": "很少有人能想到，大小姐手中的华丽阳伞也能成为克敌制胜的武器。",
+  "SEA_GLASS.STS2_NAVIA_CHARACTER_NAVIA.title": "玫瑰玻璃"
 }

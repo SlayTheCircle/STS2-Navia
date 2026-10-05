@@ -25,5 +25,6 @@
   "STS2_NAVIA_RELIC_MORA_POUCH.flavor": "Mora can't solve every problem. Luckily, most problems can be solved.",
   "STS2_NAVIA_RELIC_ELEGANT_PARASOL.title": "Elegant Parasol",
   "STS2_NAVIA_RELIC_ELEGANT_PARASOL.description": "Whenever you gain [gold]Load[/gold] and reach max [gold]Load[/gold], gain [gold]Block[/gold] equal to your current Load.",
-  "STS2_NAVIA_RELIC_ELEGANT_PARASOL.flavor": "Few would imagine that the gorgeous parasol in the young lady's hand could also be a weapon."
+  "STS2_NAVIA_RELIC_ELEGANT_PARASOL.flavor": "Few would imagine that the gorgeous parasol in the young lady's hand could also be a weapon.",
+  "SEA_GLASS.STS2_NAVIA_CHARACTER_NAVIA.title": "Rose Glass"
 }
