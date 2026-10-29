@@ -3,7 +3,7 @@
 <!-- 生成文件:scripts/export-card-table.py 从源码 ctor 与 zhs 本地化生成,勿手改。 -->
 <!-- 过时校验:check.sh 调用 --check;再生成:python3 scripts/export-card-table.py -->
 
-共 91 张（含衍生 token）。效果文本为当前运行文本;升级数值以源码与游戏内为准。
+共 94 张（含衍生 token）。效果文本为当前运行文本;升级数值以源码与游戏内为准。
 稀有度颜色对照：普通=白卡，罕见=蓝卡，稀有=金卡。
 原案数值与设计过程见[技术历史](../history/design/README.md)。
 
@@ -39,11 +39,11 @@
 | 扩容弹夹 | 罕见 | 2 | 攻击 | 造成{Damage:diff()}点伤害，[gold]装填[/gold]{LoadPower:diff()}。 |
 | 豪掷千金 | 罕见 | 1 | 攻击 | 造成{Damage:diff()}点伤害{Hits:diff()}次。下一次打出[gold]闪耀摩拉[/gold]时，[gold]装填[/gold]1。 |
 | 火力增幅 | 罕见 | 2 | 攻击 | 造成{Damage:diff()}点伤害，[gold]礼炮轰鸣[/gold]{Salvo:diff()}。将一张[gold]金花礼炮[/gold]加入你的手牌。 |
+| 火线接应 | 罕见 | 1 | 攻击 | 造成{Damage:diff()}点伤害。消耗至多{MaxSpend:diff()}层[gold]装填[/gold]，每消耗1层，其他玩家获得{BlockPerLoad:diff()}点[gold]格挡[/gold]。（联机限定） |
 | 高歌猛进 | 罕见 | 1 | 攻击 | 造成{Damage:diff()}点伤害。抽牌堆中的1张随机攻击牌获得[gold]支援[/gold]：造成的伤害-{SupportAmount:diff()}。 |
 | 横行灰河 | 罕见 | 1 | 攻击 | 造成{Damage:diff()}点伤害。手牌中每有一张带有[gold]支援[/gold]效果的牌，抽1张牌并恢复1点能量。 |
 | 坚船利炮 | 罕见 | 0 | 攻击 | 对所有敌人造成{Damage:diff()}点伤害X次。你当前每有1层[gold]装填[/gold]，这张卡的伤害+{ExtraDamage:diff()}（不消耗装填）。{InCombat:
 （当前每次造成{CalculatedDamage:diff()}点伤害）\|} |
-| 伸出援手 | 罕见 | 1 | 攻击 | 造成{Damage:diff()}点伤害。本场战斗中，所有带有[gold]支援[/gold]效果的攻击牌造成的伤害+{AuraAmount:diff()}。 |
 | 先发制人 | 罕见 | 0 | 攻击 | 造成{Damage:diff()}点伤害，给予{VulnerablePower:diff()}层[gold]易伤[/gold]，给予{WeakPower:diff()}层[gold]虚弱[/gold]。 |
 | 例行检查 | 罕见 | 2 | 攻击 | 造成{Damage:diff()}点伤害。手牌中每有一张无色牌，伤害+{ExtraDamage:diff()}。{InCombat:
 （当前共造成{CalculatedDamage:diff()}点伤害）\|} |
@@ -57,7 +57,7 @@
 | 强制买断 | 稀有 | 2 | 攻击 | 将消耗堆中所有的[gold]闪耀摩拉[/gold]对一名敌人打出。每打出1张，获得{Block:diff()}点[gold]格挡[/gold]。 |
 | 做空市场 | 稀有 | 0 | 攻击 | 造成{Damage:diff()}点伤害。本场战斗中，你每打出1张[gold]闪耀摩拉[/gold]，都会令这张卡的伤害+{MoraBonus:diff()}。 |
 
-## 技能（32）
+## 技能（34）
 
 | 卡牌 | 稀有度 | 费用 | 类型 | 效果 |
 |---|---|---|---|---|
@@ -82,22 +82,24 @@
 | 超额支出 | 罕见 | 0 | 技能 | 选择手中一张技能牌，使其获得[gold]支援[/gold]：该卡本场战斗中费用为0，并获得[gold]消耗[/gold]。 |
 | 兜售枪火 | 罕见 | 1 | 技能 | [gold]装填[/gold]{LoadPower:diff()}。本回合内，[gold]闪耀摩拉[/gold]额外造成{MoraBonus:diff()}点伤害。 |
 | 高价买入 | 罕见 | 1 | 技能 | 你手牌中每有1张[gold]金花礼炮[/gold]，抽1张牌。 |
+| 会长委托 | 罕见 | 1 | 技能 | 选择另一名玩家，由其选择自己的1张手牌，使其获得[gold]支援[/gold]：打出时，所有玩家获得{IfUpgraded:show:7\|4}点[gold]格挡[/gold]，抽{IfUpgraded:show:2\|1}张牌。（联机限定） |
+| 公账支取 | 罕见 | 0 | 技能 | 选择另一名玩家。消耗你手中的至多{MaxExhaust:diff()}张[gold]闪耀摩拉[/gold]。每消耗1张，该玩家获得1点能量。（联机限定） |
 | 铸剑为犁 | 罕见 | 0 | 技能 | 消耗手中1张[gold]金花礼炮[/gold]，获得2点能量。 |
 | 紧急调度 | 罕见 | 1 | 技能 | 抽{Cards:diff()}张牌。丢弃其中所有费用为0的牌。 |
 | 砥兵备战 | 罕见 | 0 | 技能 | 抽1张牌。[gold]装填[/gold]1。[gold]礼炮轰鸣[/gold]1。在手牌中生成1张[gold]闪耀摩拉[/gold]。 |
-| 追加订单 | 稀有 | 1 | 技能 | 将手牌中一张牌的带有[gold]消耗[/gold]的复制品加入手牌。 |
 | 破甲兵装 | 稀有 | 1 | 技能 | 失去你当前的所有[gold]格挡[/gold]。每失去3点，就对所有敌人造成{Damage:diff()}点伤害。
 你的下一回合开始时[gold]格挡[/gold]不会消失。 |
 | 紧急避险 | 稀有 | 0 | 技能 | 消耗全部[gold]装填[/gold]，每消耗2层获得{CalculationExtra:diff()}点[gold]格挡[/gold]，并在下回合[gold]装填[/gold]1。{InCombat:
 （当前共获得{CalculatedBlock:diff()}点格挡）\|} |
 | 庆贺礼炮 | 稀有 | 2 | 技能 | 选择手中一张[gold]金花礼炮[/gold]，将其对随机敌人打出3次。 |
+| 金花致意 | 稀有 | 2 | 技能 | [gold]礼炮轰鸣[/gold]{Salvo:diff()}。选择手中的1张[gold]金花礼炮[/gold]，将其对一名敌人打出（升级后改为随机敌人）。其他玩家获得等同于此次礼炮造成未被格挡伤害的[gold]格挡[/gold]。（联机限定） |
 | 贪婪枪火 | 稀有 | 1 | 技能 | 本回合内，你每次打出[gold]闪耀摩拉[/gold]，都会消耗1层[gold]装填[/gold]，在战斗结束时额外获得{Gold:diff()}金币。 |
 | 热情昂扬 | 稀有 | 2 | 技能 | 选择抽牌堆中的1张牌，使其获得[gold]支援[/gold]：打出带有支援效果的牌时，若其仍在手牌中，自动将其打出。 |
 | 精制装药 | 稀有 | 0 | 技能 | [gold]礼炮轰鸣[/gold]{Salvo:diff()}。如果有[gold]装填[/gold]，则消耗1层，将此卡返回你的手牌。 |
 | 火力覆盖 | 稀有 | 1 | 技能 | 若手牌中已有[gold]金花礼炮[/gold]，使手牌中所有[gold]金花礼炮[/gold]的伤害次数+1。然后[gold]礼炮轰鸣[/gold]{Salvo:diff()}。 |
 | 鸟枪换炮 | 稀有 | 1 | 技能 | 消耗手牌中所有的[gold]闪耀摩拉[/gold]，每消耗1张，获得1点能量。 |
 
-## 能力（20）
+## 能力（21）
 
 | 卡牌 | 稀有度 | 费用 | 类型 | 效果 |
 |---|---|---|---|---|
@@ -119,6 +121,7 @@
 | 高压弹膛 | 稀有 | 1 | 能力 | 每当你的[gold]装填[/gold]减少1层（无论何种原因），对所有敌人造成{HighPressureChamberPower:diff()}点伤害。 |
 | 通货膨胀 | 稀有 | 2 | 能力 | 你接下来生成的[gold]闪耀摩拉[/gold]伤害降低1点，并会在打出时抽1张牌。 |
 | 乐观估测 | 稀有 | 2 | 能力 | 每当你打出一张带有[gold]支援[/gold]效果的牌，抽1张牌。 |
+| 刺玫同盟 | 稀有 | 1 | 能力 | 每回合你第一次打出[gold]支援[/gold]牌后，所有其他玩家抽{RosulaAlliancePower:diff()}张牌。（联机限定） |
 | 刺玫手段 | 稀有 | 2 | 能力 | 每回合，你打出的第一张带有[gold]支援[/gold]效果的牌可以免费打出。 |
 | 饱和爆破 | 稀有 | 2 | 能力 | [gold]金花礼炮[/gold]现在会攻击所有敌人。 |
 

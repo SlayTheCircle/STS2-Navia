@@ -4,6 +4,32 @@
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-29
+
+Mirror 联机内容更新：五张联机限定卡与配套支援／能力，移除两张旧卡。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2。
+
+### 新增
+
+- 火线接应、会长委托、公账支取、金花致意、刺玫同盟五张联机限定卡，按 0.111.0 原版每角色五张联机卡的配置接入；单人卡池自动过滤。
+- 会长委托新增全体格挡与抽牌支援；刺玫同盟新增每回合首次打出支援牌后的队友抽牌能力。
+- 补齐五张卡图与刺玫同盟能力图标。
+
+### 修复
+
+- 会长委托与公账支取现在会拒绝死亡队友目标，不再附魔其手牌或消耗摩拉为其恢复能量。
+
+### 移除
+
+- 按 Mirror 整合包移除伸出援手及其支援加伤 Power、追加订单。
+- 旧档提示：包含上述卡牌或 Power 的旧战斗存档不保证恢复；请在更新前结束或放弃相关旧局。
+
+### English summary
+
+- Added five multiplayer-only cards: Fireline Support, President's Commission, Public Account Withdrawal, Golden Rose Salute, and Rosula Alliance, with all required artwork.
+- Added Commission Support and the Rosula Alliance power for team Block, card draw, energy, and unblocked-damage interactions.
+- President's Commission and Public Account Withdrawal now reject dead ally targets without enchanting their cards or exhausting Mora for energy.
+- Removed Lend a Hand, its power, and Additional Order. Old combats containing these models are unsupported and should be finished or abandoned before updating.
+
 ## [0.4.2] - 2026-10-06
 
 欧罗巴斯海玻璃标题修复。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2；Steam 工坊自动选择对应变体。

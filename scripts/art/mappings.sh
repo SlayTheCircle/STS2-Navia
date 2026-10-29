@@ -22,8 +22,12 @@ declare -A CARDS=(
     ["会长号令"]="PresidentOrder" ["军火大亨"]="ArmsDealer" ["热情昂扬"]="HighMorale"
     ["超额支出"]="Overspend" ["铸剑为犁"]="SwordsToPlowshares" ["募集资金"]="Fundraising"
     ["邻里互助"]="MutualAid" ["高歌猛进"]="ForwardMarch" ["率直作风"]="FrankManner"
-    ["刺玫手段"]="RosulaMethod" ["横行灰河"]="GrayRiverRampage" ["伸出援手"]="LendAHand"
+    ["刺玫手段"]="RosulaMethod" ["横行灰河"]="GrayRiverRampage"
     ["高额回报"]="HighPayout" ["乐观估测"]="OptimisticForecast"
+    # Mirror 基本完工整合包联机五卡(2026-10-28)
+    ["火线接应"]="FirelineSupport" ["会长委托"]="PresidentCommission"
+    ["公账支取"]="PublicAccountWithdrawal" ["金花致意"]="GoldenRoseSalute"
+    ["刺玫同盟"]="RosulaAlliance"
     # 常规批(2026-09-29)
     ["炮火连天"]="Cannonade" ["贪婪枪火"]="GreedyGunfire" ["补充物资"]="Resupply"
     ["紧急调度"]="UrgentDispatch" ["回收利息"]="CollectInterest" ["砥兵备战"]="WarPreparation"
@@ -33,7 +37,7 @@ declare -A CARDS=(
     ["亏空平账"]="BalanceTheBooks" ["灰河硝烟"]="GrayRiverHaze" ["最终突击"]="FinalAssault"
     ["空心弹头"]="HollowPoint" ["庆贺礼炮"]="FestiveCannon" ["炮身加固"]="ReinforcedBarrel"
     ["一枪爆头"]="Headshot" ["双管齐下"]="DoubleBarrel" ["扩容弹夹"]="ExtendedMagazine"
-    ["追加订单"]="AdditionalOrder" ["引导轰炸"]="GuidedBombardment"
+    ["引导轰炸"]="GuidedBombardment"
     # 炮修改批(2026-09-29,亲手)
     ["饱和爆破"]="SaturationBlast" ["武器保养"]="WeaponMaintenance" ["通货膨胀"]="Inflation"
     # 先古卡(2026-09-29)
@@ -80,7 +84,7 @@ declare -A POWERS=(
     ["延迟装填-图标"]="ExtravagantSpendPower"
     # 支援系 4 Power(第六版需求单勘误:此4张早在23图标包已交付,此前误列待补)
     ["刺玫手段-图标"]="RosulaMethodPower"
-    ["伸出援手-图标"]="LendAHandPower"
+    ["刺玫同盟-图标"]="RosulaAlliancePower"
     ["高额回报-图标"]="HighPayoutPower"
     ["乐观估测-图标"]="OptimisticForecastPower"
     ["饱和爆破-图标"]="SaturationBlastPower"

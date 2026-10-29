@@ -4,7 +4,9 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Runs;
 using NaviaMod.Content.Characters;
 
 // 只组装战斗所需的真实玩家/牌堆；不启动存档、网络或 Godot 场景。
@@ -18,6 +20,7 @@ internal static class Fixture
         var player = (Player)RuntimeHelpers.GetUninitializedObject(typeof(Player));
         Field(player, "<Character>k__BackingField", character ?? new Navia());
         Field(player, "<Creature>k__BackingField", new Creature(player, 75, 75));
+        Field(player, "_runState", NullRunState.Instance);
         Field(player, "_runPiles", Array.Empty<CardPile>());
         Field(player, "_relics", new List<RelicModel>());
         var state = (PlayerCombatState)RuntimeHelpers.GetUninitializedObject(typeof(PlayerCombatState));
@@ -26,6 +29,16 @@ internal static class Fixture
             Field(state, $"<{name}>k__BackingField", new CardPile(type));
         Field(player, "<PlayerCombatState>k__BackingField", state);
         return player;
+    }
+
+    public static CombatState Combat(params Player[] players)
+    {
+        var combat = new CombatState();
+        foreach (Player player in players)
+        {
+            combat.AddPlayer(player);
+        }
+        return combat;
     }
 
     public static T Canonical<T>() where T : AbstractModel, new()
@@ -56,15 +69,21 @@ internal static class Fixture
             .GetValue(CardPile.Get(pile, card.Owner))!).Add(card);
     }
 
-    public static CardPlay Play(CardModel card, bool auto = false) => new()
+    public static CardPlay Play(CardModel card, bool auto = false, Creature? target = null) => new()
     {
         Card = card,
 #if !NAVIA_GAME_0107_1
         Player = card.Owner,
 #endif
-        Target = null, ResultPile = PileType.Exhaust, Resources = default!, IsAutoPlay = auto,
+        Target = target, ResultPile = PileType.Exhaust, Resources = default!, IsAutoPlay = auto,
         PlayIndex = 0, PlayCount = 1,
     };
+
+    public static Task OnPlay(CardModel card, PlayerChoiceContext choiceContext, CardPlay play)
+    {
+        return (Task)typeof(CardModel).GetMethod("OnPlay", BindingFlags.Instance | BindingFlags.NonPublic)!
+            .Invoke(card, [choiceContext, play])!;
+    }
 
     public static void Require(bool condition, string message)
     {

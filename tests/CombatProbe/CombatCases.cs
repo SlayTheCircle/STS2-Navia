@@ -19,6 +19,7 @@ internal static class CombatCases
         await Inflation();
         await Cannonade();
         await LoadV4();
+        await MultiplayerCases.Run();
         await VisualCases.Run();
     }
 

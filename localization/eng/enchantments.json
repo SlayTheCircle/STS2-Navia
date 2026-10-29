@@ -19,5 +19,8 @@
   "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.extraCardText": "Support: Deals {Amount} less damage.",
   "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.title": "Horn Support",
   "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.description": "When you play a card with a Support effect, if the supported card is in your hand, it is played automatically for free with a random target (this combat).",
-  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.extraCardText": "Support: When a Support card is played, if in hand, plays itself."
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.extraCardText": "Support: When a Support card is played, if in hand, plays itself.",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_DRAW_ON_PLAY.title": "Commission Support",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_DRAW_ON_PLAY.description": "Each time the supported card is played, all players gain {Block:diff()} Block and draw {Cards:diff()} card(s) (this combat).",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_DRAW_ON_PLAY.extraCardText": "Support: When played, all players gain {Block:diff()} Block and draw {Cards:diff()} card(s)."
 }

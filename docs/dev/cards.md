@@ -71,7 +71,7 @@ protected override IEnumerable<IHoverTip> AdditionalHoverTips => new[] { HoverTi
 硬约束:
 - **作用域=本场战斗,由引擎保证**(战斗牌堆是主卡组的克隆,战斗内附魔随 CombatState 消亡)——不要写清场钩子;
 - 一卡一附魔槽:已附魔的卡不能再次获得支援(协同「换支援」设计需先 `CardCmd.ClearEnchantment`);
-- 图标:专属图按类名 `images/enchantments/<类名>.png`，缺图回落共享徽记 `navia_support.png`。当前九种支援统一使用徽记，母版由素材脚本的 [图标模块](../../scripts/art/icons.sh)派生；差异由附加文本表达。
+- 图标:专属图按类名 `images/enchantments/<类名>.png`，缺图回落共享徽记 `navia_support.png`。当前八种支援统一使用徽记，母版由素材脚本的 [图标模块](../../scripts/art/icons.sh)派生；差异由附加文本表达。
 
 ## 3. 卡牌类模板与风格
 
@@ -82,7 +82,8 @@ protected override IEnumerable<IHoverTip> AdditionalHoverTips => new[] { HoverTi
 - 稀有度:**普通=Common,罕见=Uncommon,稀有=Rare**
 - 关键词(加进 `CanonicalKeywords`):消耗=Exhaust 虚无=Ethereal 固有=Innate 保留=Retain
 - 打击类卡必须显式声明 `protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };`。原版打击木偶等联动读取 `Tags`，不按本地化名称或 C# 类名判断；本模组对应打击/阳伞打击/猛铳打击/黄金打击，升级版沿用同一标记。新增或改名时按设计确认归属，不能按某种语言的标题自动推断。
-- 目标:自身=Self 单体敌人=AnyEnemy
+- 目标:自身=Self 单体敌人=AnyEnemy；队友=AnyAlly，模型层仍需拒绝自己及死亡队友；随机敌人=RandomEnemy
+- 联机限定卡覆写 `MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly`，由原版卡池过滤；跨玩家抽牌统一走 `Content/Compat/CardPileCommandShim.cs` 吸收双版本差异。
 - 获得格挡的卡:`public override bool GainsBlock => true;`
 - 多段攻击:`DamageCmd.Attack(...).WithHitCount(n)`;全体敌人参考 `Shiv.cs` 的 `TargetingAllOpponents(combatState)`
 

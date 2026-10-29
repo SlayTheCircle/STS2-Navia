@@ -52,7 +52,7 @@ for lang in ('zhs', 'eng'):
         if cls not in varmap:
             bad.append(f'[{lang}] {cls}: 未找到对应卡牌类，无法检查占位符')
             continue
-        used = set(re.findall(r'\{(\w+)(?::[^}]*)?\}', v)) - {'InCombat'}
+        used = set(re.findall(r'\{(\w+)(?::[^}]*)?\}', v)) - {'InCombat', 'IfUpgraded'}
         missing = used - varmap[cls]
         if missing:
             bad.append(f'[{lang}] {cls}: {sorted(missing)}')

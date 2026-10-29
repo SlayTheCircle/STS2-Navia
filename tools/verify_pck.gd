@@ -7,6 +7,11 @@ const TEXTURES := [
 	"res://STS2-Navia/images/cards/TravelLight.png",
 	"res://STS2-Navia/images/cards/VolleyFire.png",
 	"res://STS2-Navia/images/cards/LightningReload.png",
+	"res://STS2-Navia/images/cards/FirelineSupport.png",
+	"res://STS2-Navia/images/cards/PresidentCommission.png",
+	"res://STS2-Navia/images/cards/PublicAccountWithdrawal.png",
+	"res://STS2-Navia/images/cards/GoldenRoseSalute.png",
+	"res://STS2-Navia/images/cards/RosulaAlliance.png",
 	"res://STS2-Navia/images/relics/RosulaEmblem.png",
 	"res://STS2-Navia/images/relics/RosulaEmblem_outline.png",
 	"res://STS2-Navia/images/potions/Fonta.png",
@@ -22,6 +27,7 @@ const TEXTURES := [
 	"res://STS2-Navia/images/powers/ArmsDealerPower.png",
 	"res://STS2-Navia/images/powers/AccidentalBlastPower.png",
 	"res://STS2-Navia/images/powers/DangerousRetrofitFillPower.png",
+	"res://STS2-Navia/images/powers/RosulaAlliancePower.png",
 	"res://STS2-Navia/images/enchantments/navia_support.png",
 	"res://STS2-Navia/images/energy/navia_energy_big.png",
 	"res://STS2-Navia/images/energy/navia_energy_text.png",
@@ -44,6 +50,7 @@ const DIMENSIONS := {
 }
 const TRANSPARENT_TEXTURES := [
 	"res://STS2-Navia/images/powers/DangerousRetrofitFillPower.png",
+	"res://STS2-Navia/images/powers/RosulaAlliancePower.png",
 	"res://STS2-Navia/images/energy/navia_spark.png",
 	"res://STS2-Navia/images/energy/navia_energy_glow.png",
 	"res://STS2-Navia/images/enchantments/navia_support.png",
@@ -53,6 +60,11 @@ const TRANSPARENT_TEXTURES := [
 	"res://STS2-Navia/images/powers/AccidentalBlastPower.png",
 	"res://STS2-Navia/images/energy/navia_energy_big.png",
 	"res://STS2-Navia/images/energy/navia_energy_text.png",
+]
+const RETIRED_TEXTURES := [
+	"res://STS2-Navia/images/cards/LendAHand.png",
+	"res://STS2-Navia/images/cards/AdditionalOrder.png",
+	"res://STS2-Navia/images/powers/LendAHandPower.png",
 ]
 
 var _frame := 0
@@ -69,6 +81,10 @@ func _process(_delta: float) -> bool:
 	var failures := 0
 	for path in TEXTURES:
 		failures += _verify_texture(path)
+	for path in RETIRED_TEXTURES:
+		if ResourceLoader.exists(path):
+			push_error("PCK 仍含已移除纹理: " + path)
+			failures += 1
 	# 标准版 Godot 不执行游戏 C# 脚本，仅确认新能量计场景确实入包。
 	if not FileAccess.file_exists("res://STS2-Navia/scenes/combat/navia_energy_counter.tscn"):
 		push_error("PCK 缺能量计场景")
@@ -77,7 +93,7 @@ func _process(_delta: float) -> bool:
 		push_error("PCK 缺专属拖尾场景")
 		failures += 1
 	for lang in ["zhs", "eng"]:
-		for table in ["cards", "events", "epochs", "ancients"]:
+		for table in ["cards", "powers", "enchantments", "card_selection", "events", "epochs", "ancients"]:
 			failures += _verify_localization(lang, table)
 	if failures == 0:
 		print("PCK 代表性纹理、尺寸、透明边缘与本地化可解析；未验证游戏模型、角色场景或机制。")

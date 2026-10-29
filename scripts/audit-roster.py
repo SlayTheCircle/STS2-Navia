@@ -12,8 +12,9 @@ if not os.path.isfile(DOC):
 
 # 原案尚未实装的已明确延后内容；当前为空。
 DEFERRED = set()
+RETIRED = {'伸出援手', '追加订单'}  # Mirror 基本完工整合包确认移除，保留原案历史但不再要求实装。
 TOKENS = {'金花礼炮', '闪耀摩拉'}
-ADDITIONS = {'极速装填'}  # 原案外新增的先古强化卡(数值调整V4 由「神速装填」改名)；设计确认状态见公开对照说明。
+ADDITIONS = {'极速装填', '火线接应', '会长委托', '公账支取', '金花致意', '刺玫同盟'}  # 原案外新增内容；联机五卡来自 Mirror 基本完工整合包。
 
 names = []
 for line in open(DOC, encoding='utf-8'):
@@ -40,14 +41,17 @@ if len(titles) != cls_n:
 ghost = titles - design - TOKENS - ADDITIONS
 if ghost:
     errors.append(f'实装了但不在设计表/白名单: {sorted(ghost)}')
+revived = titles & RETIRED
+if revived:
+    errors.append(f'已移除内容重新出现: {sorted(revived)}')
 pending = design - titles
-unexpected = pending - DEFERRED
+unexpected = pending - DEFERRED - RETIRED
 if unexpected:
     errors.append(f'未实装且不在缓做清单(在途批次落地后应清零): {sorted(unexpected)}')
 
 for e in errors:
     print('错误:', e)
-print(f'花名册: 原案 {len(design)} / 原案已实装 {len(titles & design)} / 延后 {len(DEFERRED)} / 新增 {sorted(titles & ADDITIONS)} / token {sorted(TOKENS)}')
+print(f'花名册: 原案 {len(design)} / 原案已实装 {len(titles & design)} / 延后 {len(DEFERRED)} / 移除 {sorted(RETIRED & design)} / 新增 {sorted(titles & ADDITIONS)} / token {sorted(TOKENS)}')
 if errors:
     sys.exit(1)
 print('花名册审计通过')

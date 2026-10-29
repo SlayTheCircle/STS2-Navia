@@ -19,5 +19,8 @@
   "STS2_NAVIA_ENCHANTMENT_SUPPORT_DAMAGE_DOWN.extraCardText": "支援：造成伤害 -{Amount}。",
   "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.title": "号角支援",
   "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.description": "打出一张带有支援效果的牌时，若被附魔的牌在手牌中，自动（免费）将其打出，目标随机（本场战斗）。",
-  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.extraCardText": "支援：打出支援牌时，若在手牌中，自动打出。"
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_AUTOPLAY.extraCardText": "支援：打出支援牌时，若在手牌中，自动打出。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_DRAW_ON_PLAY.title": "委托支援",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_DRAW_ON_PLAY.description": "获得支援的牌每次打出时，所有玩家获得{Block:diff()}点格挡，抽{Cards:diff()}张牌（本场战斗）。",
+  "STS2_NAVIA_ENCHANTMENT_SUPPORT_BLOCK_DRAW_ON_PLAY.extraCardText": "支援：打出时，所有玩家获得{Block:diff()}点格挡，抽{Cards:diff()}张牌。"
 }
