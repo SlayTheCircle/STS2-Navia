@@ -4,6 +4,18 @@
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-10-31
+
+铳弹齐射与枪炮轰鸣的伤害预览修复。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2。
+
+### 修复
+
+- 铳弹齐射与枪炮轰鸣消耗装填时，保留卡面已计入的每 2 层装填 +1 攻击加成，实际伤害不再低于预览；升级、力量、易伤及乘法附魔按原版管线正常结算。
+
+### English summary
+
+- Fixed Volley Fire and Cannon Roar losing Load's +1 attack per 2 stacks after consuming Load. Actual damage now matches the card preview, including upgrades, Strength, Vulnerable, and multiplicative enchantments.
+
 ## [0.5.0] - 2026-10-29
 
 Mirror 联机内容更新：五张联机限定卡与配套支援／能力，移除两张旧卡。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2。

@@ -55,10 +55,15 @@ public sealed class VolleyFire : NaviaCardBase
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
         Creature creature = base.Owner.Creature;
         // 必须在消耗装填之前计算总伤:Calculate 实时重读装填层数,先消耗就会算成基准值。
-        decimal total = base.DynamicVars.CalculatedDamage.Calculate(cardPlay.Target);
         int load = creature.GetPowerAmount<LoadPower>();
+        decimal total = base.DynamicVars.CalculatedDamage.Calculate(cardPlay.Target);
         if (load > 0)
         {
+            // 保留卡面已计入的装填力量等价;卡面将其加在附魔后,此处换算到附魔前,
+            // 使乘法附魔与后续力量/易伤仍只按原版管线结算一次。
+            decimal loadBonus = Math.Floor(load / LoadPower.StacksPerDexterity);
+            decimal enchantmentMultiplier = base.Enchantment?.EnchantDamageMultiplicative(total, ValueProp.Move) ?? 1m;
+            total += loadBonus / enchantmentMultiplier;
             // 消耗装填统一走 LoadPower.Gain 负数入口(施工手册 §4.4)。
             await LoadPower.Gain(choiceContext, creature, -load, creature, this);
         }

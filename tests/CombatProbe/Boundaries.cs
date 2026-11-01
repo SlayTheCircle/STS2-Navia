@@ -12,6 +12,8 @@ using MegaCrit.Sts2.Core.ValueProps;
 using NaviaMod.Content.Visuals.CombatAnimation;
 
 // 隔离抽牌动画、原生日志与视觉输出；不替换能力钩子、克隆、次数更新和订阅实现。
+internal sealed class HpLossObservedException : Exception;
+
 internal static class Boundaries
 {
     public static readonly List<Player> Draws = [];
@@ -20,6 +22,9 @@ internal static class Boundaries
     public static readonly List<(CardModel Card, Creature? Target)> AutoPlays = [];
     public static readonly List<(string Action, Creature? Creature)> Visuals = [];
     public static Action<CardModel, Creature?>? AutoPlayEffect;
+    public static bool ExecuteAttacks;
+    public static Creature? ObservedHpLossTarget;
+    public static decimal? ObservedHpLoss;
 
     public static void Install()
     {
@@ -36,6 +41,7 @@ internal static class Boundaries
         Patch(typeof(CardPileCmd).GetMethod("AddGeneratedCardToCombat")!, nameof(AddGenerated));
         Patch(typeof(CreatureCmd).GetMethod("GainBlock", [typeof(Creature), typeof(decimal), typeof(ValueProp), typeof(CardPlay), typeof(bool)])!, nameof(GainBlock));
         Patch(typeof(AttackCommand).GetMethod("Execute")!, nameof(AttackExecute));
+        Patch(typeof(Creature).GetMethod("LoseHpInternal")!, nameof(ObserveHpLoss));
         Patch(typeof(CardCmd).GetMethod("Exhaust")!, nameof(Exhaust));
         Patch(typeof(CardCmd).GetMethod("AutoPlay")!, nameof(AutoPlay));
         Patch(typeof(CombatManager).GetProperty("IsInProgress")!.GetMethod!, nameof(InProgress));
@@ -91,8 +97,21 @@ internal static class Boundaries
     }
     public static bool AttackExecute(AttackCommand __instance, ref Task<AttackCommand> __result)
     {
+        if (ExecuteAttacks)
+        {
+            return true;
+        }
         __result = Task.FromResult(__instance);
         return false;
+    }
+    public static bool ObserveHpLoss(Creature __instance, decimal amount)
+    {
+        if (__instance != ObservedHpLossTarget)
+        {
+            return true;
+        }
+        ObservedHpLoss = amount;
+        throw new HpLossObservedException();
     }
 #if NAVIA_GAME_0107_1
     public static bool Exhaust(CardModel card, ref Task __result)

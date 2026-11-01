@@ -97,7 +97,7 @@ protected override IEnumerable<IHoverTip> AdditionalHoverTips => new[] { HoverTi
    - 伤害:`CalculationBaseVar(基准)` + **`ExtraDamageVar(每份)`** + **`CalculatedDamageVar(ValueProp.Move)`**;OnPlay 读 `base.DynamicVars.CalculatedDamage.Calculate(target)`
    - 格挡:`CalculationBaseVar(基准)` + `CalculationExtraVar(每份)` + **`CalculatedBlockVar(ValueProp.Move)`**;OnPlay 读 `base.DynamicVars.CalculatedBlock.Calculate(target)`
    - 通用 `CalculatedVar` 的面板**不含**力量/虚弱/敏捷修正,只用于非伤害格挡的自定义数值(如礼炮轰鸣值)。
-2. **先算后耗**:凡「消耗装填结算效果」的卡,必须在消耗**之前**读取/计算数值(参考 `VolleyFire.OnPlay` 的顺序与注释;实测踩过:后算会把面板值算成基准值)。
+2. **先算后耗**:凡「消耗装填结算效果」的卡,必须在消耗**之前**读取/计算数值(参考 `VolleyFire.OnPlay` 的顺序与注释;实测踩过:后算会把面板值算成基准值)。铳弹齐射／枪炮轰鸣还须保留预览已计入的装填力量等价；该加成在卡面位于附魔之后，输入攻击管线前按本卡附魔倍率换算，避免消耗后漏算或乘法附魔重复放大。对应实际预览／扣血回归见 `VolleyFireCases`。
 3. `PowerCmd.Apply<T>(...)` 返回 `Task<T?>`,战斗结束等时点会返回 null,接返回值必须判空。
 4. 消耗装填一律走 `LoadPower.Gain(ctx, creature, -n, ...)`,不要直接 `PowerCmd.ModifyAmount`(绕过上限规则没关系,负数本来不截断,但统一入口便于将来埋点)。
 5. 自定义 Power 若不可见(`protected override bool IsVisibleInternal => false;`)不需要本地化;可见 Power 必须在中英本地化给 `STS2_NAVIA_POWER_<类名蛇形大写>.title/.description/.smartDescription` 三条(smartDescription 用 `[blue]{Amount}[/blue]` 引用当前层数,风格见 `localization/zhs/powers.json` 的 LOAD_POWER)。

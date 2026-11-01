@@ -54,10 +54,15 @@ public sealed class CannonRoar : NaviaCardBase
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
         Creature creature = base.Owner.Creature;
         // 先算总伤再消耗装填(Calculate 实时重读层数,先消耗就会算成基准值)。
-        decimal total = base.DynamicVars.CalculatedDamage.Calculate(cardPlay.Target);
         int load = creature.GetPowerAmount<LoadPower>();
+        decimal total = base.DynamicVars.CalculatedDamage.Calculate(cardPlay.Target);
         if (load > 0)
         {
+            // 与铳弹齐射同口径:保留卡面已计入的装填力量等价,并换算到附魔前,
+            // 避免消耗后实际伤害低于预览或乘法附魔重复放大该加成。
+            decimal loadBonus = Math.Floor(load / LoadPower.StacksPerDexterity);
+            decimal enchantmentMultiplier = base.Enchantment?.EnchantDamageMultiplicative(total, ValueProp.Move) ?? 1m;
+            total += loadBonus / enchantmentMultiplier;
             await LoadPower.Gain(choiceContext, creature, -load, creature, this);
         }
         await DamageCmd.Attack(total).FromCard(this, cardPlay).Targeting(cardPlay.Target)
