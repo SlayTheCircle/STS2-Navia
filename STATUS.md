@@ -1,6 +1,12 @@
-# 当前状态（2026-10-29）
+# 当前状态（2026-10-31）
 
 本文件维护当前实现、证据边界、限制与待办。安装入口见 README，长期工程规则见 docs/dev/README.md。
+
+## v0.5.1 已发布（2026-10-31）
+
+- 按维护者选定口径修复铳弹齐射与枪炮轰鸣：消耗装填时保留预览已计入的每 2 层 +1 攻击加成，并按本卡附魔倍率换算到附魔前，避免乘法附魔重复放大。新增 `VolleyFireCases` 在真实 AttackCommand／Hook 到 LoseHpInternal 的管线上比较预览与实际伤害；未修复版本以 2 层装填预览 16／实际 15 复现失败，修复后 0／1／2／6 层、升级、力量／易伤、乘法附魔及枪炮轰鸣对照均一致。
+- 独立审查未发现核心伤害数学、Hook／附魔顺序或回归缺陷。main Source checks／Compile、双目标 `check.sh --full` 与 CombatProbe 全绿；tag 触发 [Release CI](https://github.com/SlayTheCircle/STS2-Navia/actions/runs/41332790938) 成功。六个正式附件回下载后通过 SHA-256、7／7／9 文件结构、清单与跨包 DLL／PCK 核对，CI DLL 的双目标 CombatProbe／LoaderProbe（各 159 模型）及工坊 PCK／角色资源检查通过。发行源码 `f846dca03ccb24f2805ac3ce2f68c15a21aae844`，美术输入 `79c8076`。
+- [GitHub v0.5.1](https://github.com/SlayTheCircle/STS2-Navia/releases/tag/v0.5.1) 已公开发布，[Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) 使用同一 CI 工件经 SteamCMD 更新成功。工坊 ZIP SHA-256 为 `e74cef77371263b2dc04208c338ba091ee2f0646d8f28cca818055e42b35612b`；重新下载的线上 9 个文件与 GitHub 工件逐字节一致，物品 ID、app、所有者、标题、封面、公开可见性、简介及链接保持。0.5.0 回退包校验完整。未部署本机游戏；本轮未新增真实 GUI 或跨客户端联机验收，既有证据边界不变。执行记录与校验脚本保存在私有 `local_dev/releases/v0.5.1/`。
 
 ## 内容与机制
 
@@ -85,8 +91,8 @@
 - 美术母版由组织私有美术仓管理，适用范围见许可说明。历史整理不属于本轮修复；后续重写历史须另获明确授权。
 - local_dev 整个目录保持私有，无子文件跟踪例外；公开资料位于 docs，原案卡表（docs/history/design）作为花名册审计输入，现行卡表由脚本生成并纳入检查。未整理原件、本机地图与执行记录仅留本地。
 - 94 个卡牌模型已按[目录组织约定](docs/history/design/card-organization.md)收纳；源码字节、类名、命名空间、注册与资源关系保留。卡牌审计同步递归枚举，当前文档路径已迁移。实际 Compile 输入、一致性检查、完整素材存在性及 DLL 编译通过；本轮未新增游戏验收证据。
-- 源码采用 MIT，许可范围、第三方说明和发行包的许可文件接入已落实。第三方代码来源与许可见 THIRD_PARTY_NOTICES；原案署名已入 CREDITS，美术母版采用限定授权（组织私有美术仓）。最新发行版为 v0.5.0，GitHub Release 与 Steam 工坊均已发布（见上方记录）。
-- 清单版本当前为 0.5.0，已整理对应发行说明并完成双端发布。历史内部 0.1.2 ZIP 包名与内部清单不一致，保留原样；新生成候选包从清单命名。
+- 源码采用 MIT，许可范围、第三方说明和发行包的许可文件接入已落实。第三方代码来源与许可见 THIRD_PARTY_NOTICES；原案署名已入 CREDITS，美术母版采用限定授权（组织私有美术仓）。最新发行版为 v0.5.1，GitHub Release 与 Steam 工坊均已发布（见上方记录）。
+- 清单版本当前为 0.5.1，已整理对应发行说明并完成双端发布。历史内部 0.1.2 ZIP 包名与内部清单不一致，保留原样；新生成候选包从清单命名。
 
 ## 美术状态
 
