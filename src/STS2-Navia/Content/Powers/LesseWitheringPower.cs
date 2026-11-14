@@ -29,7 +29,11 @@ public sealed class LesseWitheringPower : NaviaPowerBase
         if (participants.Contains(base.Owner))
         {
             Flash();
+#if MOD_GAME_0113_0
+            await CreatureCmd.LoseMaxHp(choiceContext, base.Owner, base.Amount, cardSource: null);
+#else
             await CreatureCmd.LoseMaxHp(choiceContext, base.Owner, base.Amount, isFromCard: false);
+#endif
         }
     }
 }

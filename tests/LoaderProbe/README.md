@@ -15,9 +15,9 @@ source scripts/dev-env.sh
 "$DOTNET_EXE" build tests/LoaderProbe/LoaderProbe.csproj -c Release
 "$DOTNET_EXE" tests/LoaderProbe/bin/Release/net9.0/LoaderProbe.dll \
   '<目标游戏引用目录>' '<同目标游戏运行时 DLL 目录>' "$RITSULIB_DIR" \
-  mods-dist/loader/STS2-Navia.dll '<0.107.1 内容 DLL>' '<0.111.0 内容 DLL>'
+  mods-dist/loader/STS2-Navia.dll '<0.107.1 内容 DLL>' '<0.113.0 内容 DLL>'
 ```
 
-对 0.107.1、0.111.0 分别启动一个验证进程；使用同一份按 0.107.1 编译的 Loader。进程按 release_info.json 选目标，并断言实际转发的 DLL 路径。它核对角色、初始打击和卡池等真实模型，输出扫描到的模型数但不把固定数量作为断言。
+对 0.107.1、0.113.0 分别启动一个验证进程；使用同一份按 0.107.1 编译的 Loader。进程按 release_info.json 选目标，并断言实际转发的 DLL 路径。它核对角色、初始打击和卡池等真实模型，输出扫描到的模型数但不把固定数量作为断言。
 
 只登记壳的对照组必须复现内容模型完全缺失。低于清单下限的依赖必须在转发初始化器前被拒绝，且加载完成后留下带错误的 Failed 条目。验证在独立探针进程中执行。

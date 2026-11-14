@@ -4,6 +4,16 @@
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-11-14
+
+### Compatibility
+
+- 将活跃游戏目标调整为 0.107.1／0.113.0，升级 RitsuLib 最低依赖至 0.6.12，并更新变体打包与构建配置。
+- Target game versions 0.107.1 / 0.113.0, require RitsuLib 0.6.12 or newer, and update variant packaging and build configuration.
+- 测试分支以 0.113.0 替代 0.111.0；保留 0.107.1 稳定分支支持。更新前请关闭游戏，并先更新 RitsuLib。
+- The beta target moves from 0.111.0 to 0.113.0 while stable 0.107.1 remains supported. Close the game and update RitsuLib before installing.
+
+
 ## [0.5.1] - 2026-10-31
 
 铳弹齐射与枪炮轰鸣的伤害预览修复。支持游戏 0.107.1／0.111.0，依赖 RitsuLib >= 0.6.2。

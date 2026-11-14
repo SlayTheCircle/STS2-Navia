@@ -6,7 +6,7 @@ NAVIA_GODOT_VERSION="4.5.1"
 # 保留调用者显式设置的值，本地可信配置只提供后备值。
 navia_env_names=()
 navia_env_values=()
-for navia_name in GAME_DIR GAME_LOG GAME_REFS_DIR RITSULIB_DIR RITSULIB_TARGET DOTNET_EXE GODOT_EXE ART_SOURCE_DIR ROSTER_DESIGN_FILE TASKLIST_EXE; do
+for navia_name in GAME_DIR GAME_LOG GAME_REFS_DIR RITSULIB_DIR RITSULIB_TARGET DOTNET_EXE GODOT_EXE ART_SOURCE_DIR ROSTER_DESIGN_FILE TASKLIST_EXE NAVIA_GAME_REFS_1130 NAVIA_GAME_REFS_1071 NAVIA_LOADER_GAME_REFS; do
     if [[ -v "$navia_name" ]]; then
         navia_env_names+=("$navia_name")
         navia_env_values+=("${!navia_name}")
@@ -22,9 +22,9 @@ unset navia_env_names navia_env_values navia_name navia_i
 
 DOTNET_EXE="${DOTNET_EXE:-dotnet}"
 GODOT_EXE="${GODOT_EXE:-$NAVIA_ROOT/.tools/godot/$NAVIA_GODOT_VERSION/Godot_v${NAVIA_GODOT_VERSION}-stable_linux.x86_64}"
-GAME_REFS_DIR="${GAME_REFS_DIR:-$NAVIA_ROOT/libs/game}"
+GAME_REFS_DIR="${GAME_REFS_DIR:-$NAVIA_ROOT/libs/game-0.113.0}"
 RITSULIB_DIR="${RITSULIB_DIR:-$NAVIA_ROOT/libs/RitsuLib}"
-RITSULIB_TARGET="${RITSULIB_TARGET:-0.111.0}"
+RITSULIB_TARGET="${RITSULIB_TARGET:-0.113.0}"
 TASKLIST_EXE="${TASKLIST_EXE:-tasklist.exe}"
 ROSTER_DESIGN_FILE="${ROSTER_DESIGN_FILE:-$NAVIA_ROOT/docs/history/design/card-roster.txt}"
 export GAME_REFS_DIR RITSULIB_DIR RITSULIB_TARGET

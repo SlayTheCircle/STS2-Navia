@@ -31,7 +31,7 @@ jobs:
 
       - name: 校验输入版本目录
         run: |
-          for target in 0.111.0 0.107.1; do
+          for target in 0.113.0 0.107.1; do
             [[ -d "refs/game-refs/$target" ]] || { echo "错误: circle-refs 缺少 game-refs/$target。" >&2; exit 1; }
           done
 
@@ -44,7 +44,7 @@ jobs:
         env:
           RITSULIB_DIR: ${{ github.workspace }}/refs/RitsuLib
         run: |
-          for target in 0.111.0 0.107.1; do
+          for target in 0.113.0 0.107.1; do
             echo "== 目标 $target =="
             GAME_REFS_DIR="$PWD/refs/game-refs/$target" RITSULIB_TARGET="$target" bash scripts/build.sh --dll-only
           done

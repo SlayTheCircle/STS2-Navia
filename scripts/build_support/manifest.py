@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 
-SUPPORTED_TARGETS = ("0.107.1", "0.111.0")
+SUPPORTED_TARGETS = ("0.107.1", "0.113.0")
 
 
 def for_target(source: dict, target: str) -> dict:

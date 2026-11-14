@@ -42,7 +42,7 @@ class ManifestTests(unittest.TestCase):
             source.write_text('{"version":"1.2.3"}\n')
             original = source.read_bytes()
             result = subprocess.run([sys.executable, str(ROOT / "scripts/build_support/manifest.py"),
-                                     str(source), str(source), "0.111.0"], capture_output=True)
+                                     str(source), str(source), "0.113.0"], capture_output=True)
             self.assertNotEqual(result.returncode, 0)
             self.assertEqual(source.read_bytes(), original)
 

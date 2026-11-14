@@ -127,7 +127,11 @@ internal static class VanillaEventNaviaOptions
     private static async Task ShareExperienceAsync(EventModel evt)
     {
         Player player = evt.Owner!;
+#if MOD_GAME_0113_0
+        RelicModel relic = RelicFactory.PullNextRelicFromFront(player, evt.Rng).ToMutable();
+#else
         RelicModel relic = RelicFactory.PullNextRelicFromFront(player).ToMutable();
+#endif
         await RelicCmd.Obtain(relic, player);
         FinishDelegate!.Invoke(evt, new LocString("events", "BUGSLAYER.pages.NAVIA_SHARE_EXPERIENCE.description"));
     }

@@ -27,7 +27,7 @@ export PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH"
 
 C# 扩展自身使用的 .NET Runtime 与项目所需 SDK 分别发现。dotnetAcquisitionExtension.existingDotnetPath 用于扩展运行宿主，不应将它当作项目 SDK 选择器；项目 SDK 仍按 global.json 与可发现安装选择。
 
-编辑器直接加载 csproj 时，游戏引用与 RitsuLib 同样必须可见。可在本机环境设置 GAME_REFS_DIR／RITSULIB_DIR，或准备 csproj 的默认 libs/game／libs/RitsuLib。Linux／WSL 可在 libs/RitsuLib 尚不存在时，用本地符号链接指向已准备的完整包；此目录被整体忽略，真实路径不进入公开文件。不要将项目专用引用变量写成所有工作区共享的固定值。
+编辑器直接加载 csproj 时，游戏引用与 RitsuLib 同样必须可见。可在本机环境设置 GAME_REFS_DIR／RITSULIB_DIR，或准备 csproj 的默认 libs/game-0.113.0／libs/RitsuLib。Linux／WSL 可在 libs/RitsuLib 尚不存在时，用本地符号链接指向已准备的完整包；此目录被整体忽略，真实路径不进入公开文件。不要将项目专用引用变量写成所有工作区共享的固定值。
 
 遇到 SDK 错误先在对应 WSL 环境运行 dotnet --list-sdks 与 dotnet --version，再核对项目是否能直接评估；遇到 MSB4019 或缺程序集时继续检查依赖路径。分别报告 SDK 发现、项目加载与实际编译的结果。
 
@@ -68,10 +68,10 @@ tag `v*` 推送触发 [Release 工作流](../../.github/workflows/release.yml)�
 
 Steam 工坊发布为本地手工步（`local_dev/workshop/publish.sh`，私有）：从 Release 工件取内容经 SteamCMD 上传至固定物品，描述单源 `description.bbcode` 使用真实换行——steamcmd 的 VDF 不解析 `\n` 转义，会按字面透传。
 
-双版本编译已适配：源码以 `NAVIA_GAME_0107_1` 条件编译吸收 0.107.1 与 0.111.0 的 API 差异（伤害加成签名、卡牌去向钩子、克隆 API、LoseBlock，以及 `Content/Compat/` 下注入游戏命名空间的 FromCard／CardPlay.GetPlayer 垫片），csproj 按 `RITSULIB_TARGET` 自动注入 define。双目标回归：分别以 `RITSULIB_TARGET=0.107.1 GAME_REFS_DIR=<0.107.1 引用>` 与默认环境跑 `build.sh --dll-only`，两目标 0 错误且警告剖面一致方为通过。注意声明层错误会让编译在方法体绑定前中止——必须迭代到零错误，以警告回归确认绑定完整。变体候选布局与游戏内状态见 [STATUS](../../STATUS.md)。
+双版本编译已适配：源码以 `NAVIA_GAME_0107_1` 条件编译吸收 0.107.1 与 0.113.0 的 API 差异（伤害加成签名、卡牌去向钩子、克隆 API、LoseBlock，以及 `Content/Compat/` 下注入游戏命名空间的 FromCard／CardPlay.GetPlayer 垫片），csproj 按 `RITSULIB_TARGET` 自动注入 define。双目标回归：分别以 `RITSULIB_TARGET=0.107.1 GAME_REFS_DIR=<0.107.1 引用>` 与默认环境跑 `build.sh --dll-only`，两目标 0 错误且警告剖面一致方为通过。注意声明层错误会让编译在方法体绑定前中止——必须迭代到零错误，以警告回归确认绑定完整。变体候选布局与游戏内状态见 [STATUS](../../STATUS.md)。
 
 Loader 按两版共有的 API 下限 0.107.1 编译：`scripts/build-loader.sh` 输出到 `mods-dist/loader/`，不刷新已有工坊目录或 ZIP。构建变体包时须重新执行 package.sh；部署按工作流中的授权范围执行。游戏程序集登记规则见[架构](architecture.md#变体-loader-与游戏模型发现)。[Loader 验证](../../tests/LoaderProbe/README.md) 使用真实游戏 DLL 检查选择、依赖拒绝与模型发现，仍须用实际游戏复验完整初始化、资源和菜单。
 
 ### 单目标安装清单
 
-完整构建的平铺安装目录只承诺当前编译目标：0.107.1 DLL 配 0.107.1 最低版本，0.111.0 DLL 配 0.111.0 最低版本。`build_support/manifest.py` 与双目标打包共用生成规则，不改写根清单。`--dll-only` 不更新安装目录；需要部署时须先完成对应目标的完整构建。工坊布局仍由根 Loader 选择双变体；部署脚本仍只消费平铺目录。
+完整构建的平铺安装目录只承诺当前编译目标：0.107.1 DLL 配 0.107.1 最低版本，0.113.0 DLL 配 0.113.0 最低版本。`build_support/manifest.py` 与双目标打包共用生成规则，不改写根清单。`--dll-only` 不更新安装目录；需要部署时须先完成对应目标的完整构建。工坊布局仍由根 Loader 选择双变体；部署脚本仍只消费平铺目录。
