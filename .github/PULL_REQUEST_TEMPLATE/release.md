@@ -2,6 +2,7 @@
 
 - 目标版本与候选提交：
 - 游戏版本／RitsuLib compat：
+- 本次发行最低支持游戏版本（含 Patch，核对包内 `min_game_version` 与 Release／工坊说明）：
 - 自上一发行基线以来的变化：
 
 ## 发布前确认

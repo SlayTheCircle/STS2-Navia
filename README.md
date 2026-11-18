@@ -2,11 +2,13 @@
 
 [English](README.en.md)
 
-《杀戮尖塔 2》的娜维娅角色模组，以装填、礼炮轰鸣、摩拉与支援构筑为主题。支持游戏 0.107.1（稳定版）与 0.113.0（测试版）双分支。当前实现与开发进度见 [STATUS.md](STATUS.md)。
+《杀戮尖塔 2》的娜维娅角色模组，以装填、礼炮轰鸣、摩拉与支援构筑为主题。当前实现与开发进度见 [STATUS.md](STATUS.md)。
+
+游戏支持仅跟随官方稳定版与 Beta 分支各自的最新版，不为旧版本提供 LTS 或持续兼容维护。支持政策见[版本与兼容约定](docs/dev/versioning.md)。
 
 ## 获取与安装
 
-当前仓库提供源码、双语本地化、文本资源配置及整理后的公开设计资料。推荐经 [Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) 订阅安装，并一并订阅 [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295)——工坊物品按当前游戏版本自动选择内容，切换分支无需换装；也可从 [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) 下载对应游戏目标（0.107.1／0.113.0）的安装包，将其中 `STS2-Navia/` 目录放入游戏 `mods/`。安装或覆盖前关闭游戏；保存原版本包，便于回退。依赖最低版本以 [模组清单](STS2-Navia.json) 为准。完整安装包包含程序与运行素材，可直接从上述发行渠道获取。
+当前仓库提供源码、双语本地化、文本资源配置及整理后的公开设计资料。推荐经 [Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3810999936) 订阅安装，并一并订阅 [RitsuLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3747602295)——工坊物品按当前游戏版本自动选择内容，切换分支无需换装；也可从 [GitHub Releases](https://github.com/SlayTheCircle/STS2-Navia/releases) 下载与当前最新游戏分支对应的安装包，将其中 `STS2-Navia/` 目录放入游戏 `mods/`。安装或覆盖前关闭游戏；保存原版本包，便于回退。依赖最低版本以 [模组清单](STS2-Navia.json) 为准。完整安装包包含程序与运行素材，可直接从上述发行渠道获取。
 
 ## 开发
 

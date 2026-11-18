@@ -14,7 +14,10 @@ for name in sts2.dll GodotSharp.dll 0Harmony.dll; do
 done
 [[ -f "$GAME_DIR/release_info.json" ]] || { echo '错误: 游戏安装缺 release_info.json。' >&2; exit 1; }
 version="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["version"].removeprefix("v"))' "$GAME_DIR/release_info.json")"
-[[ "$version" == "$RITSULIB_TARGET" ]] || { echo "错误: 游戏版本 $version 与 RITSULIB_TARGET=$RITSULIB_TARGET 不一致；未复制引用。" >&2; exit 1; }
+if [[ "$version" != "$RITSULIB_TARGET" && ! ( "$RITSULIB_TARGET" == "0.113.0" && "$version" =~ ^0\.113\.[0-9]+$ ) ]]; then
+    echo "错误: 游戏版本 $version 与 RitsuLib compat=$RITSULIB_TARGET 不兼容；未复制引用。" >&2
+    exit 1
+fi
 mkdir -p "$GAME_REFS_DIR"
 for name in sts2.dll GodotSharp.dll 0Harmony.dll; do cp "$DATA_DIR/$name" "$GAME_REFS_DIR/"; done
 cp "$GAME_DIR/release_info.json" "$GAME_REFS_DIR/"

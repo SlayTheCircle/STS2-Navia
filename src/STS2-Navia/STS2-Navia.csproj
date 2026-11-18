@@ -9,7 +9,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <!-- 引用来自 scripts/restore-refs.sh,按游戏分支取对应版本 -->
     <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(GAME_REFS_DIR)</GameRefsDir>
-    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(MSBuildThisFileDirectory)..\..\libs\game-0.113.0</GameRefsDir>
+    <GameRefsDir Condition="'$(GameRefsDir)' == ''">$(MSBuildThisFileDirectory)..\..\libs\game-0.113.1</GameRefsDir>
   </PropertyGroup>
 
   <ItemGroup>

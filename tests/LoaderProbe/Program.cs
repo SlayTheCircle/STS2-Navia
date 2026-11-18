@@ -4,14 +4,15 @@ using System.Text.Json;
 
 if (args.Length != 6)
 {
-    Console.Error.WriteLine("Usage: LoaderProbe <game-refs> <game-runtime-dll-dir> <RitsuLib> <loader-dll> <content-0.107.1-dll> <content-0.113.0-dll>");
+    Console.Error.WriteLine("Usage: LoaderProbe <game-refs> <game-runtime-dll-dir> <RitsuLib> <loader-dll> <content-0.107.1-dll> <content-0.113.1-dll>");
     return 2;
 }
 string[] inputs = args.Select(Path.GetFullPath).ToArray();
 string target = JsonDocument.Parse(File.ReadAllText(Path.Combine(inputs[0], "release_info.json")))
     .RootElement.GetProperty("version").GetString()!.TrimStart('v');
-Require(target is "0.107.1" or "0.113.0", "Probe only supports the two declared game targets");
-string[] dependencyDirs = [inputs[0], Path.Combine(inputs[2], "compat", target), Path.Combine(inputs[2], "shared"), inputs[1]];
+Require(target is "0.107.1" or "0.113.1", "Probe only supports the two declared game targets");
+string compatTarget = target == "0.113.1" ? "0.113.0" : target;
+string[] dependencyDirs = [inputs[0], Path.Combine(inputs[2], "compat", compatTarget), Path.Combine(inputs[2], "shared"), inputs[1]];
 AssemblyLoadContext.Default.Resolving += (_, name) =>
 {
     string? path = dependencyDirs.Select(dir => Path.Combine(dir, name.Name + ".dll")).FirstOrDefault(File.Exists);
@@ -23,7 +24,7 @@ Directory.CreateDirectory(bundle);
 try
 {
     File.Copy(inputs[3], Path.Combine(bundle, "STS2-Navia.dll"));
-    string[] targets = ["0.107.1", "0.113.0"];
+    string[] targets = ["0.107.1", "0.113.1"];
     for (int i = 0; i < targets.Length; i++)
     {
         string directory = Path.Combine(bundle, "lib", "game-" + targets[i]);
